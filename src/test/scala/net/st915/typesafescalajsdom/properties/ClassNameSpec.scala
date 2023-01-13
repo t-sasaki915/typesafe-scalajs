@@ -15,7 +15,7 @@ class ClassNameSpec extends AnyFlatSpec with should.Matchers {
   }
 
   "Monoid.combine" should "be able to combine correctly" in {
-    ClassName("AA") |+| ClassName("BB") should be (ClassName("AA BB"))
+    ClassName("AA") |+| ClassName("BB") should be(ClassName("AA BB"))
   }
 
 }
