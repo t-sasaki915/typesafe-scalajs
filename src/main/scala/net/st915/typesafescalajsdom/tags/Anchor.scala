@@ -2,6 +2,7 @@ package net.st915.typesafescalajsdom.tags
 
 import net.st915.typesafescalajsdom.Node
 import net.st915.typesafescalajsdom.attributes.global.GlobalAttribute
+import net.st915.typesafescalajsdom.attributes.html.AnchorAttribute
 
 object Anchor {
 
@@ -13,4 +14,4 @@ object Anchor {
 
 }
 
-final case class Anchor(attributes: List[(GlobalAttribute, _)], childs: List[Node]) extends Node
+final case class Anchor(attributes: List[(GlobalAttribute | AnchorAttribute, _)], childs: List[Node]) extends Node
