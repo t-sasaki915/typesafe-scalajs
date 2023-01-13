@@ -1,2 +1,11 @@
-*.class
-*.log
+.idea/
+*.iml
+
+.bsp/
+null/
+
+target
+/project/target
+/project/project
+
+**.semanticdb
