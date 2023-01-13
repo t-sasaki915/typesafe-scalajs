@@ -18,7 +18,7 @@ lazy val root = project
   .settings(
     name := "typesafe-scalajs-dom",
     libraryDependencies ++= Seq(
-      "org.typelevel" %%% "cats-effect" % "3.4.1",
+      "org.typelevel" %%% "cats-core" % "2.9.0",
       "org.scala-js" %%% "scalajs-dom" % "2.1.0",
       "org.scalatest" %%% "scalatest" % "3.2.10" % "test"
     )
