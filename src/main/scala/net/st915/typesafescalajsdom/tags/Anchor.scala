@@ -6,10 +6,10 @@ import net.st915.typesafescalajsdom.attributes.global.GlobalAttribute
 object Anchor {
 
   def apply(attributes: (GlobalAttribute, _)*): Anchor =
-    new Anchor(attributes.toList, List())
+    Anchor(attributes.toList, List())
 
   def apply(attributes: (GlobalAttribute, _)*)(childs: Node*): Anchor =
-    new Anchor(attributes.toList, childs.toList)
+    Anchor(attributes.toList, childs.toList)
 
 }
 
