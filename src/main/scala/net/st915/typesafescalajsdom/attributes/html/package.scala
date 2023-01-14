@@ -170,4 +170,148 @@ package object html {
   case object onAbort extends Attribute[UIEvent => IO[Unit]] with AudioAttribute with EmbedAttribute
       with ImageAttribute with ObjectAttribute with VideoAttribute
 
+  case object onAfterPrint extends Attribute[Event => IO[Unit]] with BodyAttribute
+
+  case object onBeforePrint extends Attribute[Event => IO[Unit]] with BodyAttribute
+
+  case object onBeforeUnload extends Attribute[BeforeUnloadEvent => IO[Unit]] with BodyAttribute
+
+  case object onBlur extends Attribute[FocusEvent => IO[Unit]] with VisibleElementAttribute
+
+  case object onCanPlay extends Attribute[Event => IO[Unit]] with AudioAttribute with EmbedAttribute
+      with ObjectAttribute with VideoAttribute
+
+  case object onCanPlayThrough extends Attribute[Event => IO[Unit]] with AudioAttribute
+      with VideoAttribute
+
+  case object onChange extends Attribute[Event => IO[Unit]] with VisibleElementAttribute
+
+  case object onClick extends Attribute[MouseEvent => IO[Unit]] with VisibleElementAttribute
+
+  case object onContextMenu extends Attribute[MouseEvent => IO[Unit]] with VisibleElementAttribute
+
+  case object onCopy extends Attribute[ClipboardEvent => IO[Unit]] with VisibleElementAttribute
+
+  case object onCueChange extends Attribute[Event => IO[Unit]] with TrackAttribute
+
+  case object onCut extends Attribute[ClipboardEvent => IO[Unit]] with VisibleElementAttribute
+
+  case object onDoubleClick extends Attribute[MouseEvent => IO[Unit]] with VisibleElementAttribute
+
+  case object onDrag extends Attribute[DragEvent => IO[Unit]] with VisibleElementAttribute
+
+  case object onDragEnd extends Attribute[DragEvent => IO[Unit]] with VisibleElementAttribute
+
+  case object onDragEnter extends Attribute[DragEvent => IO[Unit]] with VisibleElementAttribute
+
+  case object onDragLeave extends Attribute[DragEvent => IO[Unit]] with VisibleElementAttribute
+
+  case object onDragOver extends Attribute[DragEvent => IO[Unit]] with VisibleElementAttribute
+
+  case object onDragStart extends Attribute[DragEvent => IO[Unit]] with VisibleElementAttribute
+
+  case object onDrop extends Attribute[DragEvent => IO[Unit]] with VisibleElementAttribute
+
+  case object onDurationChange extends Attribute[Event => IO[Unit]] with AudioAttribute
+      with VideoAttribute
+
+  case object onEmptied extends Attribute[Event => IO[Unit]] with AudioAttribute with VideoAttribute
+
+  case object onEnded extends Attribute[Event => IO[Unit]] with AudioAttribute with VideoAttribute
+
+  case object onError extends Attribute[ErrorEvent => IO[Unit]] with AudioAttribute
+      with BodyAttribute with EmbedAttribute with ImageAttribute with ObjectAttribute
+      with ScriptAttribute with StyleAttribute with VideoAttribute
+
+  case object onFocus extends Attribute[FocusEvent => IO[Unit]] with VisibleElementAttribute
+
+  case object onHashChange extends Attribute[Event => IO[Unit]] with BodyAttribute
+
+  case object onInput extends Attribute[Event => IO[Unit]] with VisibleElementAttribute
+
+  case object onKeyDown extends Attribute[KeyboardEvent => IO[Unit]] with VisibleElementAttribute
+
+  case object onKeyPress extends Attribute[KeyboardEvent => IO[Unit]] with VisibleElementAttribute
+
+  case object onKeyUp extends Attribute[KeyboardEvent => IO[Unit]] with VisibleElementAttribute
+
+  case object onLoad extends Attribute[Event => IO[Unit]] with BodyAttribute with IFrameAttribute
+      with ImageAttribute with InputAttribute with LinkAttribute with ScriptAttribute
+      with StyleAttribute
+
+  case object onLoadedData extends Attribute[Event => IO[Unit]] with AudioAttribute
+      with VideoAttribute
+
+  case object onLoadedMetaData extends Attribute[Event => IO[Unit]] with AudioAttribute
+      with VideoAttribute
+
+  case object onLoadStart extends Attribute[Event => IO[Unit]] with AudioAttribute
+      with VideoAttribute
+
+  case object onMouseDown extends Attribute[MouseEvent => IO[Unit]] with VisibleElementAttribute
+
+  case object onMouseMove extends Attribute[MouseEvent => IO[Unit]] with VisibleElementAttribute
+
+  case object onMouseOut extends Attribute[MouseEvent => IO[Unit]] with VisibleElementAttribute
+
+  case object onMouseOver extends Attribute[MouseEvent => IO[Unit]] with VisibleElementAttribute
+
+  case object onMouseUp extends Attribute[MouseEvent => IO[Unit]] with VisibleElementAttribute
+
+  case object onMouseWheel extends Attribute[WheelEvent => IO[Unit]] with VisibleElementAttribute
+
+  case object onOffline extends Attribute[Event => IO[Unit]] with BodyAttribute
+
+  case object onOnline extends Attribute[Event => IO[Unit]] with BodyAttribute
+
+  case object onPageHide extends Attribute[PageTransitionEvent => IO[Unit]] with BodyAttribute
+
+  case object onPageShow extends Attribute[PageTransitionEvent => IO[Unit]] with BodyAttribute
+
+  case object onPaste extends Attribute[ClipboardEvent => IO[Unit]] with VisibleElementAttribute
+
+  case object onPause extends Attribute[Event => IO[Unit]] with AudioAttribute with VideoAttribute
+
+  case object onPlay extends Attribute[Event => IO[Unit]] with AudioAttribute with VideoAttribute
+
+  case object onPlaying extends Attribute[Event => IO[Unit]] with AudioAttribute with VideoAttribute
+
+  case object onPopState extends Attribute[PopStateEvent => IO[Unit]] with BodyAttribute
+
+  case object onRateChange extends Attribute[Event => IO[Unit]] with AudioAttribute
+      with VideoAttribute
+
+  case object onReset extends Attribute[Event => IO[Unit]] with FormAttribute
+
+  case object onResize extends Attribute[UIEvent => IO[Unit]] with BodyAttribute
+
+  case object onScroll extends Attribute[UIEvent => IO[Unit]] with VisibleElementAttribute
+
+  case object onSeeked extends Attribute[Event => IO[Unit]] with AudioAttribute with VideoAttribute
+
+  case object onSeeking extends Attribute[Event => IO[Unit]] with AudioAttribute with VideoAttribute
+
+  case object onSelect extends Attribute[UIEvent => IO[Unit]] with VisibleElementAttribute
+
+  case object onStalled extends Attribute[Event => IO[Unit]] with AudioAttribute with VideoAttribute
+
+  case object onStorage extends Attribute[StorageEvent => IO[Unit]] with BodyAttribute
+
+  case object onSubmit extends Attribute[Event => IO[Unit]] with FormAttribute
+
+  case object onSuspend extends Attribute[Event => IO[Unit]] with AudioAttribute with VideoAttribute
+
+  case object onTimeUpdate extends Attribute[Event => IO[Unit]] with AudioAttribute
+      with VideoAttribute
+
+  case object onUnload extends Attribute[Event => IO[Unit]] with BodyAttribute
+
+  case object onVolumeChange extends Attribute[Event => IO[Unit]] with AudioAttribute
+      with VideoAttribute
+
+  case object onWaiting extends Attribute[Event => IO[Unit]] with AudioAttribute with VideoAttribute
+
+  case object onWheel extends Attribute[MouseEvent => IO[Unit]] with AudioAttribute
+      with VideoAttribute
+
 }
