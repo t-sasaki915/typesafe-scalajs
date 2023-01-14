@@ -69,12 +69,18 @@ package object html {
     override def default: String = ""
 
   object async extends FlagAttribute with ScriptAttribute
-  // TODO: autocomplete, autofocus, autoplay
+
+  object autoComplete extends FlagAttribute with FormAttribute with InputAttribute
+
+  object autoFocus extends FlagAttribute with ButtonAttribute with InputAttribute
+      with SelectAttribute with TextAreaAttribute
+
+  object autoPlay extends FlagAttribute with AudioAttribute with VideoAttribute
 
   object charset extends Attribute[String] with MetaAttribute with ScriptAttribute:
     override def default: String = ""
 
-  // TODO: checked
+  object checked extends FlagAttribute with InputAttribute
 
   object cite extends Attribute[String] with QuoteAttribute:
     override def default: String = ""
@@ -88,7 +94,7 @@ package object html {
   object content extends Attribute[String] with MetaAttribute:
     override def default: String = ""
 
-  // TODO: controls
+  object controls extends FlagAttribute with AudioAttribute with VideoAttribute
 
   object coords extends Attribute[String] with AreaAttribute:
     override def default: String = ""
@@ -96,7 +102,7 @@ package object html {
   object data extends Attribute[String] with ObjectAttribute:
     override def default: String = ""
 
-  // TODO: defer
+  object defer extends FlagAttribute with ScriptAttribute
 
   object dirName extends Attribute[String] with InputAttribute with TextAreaAttribute:
     override def default: String = ""
