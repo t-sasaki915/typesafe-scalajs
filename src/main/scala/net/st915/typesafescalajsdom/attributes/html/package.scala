@@ -12,57 +12,57 @@ import net.st915.typesafescalajsdom.events.*
 package object html {
 
   sealed trait VisibleElementAttribute
-  sealed trait AnchorAttribute extends VisibleElementAttribute
-  sealed trait AreaAttribute extends VisibleElementAttribute
+  sealed trait AnchorAttribute
+  sealed trait AreaAttribute
   sealed trait AudioAttribute
-  sealed trait BRAttribute extends VisibleElementAttribute
+  sealed trait BRAttribute
   sealed trait BaseAttribute
-  sealed trait BodyAttribute extends VisibleElementAttribute
-  sealed trait ButtonAttribute extends VisibleElementAttribute
-  sealed trait CanvasAttribute extends VisibleElementAttribute
-  sealed trait DialogAttribute extends VisibleElementAttribute
-  sealed trait DivAttribute extends VisibleElementAttribute
-  sealed trait EmbedAttribute extends VisibleElementAttribute
-  sealed trait FieldSetAttribute extends VisibleElementAttribute
-  sealed trait FormAttribute extends VisibleElementAttribute
-  sealed trait HRAttribute extends VisibleElementAttribute
+  sealed trait BodyAttribute
+  sealed trait ButtonAttribute
+  sealed trait CanvasAttribute
+  sealed trait DialogAttribute
+  sealed trait DivAttribute
+  sealed trait EmbedAttribute
+  sealed trait FieldSetAttribute
+  sealed trait FormAttribute
+  sealed trait HRAttribute
   sealed trait HeadAttribute
   sealed trait HTMLAttribute
-  sealed trait IFrameAttribute extends VisibleElementAttribute
-  sealed trait ImageAttribute extends VisibleElementAttribute
-  sealed trait InputAttribute extends VisibleElementAttribute
-  sealed trait LinkAttribute extends VisibleElementAttribute
-  sealed trait LIAttribute extends VisibleElementAttribute
-  sealed trait LabelAttribute extends VisibleElementAttribute
-  sealed trait LegendAttribute extends VisibleElementAttribute
-  sealed trait MapAttribute extends VisibleElementAttribute
+  sealed trait IFrameAttribute
+  sealed trait ImageAttribute
+  sealed trait InputAttribute
+  sealed trait LinkAttribute
+  sealed trait LIAttribute
+  sealed trait LabelAttribute
+  sealed trait LegendAttribute
+  sealed trait MapAttribute
   sealed trait MediaAttribute
-  sealed trait MenuAttribute extends VisibleElementAttribute
+  sealed trait MenuAttribute
   sealed trait MetaAttribute
-  sealed trait OListAttribute extends VisibleElementAttribute
-  sealed trait ObjectAttribute extends VisibleElementAttribute
-  sealed trait OptGroupAttribute extends VisibleElementAttribute
-  sealed trait OptionAttribute extends VisibleElementAttribute
-  sealed trait ParagraphAttribute extends VisibleElementAttribute
+  sealed trait OListAttribute
+  sealed trait ObjectAttribute
+  sealed trait OptGroupAttribute
+  sealed trait OptionAttribute
+  sealed trait ParagraphAttribute
   sealed trait ParamAttribute
-  sealed trait PreAttribute extends VisibleElementAttribute
-  sealed trait ProgressAttribute extends VisibleElementAttribute
-  sealed trait QuoteAttribute extends VisibleElementAttribute
+  sealed trait PreAttribute
+  sealed trait ProgressAttribute
+  sealed trait QuoteAttribute
   sealed trait ScriptAttribute
-  sealed trait SelectAttribute extends VisibleElementAttribute
+  sealed trait SelectAttribute
   sealed trait SourceAttribute
-  sealed trait SpanAttribute extends VisibleElementAttribute
+  sealed trait SpanAttribute
   sealed trait StyleAttribute
-  sealed trait TableCaptionAttribute extends VisibleElementAttribute
-  sealed trait TableCellAttribute extends VisibleElementAttribute
-  sealed trait TableColAttribute extends VisibleElementAttribute
-  sealed trait TableRowAttribute extends VisibleElementAttribute
-  sealed trait TableSectionAttribute extends VisibleElementAttribute
-  sealed trait TemplateAttribute extends VisibleElementAttribute
-  sealed trait TextAreaAttribute extends VisibleElementAttribute
+  sealed trait TableCaptionAttribute
+  sealed trait TableCellAttribute
+  sealed trait TableColAttribute
+  sealed trait TableRowAttribute
+  sealed trait TableSectionAttribute
+  sealed trait TemplateAttribute
+  sealed trait TextAreaAttribute
   sealed trait TitleAttribute
   sealed trait TrackAttribute
-  sealed trait VideoAttribute extends VisibleElementAttribute
+  sealed trait VideoAttribute
 
   case object accept extends Attribute[String] with InputAttribute
 

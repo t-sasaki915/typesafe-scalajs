@@ -2,19 +2,19 @@ package net.st915.typesafescalajsdom.tags
 
 import net.st915.typesafescalajsdom.Node
 import net.st915.typesafescalajsdom.attributes.global.GlobalAttribute
-import net.st915.typesafescalajsdom.attributes.html.AnchorAttribute
+import net.st915.typesafescalajsdom.attributes.html.{AnchorAttribute, VisibleElementAttribute}
 
 object Anchor {
 
-  type AcceptAttribute = GlobalAttribute | AnchorAttribute
+  type AcceptAttribute = GlobalAttribute | AnchorAttribute | VisibleElementAttribute
 
   def apply(attributes: (AcceptAttribute, _)*): Anchor =
-    Anchor(attributes.toList, List())
+    Anchor(attributes.toSet, List())
 
   def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): Anchor =
-    Anchor(attributes.toList, childs.toList)
+    Anchor(attributes.toSet, childs.toList)
 
 }
 
-final case class Anchor(attributes: List[(Anchor.AcceptAttribute, _)], childs: List[Node])
+final case class Anchor(attributes: Set[(Anchor.AcceptAttribute, _)], childs: List[Node])
     extends Node
