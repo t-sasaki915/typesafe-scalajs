@@ -56,43 +56,44 @@ package object html {
   sealed trait TrackAttribute
   sealed trait VideoAttribute extends VisibleElementAttribute
 
-  object accept extends Attribute[String] with InputAttribute
+  case object accept extends Attribute[String] with InputAttribute
 
-  object acceptCharset extends Attribute[String] with FormAttribute
+  case object acceptCharset extends Attribute[String] with FormAttribute
 
-  object action extends Attribute[String] with FormAttribute
+  case object action extends Attribute[String] with FormAttribute
 
-  object alt extends Attribute[String] with AreaAttribute with ImageAttribute with InputAttribute
+  case object alt extends Attribute[String] with AreaAttribute with ImageAttribute
+      with InputAttribute
 
-  object async extends FlagAttribute with ScriptAttribute
+  case object async extends FlagAttribute with ScriptAttribute
 
-  object autoComplete extends FlagAttribute with FormAttribute with InputAttribute
+  case object autoComplete extends FlagAttribute with FormAttribute with InputAttribute
 
-  object autoFocus extends FlagAttribute with ButtonAttribute with InputAttribute
+  case object autoFocus extends FlagAttribute with ButtonAttribute with InputAttribute
       with SelectAttribute with TextAreaAttribute
 
-  object autoPlay extends FlagAttribute with AudioAttribute with VideoAttribute
+  case object autoPlay extends FlagAttribute with AudioAttribute with VideoAttribute
 
-  object charset extends Attribute[String] with MetaAttribute with ScriptAttribute
+  case object charset extends Attribute[String] with MetaAttribute with ScriptAttribute
 
-  object checked extends FlagAttribute with InputAttribute
+  case object checked extends FlagAttribute with InputAttribute
 
-  object cite extends Attribute[String] with QuoteAttribute
+  case object cite extends Attribute[String] with QuoteAttribute
 
-  object cols extends Attribute[Int] with TextAreaAttribute
+  case object cols extends Attribute[Int] with TextAreaAttribute
 
-  object colSpan extends Attribute[Int] with TableCellAttribute with TableColAttribute
+  case object colSpan extends Attribute[Int] with TableCellAttribute with TableColAttribute
 
-  object content extends Attribute[String] with MetaAttribute
+  case object content extends Attribute[String] with MetaAttribute
 
-  object controls extends FlagAttribute with AudioAttribute with VideoAttribute
+  case object controls extends FlagAttribute with AudioAttribute with VideoAttribute
 
-  object coords extends Attribute[String] with AreaAttribute
+  case object coords extends Attribute[String] with AreaAttribute
 
-  object data extends Attribute[String] with ObjectAttribute
+  case object data extends Attribute[String] with ObjectAttribute
 
-  object defer extends FlagAttribute with ScriptAttribute
+  case object defer extends FlagAttribute with ScriptAttribute
 
-  object dirName extends Attribute[String] with InputAttribute with TextAreaAttribute
+  case object dirName extends Attribute[String] with InputAttribute with TextAreaAttribute
 
 }
