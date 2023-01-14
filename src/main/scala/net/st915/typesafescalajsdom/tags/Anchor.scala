@@ -9,7 +9,7 @@ object Anchor {
   type AcceptAttribute = GlobalAttribute | AnchorAttribute | VisibleElementAttribute
 
   def apply(attributes: (AcceptAttribute, _)*): Anchor =
-    Anchor(attributes.toSet, List())
+    Anchor(attributes.toSet, Nil)
 
   def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): Anchor =
     Anchor(attributes.toSet, childs.toList)
@@ -17,4 +17,4 @@ object Anchor {
 }
 
 final case class Anchor(attributes: Set[(Anchor.AcceptAttribute, _)], childs: List[Node])
-    extends Node
+    extends Tag[Anchor.AcceptAttribute]
