@@ -50,6 +50,16 @@ trait all {
   final val label = html.label
   final val list = html.list
   final val loop = html.loop
+  final val max = html.max
+  final val maxLength = html.maxLength
+  final val media = html.media
+  final val method = html.method
+  final val min = html.min
+  final val multiple = html.multiple
+  final val muted = html.muted
+  final val name = html.name
+  final val noValidate = html.noValidate
+  final val onAbort = html.onAbort
 
 }
 
