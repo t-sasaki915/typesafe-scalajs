@@ -1,6 +1,6 @@
 package net.st915.typesafescalajsdom.attributes
 
-import net.st915.typesafescalajsdom.attributes.Attribute
+import net.st915.typesafescalajsdom.attributes.{Attribute, FlagAttribute}
 
 package object html {
 
@@ -68,7 +68,8 @@ package object html {
   object alt extends Attribute[String] with AreaAttribute with ImageAttribute with InputAttribute:
     override def default: String = ""
 
-  // TODO: async, autocomplete, autofocus, autoplay
+  object async extends FlagAttribute with ScriptAttribute
+  // TODO: autocomplete, autofocus, autoplay
 
   object charset extends Attribute[String] with MetaAttribute with ScriptAttribute:
     override def default: String = ""

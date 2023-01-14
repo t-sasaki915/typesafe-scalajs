@@ -1,6 +1,6 @@
 package net.st915.typesafescalajsdom.attributes
 
-object all {
+trait all {
 
   final val accessKey = global.accessKey
   final val className = global.className
@@ -14,5 +14,21 @@ object all {
   final val tabIndex = global.tabIndex
   final val title = global.title
   final val translate = global.translate
+  
+  final val accept = html.accept
+  final val acceptCharset = html.acceptCharset
+  final val action = html.action
+  final val alt = html.alt
+  final val async = html.async
+  final val charset = html.charset
+  final val cite = html.cite
+  final val cols = html.cols
+  final val colSpan = html.colSpan
+  final val content = html.content
+  final val coords = html.coords
+  final val data = html.data
+  final val dirName = html.dirName
 
 }
+
+object all extends all
