@@ -1,6 +1,8 @@
 package net.st915.typesafescalajsdom.attributes
 
+import cats.effect.IO
 import net.st915.typesafescalajsdom.attributes.{Attribute, FlagAttribute}
+import net.st915.typesafescalajsdom.events.*
 
 /**
  * *
@@ -142,5 +144,30 @@ package object html {
   case object list extends Attribute[String] with InputAttribute
 
   case object loop extends FlagAttribute with AudioAttribute with VideoAttribute
+
+  case object max extends Attribute[String] with InputAttribute with ProgressAttribute
+
+  case object maxLength extends Attribute[Int] with InputAttribute with TextAreaAttribute
+
+  case object media extends Attribute[String] with AnchorAttribute with AreaAttribute
+      with LinkAttribute with SourceAttribute with StyleAttribute
+
+  case object method extends Attribute[String] with FormAttribute
+
+  case object min extends Attribute[String] with InputAttribute
+
+  case object multiple extends FlagAttribute with InputAttribute with SelectAttribute
+
+  case object muted extends FlagAttribute with VideoAttribute with AudioAttribute
+
+  case object name extends Attribute[String] with ButtonAttribute with FieldSetAttribute
+      with FormAttribute with IFrameAttribute with InputAttribute with MapAttribute
+      with MetaAttribute with ObjectAttribute with ParamAttribute with SelectAttribute
+      with TextAreaAttribute
+
+  case object noValidate extends FlagAttribute with FormAttribute
+
+  case object onAbort extends Attribute[UIEvent => IO[Unit]] with AudioAttribute with EmbedAttribute
+      with ImageAttribute with ObjectAttribute with VideoAttribute
 
 }
