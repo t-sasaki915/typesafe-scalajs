@@ -6,40 +6,28 @@ package object global {
 
   sealed trait GlobalAttribute
 
-  object accessKey extends Attribute[String] with GlobalAttribute:
-    override def default: String = ""
+  object accessKey extends Attribute[String] with GlobalAttribute
 
-  object className extends Attribute[String] with GlobalAttribute:
-    override def default: String = ""
+  object className extends Attribute[String] with GlobalAttribute
 
-  object contentEditable extends Attribute[Boolean] with GlobalAttribute:
-    override def default: Boolean = false
+  object contentEditable extends Attribute[Boolean] with GlobalAttribute
 
-  object dir extends Attribute[String] with GlobalAttribute:
-    override def default: String = ""
+  object dir extends Attribute[String] with GlobalAttribute
 
-  object draggable extends Attribute[Boolean] with GlobalAttribute:
-    override def default: Boolean = true
+  object draggable extends Attribute[Boolean] with GlobalAttribute
 
-  object hidden extends Attribute[Boolean] with GlobalAttribute:
-    override def default: Boolean = false
+  object hidden extends Attribute[Boolean] with GlobalAttribute
 
-  object id extends Attribute[String] with GlobalAttribute:
-    override def default: String = ""
+  object id extends Attribute[String] with GlobalAttribute
 
-  object lang extends Attribute[String] with GlobalAttribute:
-    override def default: String = ""
+  object lang extends Attribute[String] with GlobalAttribute
 
-  object spellCheck extends Attribute[Boolean] with GlobalAttribute:
-    override def default: Boolean = true
+  object spellCheck extends Attribute[Boolean] with GlobalAttribute
 
-  object tabIndex extends Attribute[Int] with GlobalAttribute:
-    override def default: Int = 1
+  object tabIndex extends Attribute[Int] with GlobalAttribute
 
-  object title extends Attribute[String] with GlobalAttribute:
-    override def default: String = ""
+  object title extends Attribute[String] with GlobalAttribute
 
-  object translate extends Attribute[Boolean] with GlobalAttribute:
-    override def default: Boolean = true
+  object translate extends Attribute[Boolean] with GlobalAttribute
 
 }
