@@ -56,4 +56,48 @@ package object html {
   sealed trait TrackAttribute
   sealed trait VideoAttribute extends VisibleElementAttribute
 
+  object accept extends Attribute[String] with InputAttribute:
+    override def default: String = ""
+
+  object acceptCharset extends Attribute[String] with FormAttribute:
+    override def default: String = ""
+
+  object action extends Attribute[String] with FormAttribute:
+    override def default: String = ""
+
+  object alt extends Attribute[String] with AreaAttribute with ImageAttribute with InputAttribute:
+    override def default: String = ""
+
+  // TODO: async, autocomplete, autofocus, autoplay
+
+  object charset extends Attribute[String] with MetaAttribute with ScriptAttribute:
+    override def default: String = ""
+
+  // TODO: checked
+
+  object cite extends Attribute[String] with QuoteAttribute:
+    override def default: String = ""
+
+  object cols extends Attribute[Int] with TextAreaAttribute:
+    override def default: Int = 0
+
+  object colSpan extends Attribute[Int] with TableCellAttribute with TableColAttribute:
+    override def default: Int = 0
+
+  object content extends Attribute[String] with MetaAttribute:
+    override def default: String = ""
+
+  // TODO: controls
+
+  object coords extends Attribute[String] with AreaAttribute:
+    override def default: String = ""
+
+  object data extends Attribute[String] with ObjectAttribute:
+    override def default: String = ""
+
+  // TODO: defer
+
+  object dirName extends Attribute[String] with InputAttribute with TextAreaAttribute:
+    override def default: String = ""
+
 }
