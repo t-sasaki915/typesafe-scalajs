@@ -11,6 +11,7 @@ trait all {
   final val id = global.id
   final val lang = global.lang
   final val spellCheck = global.spellCheck
+  final val style = global.style
   final val tabIndex = global.tabIndex
   final val title = global.title
   final val translate = global.translate
@@ -125,6 +126,35 @@ trait all {
   final val onVolumeChange = html.onVolumeChange
   final val onWaiting = html.onWaiting
   final val onWheel = html.onWheel
+  final val pattern = html.pattern
+  final val placeholder = html.placeholder
+  final val poster = html.poster
+  final val preload = html.preload
+  final val readonly = html.readonly
+  final val rel = html.rel
+  final val required = html.required
+  final val reversed = html.reversed
+  final val rows = html.rows
+  final val rowSpan = html.rowSpan
+  final val sandbox = html.sandbox
+  final val scope = html.scope
+  final val selected = html.selected
+  final val shape = html.shape
+  final val size = html.size
+  final val sizes = html.sizes
+  final val span = html.span
+  final val src = html.src
+  final val srcDoc = html.srcDoc
+  final val srcLang = html.srcLang
+  final val srcSet = html.srcSet
+  final val start = html.start
+  final val step = html.step
+  final val target = html.target
+  final val `type` = html.`type`
+  final val useMap = html.useMap
+  final val value = html.value
+  final val width = html.width
+  final val wrap = html.wrap
 
 }
 

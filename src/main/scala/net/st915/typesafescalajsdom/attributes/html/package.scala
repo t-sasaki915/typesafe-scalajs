@@ -314,4 +314,73 @@ package object html {
   case object onWheel extends Attribute[MouseEvent => IO[Unit]] with AudioAttribute
       with VideoAttribute
 
+  case object pattern extends Attribute[String] with InputAttribute
+
+  case object placeholder extends Attribute[String] with InputAttribute with TextAreaAttribute
+
+  case object poster extends Attribute[String] with VideoAttribute
+
+  case object preload extends Attribute[String] with AudioAttribute with VideoAttribute
+
+  case object readonly extends FlagAttribute with InputAttribute with TextAreaAttribute
+
+  case object rel extends Attribute[String] with AnchorAttribute with AreaAttribute
+      with FormAttribute with LinkAttribute
+
+  case object required extends FlagAttribute with InputAttribute with SelectAttribute
+      with TextAreaAttribute
+
+  case object reversed extends FlagAttribute with OListAttribute
+
+  case object rows extends Attribute[Int] with TextAreaAttribute
+
+  case object rowSpan extends Attribute[Int] with TableCellAttribute with TableRowAttribute
+
+  case object sandbox extends FlagAttribute with IFrameAttribute
+
+  case object scope extends Attribute[String] with TableRowAttribute
+
+  case object selected extends FlagAttribute with OptionAttribute
+
+  case object shape extends Attribute[String] with AreaAttribute
+
+  case object size extends Attribute[Int] with InputAttribute with SelectAttribute
+
+  case object sizes extends Attribute[String] with ImageAttribute with LinkAttribute
+      with SourceAttribute
+
+  case object span extends Attribute[Int] with TableColAttribute with TableSectionAttribute
+
+  case object src extends Attribute[String] with AudioAttribute with EmbedAttribute
+      with IFrameAttribute with ImageAttribute with InputAttribute with ScriptAttribute
+      with SourceAttribute with TrackAttribute with VideoAttribute
+
+  case object srcDoc extends Attribute[String] with IFrameAttribute
+
+  case object srcLang extends Attribute[String] with TrackAttribute
+
+  case object srcSet extends Attribute[String] with ImageAttribute with SourceAttribute
+
+  case object start extends Attribute[Int] with OListAttribute
+
+  case object step extends Attribute[Int] with InputAttribute
+
+  case object target extends Attribute[String] with AnchorAttribute with AreaAttribute
+      with BaseAttribute with FormAttribute
+
+  case object `type` extends Attribute[String] with AnchorAttribute with ButtonAttribute
+      with EmbedAttribute with InputAttribute with LinkAttribute with MenuAttribute
+      with ObjectAttribute with ScriptAttribute with SourceAttribute with StyleAttribute
+
+  case object useMap extends Attribute[String] with ImageAttribute with ObjectAttribute
+
+  case object value extends Attribute[String] with ButtonAttribute with InputAttribute
+      with OptionAttribute with ParamAttribute
+
+  case object width extends Attribute[Int] with CanvasAttribute with EmbedAttribute
+      with IFrameAttribute with ImageAttribute with InputAttribute with ObjectAttribute
+      with VideoAttribute
+
+  case object wrap extends Attribute[String] with TextAreaAttribute
+
 }

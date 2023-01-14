@@ -28,6 +28,8 @@ package object global {
 
   case object spellCheck extends Attribute[Boolean] with GlobalAttribute
 
+  case object style extends Attribute[String] with GlobalAttribute
+
   case object tabIndex extends Attribute[Int] with GlobalAttribute
 
   case object title extends Attribute[String] with GlobalAttribute
