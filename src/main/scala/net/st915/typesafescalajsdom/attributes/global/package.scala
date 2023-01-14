@@ -2,6 +2,10 @@ package net.st915.typesafescalajsdom.attributes
 
 import net.st915.typesafescalajsdom.attributes.Attribute
 
+/**
+ * @see
+ *   https://www.w3schools.com/tags/ref_standardattributes.asp
+ */
 package object global {
 
   sealed trait GlobalAttribute

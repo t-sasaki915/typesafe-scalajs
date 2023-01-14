@@ -34,6 +34,22 @@ trait all {
   final val data = html.data
   final val defer = html.defer
   final val dirName = html.dirName
+  final val disabled = html.disabled
+  final val download = html.download
+  final val encType = html.encType
+  final val `for` = html.`for`
+  final val form = html.form
+  final val formAction = html.formAction
+  final val headers = html.headers
+  final val height = html.height
+  final val href = html.href
+  final val hrefLang = html.hrefLang
+  final val httpEquiv = html.httpEquiv
+  final val isMap = html.isMap
+  final val kind = html.kind
+  final val label = html.label
+  final val list = html.list
+  final val loop = html.loop
 
 }
 

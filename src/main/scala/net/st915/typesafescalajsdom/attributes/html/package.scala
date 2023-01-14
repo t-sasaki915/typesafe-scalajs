@@ -2,6 +2,11 @@ package net.st915.typesafescalajsdom.attributes
 
 import net.st915.typesafescalajsdom.attributes.{Attribute, FlagAttribute}
 
+/**
+ * *
+ * @see
+ *   https://www.w3schools.com/tags/ref_attributes.asp
+ */
 package object html {
 
   sealed trait VisibleElementAttribute
@@ -24,6 +29,7 @@ package object html {
   sealed trait IFrameAttribute extends VisibleElementAttribute
   sealed trait ImageAttribute extends VisibleElementAttribute
   sealed trait InputAttribute extends VisibleElementAttribute
+  sealed trait LinkAttribute extends VisibleElementAttribute
   sealed trait LIAttribute extends VisibleElementAttribute
   sealed trait LabelAttribute extends VisibleElementAttribute
   sealed trait LegendAttribute extends VisibleElementAttribute
@@ -95,5 +101,46 @@ package object html {
   case object defer extends FlagAttribute with ScriptAttribute
 
   case object dirName extends Attribute[String] with InputAttribute with TextAreaAttribute
+
+  case object disabled extends FlagAttribute with ButtonAttribute with FieldSetAttribute
+      with InputAttribute with OptGroupAttribute with OptionAttribute with SelectAttribute
+      with TextAreaAttribute
+
+  case object download extends Attribute[String] with AnchorAttribute with AreaAttribute
+
+  case object encType extends Attribute[String] with FormAttribute
+
+  case object `for` extends Attribute[String] with LabelAttribute
+
+  case object form extends Attribute[String] with ButtonAttribute with FieldSetAttribute
+      with InputAttribute with LabelAttribute with ObjectAttribute with SelectAttribute
+      with TextAreaAttribute
+
+  case object formAction extends Attribute[String] with ButtonAttribute with InputAttribute
+
+  case object headers extends Attribute[String] with TableCellAttribute with TableColAttribute
+
+  case object height extends Attribute[Int] with CanvasAttribute with EmbedAttribute
+      with IFrameAttribute with ImageAttribute with InputAttribute with ObjectAttribute
+      with VideoAttribute
+
+  case object href extends Attribute[String] with AnchorAttribute with AreaAttribute
+      with BaseAttribute with LinkAttribute
+
+  case object hrefLang extends Attribute[String] with AnchorAttribute with AreaAttribute
+      with LinkAttribute
+
+  case object httpEquiv extends Attribute[String] with MetaAttribute
+
+  case object isMap extends FlagAttribute with ImageAttribute
+
+  case object kind extends Attribute[String] with TrackAttribute
+
+  case object label extends Attribute[String] with TrackAttribute with OptionAttribute
+      with OptGroupAttribute
+
+  case object list extends Attribute[String] with InputAttribute
+
+  case object loop extends FlagAttribute with AudioAttribute with VideoAttribute
 
 }
