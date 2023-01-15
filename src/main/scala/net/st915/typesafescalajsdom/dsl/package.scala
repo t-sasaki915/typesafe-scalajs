@@ -1,6 +1,6 @@
 package net.st915.typesafescalajsdom
 
-package object dsl extends syntax.all with attributes.all {
+package object dsl extends attributes.all with syntax.all {
 
   final val TextNode = net.st915.typesafescalajsdom.TextNode
 
