@@ -2,7 +2,7 @@ package net.st915.typesafescalajsdom.tags
 
 import net.st915.typesafescalajsdom.Node
 
-abstract class Tag[A] extends Node {
+trait Tag[A] extends Node {
 
   def attributes: Set[(A, _)]
 

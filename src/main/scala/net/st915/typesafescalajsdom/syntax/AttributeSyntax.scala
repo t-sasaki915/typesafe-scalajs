@@ -10,10 +10,10 @@ trait AttributeSyntax {
   implicit def autoApplyFlagAttribute[A <: FlagAttribute](flagAttribute: A): (A, Boolean) =
     (flagAttribute, true)
 
-  extension [A, B <: Attribute[A]](x: B) {
+  extension [A <: Attribute[B], B](x: A) {
 
     @targetName(":=")
-    def :=(value: A): (B, A) = (x, value)
+    def :=(value: B): (A, B) = (x, value)
 
   }
 
