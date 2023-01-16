@@ -1,0 +1,79 @@
+package net.st915.typesafescalajsdom.tags
+
+trait all {
+
+  final type Audio = invisible.Audio
+  final type Base = invisible.Base
+  final type Link = invisible.Link
+  final type Meta = invisible.Meta
+  final type Param = invisible.Param
+  final type Script = invisible.Script
+
+  final type Anchor = visible.Anchor
+  final type Area = visible.Area
+  final type BR = visible.BR
+  final type Button = visible.Button
+  final type Canvas = visible.Canvas
+  final type Dialog = visible.Dialog
+  final type Div = visible.Div
+  final type Embed = visible.Embed
+  final type FieldSet = visible.FieldSet
+  final type Form = visible.Form
+  final type HR = visible.HR
+  final type HTMLMap = visible.HTMLMap
+  final type HTMLObject = visible.HTMLObject
+  final type HTMLOption = visible.HTMLOption
+  final type IFrame = visible.IFrame
+  final type Image = visible.Image
+  final type Input = visible.Input
+  final type Label = visible.Label
+  final type Legend = visible.Legend
+  final type LI = visible.LI
+  final type Menu = visible.Menu
+  final type OList = visible.OList
+  final type OptGroup = visible.OptGroup
+  final type Paragraph = visible.Paragraph
+  final type Pre = visible.Pre
+  final type Progress = visible.Progress
+  final type Quote = visible.Quote
+  final type Select = visible.Select
+
+  final val Audio = invisible.Audio
+  final val Base = invisible.Base
+  final val Link = invisible.Link
+  final val Meta = invisible.Meta
+  final val Param = invisible.Param
+  final val Script = invisible.Script
+
+  final val Anchor = visible.Anchor
+  final val Area = visible.Area
+  final val BR = visible.BR
+  final val Button = visible.Button
+  final val Canvas = visible.Canvas
+  final val Dialog = visible.Dialog
+  final val Div = visible.Div
+  final val Embed = visible.Embed
+  final val FieldSet = visible.FieldSet
+  final val Form = visible.Form
+  final val HR = visible.HR
+  final val HTMLMap = visible.HTMLMap
+  final val HTMLObject = visible.HTMLObject
+  final val HTMLOption = visible.HTMLOption
+  final val IFrame = visible.IFrame
+  final val Image = visible.Image
+  final val Input = visible.Input
+  final val Label = visible.Label
+  final val Legend = visible.Legend
+  final val LI = visible.LI
+  final val Menu = visible.Menu
+  final val OList = visible.OList
+  final val OptGroup = visible.OptGroup
+  final val Paragraph = visible.Paragraph
+  final val Pre = visible.Pre
+  final val Progress = visible.Progress
+  final val Quote = visible.Quote
+  final val Select = visible.Select
+
+}
+
+object all extends all
