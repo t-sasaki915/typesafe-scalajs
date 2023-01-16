@@ -35,7 +35,6 @@ package object html {
   sealed trait LabelAttribute
   sealed trait LegendAttribute
   sealed trait MapAttribute
-  sealed trait MediaAttribute
   sealed trait MenuAttribute
   sealed trait MetaAttribute
   sealed trait OListAttribute
