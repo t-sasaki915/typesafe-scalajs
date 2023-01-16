@@ -47,5 +47,31 @@ package object dsl extends attributes.all with syntax.all {
   final val Legend = tags.Legend
   final type Link = tags.Link
   final val Link = tags.Link
+  final type HTMLObject = tags.HTMLObject
+  final val HTMLObject = tags.HTMLObject
+  final type HTMLOption = tags.HTMLOption
+  final val HTMLOption = tags.HTMLOption
+  final type Menu = tags.Menu
+  final val Menu = tags.Menu
+  final type Meta = tags.Meta
+  final val Meta = tags.Meta
+  final type OList = tags.OList
+  final val OList = tags.OList
+  final type OptGroup = tags.OptGroup
+  final val OptGroup = tags.OptGroup
+  final type Paragraph = tags.Paragraph
+  final val Paragraph = tags.Paragraph
+  final type Param = tags.Param
+  final val Param = tags.Param
+  final type Pre = tags.Pre
+  final val Pre = tags.Pre
+  final type Progress = tags.Progress
+  final val Progress = tags.Progress
+  final type Quote = tags.Quote
+  final val Quote = tags.Quote
+  final type Script = tags.Script
+  final val Script = tags.Script
+  final type Select = tags.Select
+  final val Select = tags.Select
 
 }
