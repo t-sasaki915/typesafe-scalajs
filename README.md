@@ -1,2 +1,2 @@
-# typesafe-scalajs-dom
-Typesafe scalajs-dom
+# typesafe-scalajs
+Typesafe scalajs

@@ -1,5 +1,5 @@
 ThisBuild / version := "1.0.0"
-ThisBuild / description := "Typesafe scalajs-dom"
+ThisBuild / description := "Typesafe scalajs"
 ThisBuild / scalaVersion := "3.2.1"
 
 ThisBuild / semanticdbEnabled := true
@@ -12,7 +12,7 @@ ThisBuild / scalacOptions ++= Seq(
   "-unchecked"
 )
 
-lazy val root = project
+lazy val dom = project
   .in(file("."))
   .enablePlugins(ScalaJSPlugin)
   .settings(
