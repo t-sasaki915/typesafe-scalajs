@@ -56,7 +56,6 @@ package object html {
   sealed trait TableColAttribute
   sealed trait TableRowAttribute
   sealed trait TableSectionAttribute
-  sealed trait TemplateAttribute
   sealed trait TextAreaAttribute
   sealed trait TitleAttribute
   sealed trait TrackAttribute

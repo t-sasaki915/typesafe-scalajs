@@ -8,6 +8,10 @@ trait all {
   final type Meta = invisible.Meta
   final type Param = invisible.Param
   final type Script = invisible.Script
+  final type Source = invisible.Source
+  final type Style = invisible.Style
+  final type Title = invisible.Title
+  final type Track = invisible.Track
 
   final type Anchor = visible.Anchor
   final type Area = visible.Area
@@ -37,6 +41,14 @@ trait all {
   final type Progress = visible.Progress
   final type Quote = visible.Quote
   final type Select = visible.Select
+  final type Span = visible.Span
+  final type TableCaption = visible.TableCaption
+  final type TableCell = visible.TableCell
+  final type TableCol = visible.TableCol
+  final type TableRow = visible.TableRow
+  final type TableSection = visible.TableSection
+  final type TextArea = visible.TextArea
+  final type Video = visible.Video
 
   final val Audio = invisible.Audio
   final val Base = invisible.Base
@@ -44,6 +56,10 @@ trait all {
   final val Meta = invisible.Meta
   final val Param = invisible.Param
   final val Script = invisible.Script
+  final val Source = invisible.Source
+  final val Style = invisible.Style
+  final val Title = invisible.Title
+  final val Track = invisible.Track
 
   final val Anchor = visible.Anchor
   final val Area = visible.Area
@@ -73,6 +89,14 @@ trait all {
   final val Progress = visible.Progress
   final val Quote = visible.Quote
   final val Select = visible.Select
+  final val Span = visible.Span
+  final val TableCaption = visible.TableCaption
+  final val TableCell = visible.TableCell
+  final val TableCol = visible.TableCol
+  final val TableRow = visible.TableRow
+  final val TableSection = visible.TableSection
+  final val TextArea = visible.TextArea
+  final val Video = visible.Video
 
 }
 
