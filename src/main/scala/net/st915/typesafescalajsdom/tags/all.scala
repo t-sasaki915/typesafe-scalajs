@@ -23,6 +23,12 @@ trait all {
   final type Embed = visible.Embed
   final type FieldSet = visible.FieldSet
   final type Form = visible.Form
+  final type H1 = visible.H1
+  final type H2 = visible.H2
+  final type H3 = visible.H3
+  final type H4 = visible.H4
+  final type H5 = visible.H5
+  final type H6 = visible.H6
   final type HR = visible.HR
   final type HTMLMap = visible.HTMLMap
   final type HTMLObject = visible.HTMLObject
@@ -71,6 +77,12 @@ trait all {
   final val Embed = visible.Embed
   final val FieldSet = visible.FieldSet
   final val Form = visible.Form
+  final val H1 = visible.H1
+  final val H2 = visible.H2
+  final val H3 = visible.H3
+  final val H4 = visible.H4
+  final val H5 = visible.H5
+  final val H6 = visible.H6
   final val HR = visible.HR
   final val HTMLMap = visible.HTMLMap
   final val HTMLObject = visible.HTMLObject

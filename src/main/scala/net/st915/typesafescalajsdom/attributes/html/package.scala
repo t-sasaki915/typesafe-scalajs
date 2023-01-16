@@ -27,6 +27,7 @@ package object html {
   sealed trait FormAttribute
   sealed trait HRAttribute
   sealed trait HeadAttribute
+  sealed trait HeadingAttribute
   sealed trait IFrameAttribute
   sealed trait ImageAttribute
   sealed trait InputAttribute
