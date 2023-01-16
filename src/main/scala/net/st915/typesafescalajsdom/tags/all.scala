@@ -56,6 +56,9 @@ trait all {
   final type TextArea = visible.TextArea
   final type Video = visible.Video
 
+  final type Body = special.Body
+  final type Head = special.Head
+
   final val Audio = invisible.Audio
   final val Base = invisible.Base
   final val Link = invisible.Link
@@ -109,6 +112,9 @@ trait all {
   final val TableSection = visible.TableSection
   final val TextArea = visible.TextArea
   final val Video = visible.Video
+
+  final val Body = special.Body
+  final val Head = special.Head
 
 }
 
