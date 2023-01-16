@@ -44,5 +44,6 @@ lazy val rendererTest = project
   .enablePlugins(ScalaJSPlugin)
   .dependsOn(renderer)
   .settings(
-    name := "typesafe-scalajs-renderer-test"
+    name := "typesafe-scalajs-renderer-test",
+    scalaJSUseMainModuleInitializer := true
   )
