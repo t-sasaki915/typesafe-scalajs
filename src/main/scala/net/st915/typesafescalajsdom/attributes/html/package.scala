@@ -2,7 +2,7 @@ package net.st915.typesafescalajsdom.attributes
 
 import cats.effect.IO
 import net.st915.typesafescalajsdom.attributes.{Attribute, FlagAttribute}
-import net.st915.typesafescalajsdom.events.*
+import net.st915.typesafescalajsdom.domain.events.*
 
 /**
  * *

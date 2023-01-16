@@ -1,4 +1,4 @@
-package net.st915.typesafescalajsdom
+package net.st915.typesafescalajsdom.domain
 
 package object events {
 
