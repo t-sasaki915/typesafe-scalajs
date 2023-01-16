@@ -1,6 +1,6 @@
 package net.st915.typesafescalajs.dom.tags.special
 
-import net.st915.typesafescalajs.dom.Node
+import net.st915.typesafescalajs.Node
 import net.st915.typesafescalajs.dom.attributes.global.GlobalAttribute
 import net.st915.typesafescalajs.dom.attributes.html.HeadAttribute
 import net.st915.typesafescalajs.dom.tags.Tag
