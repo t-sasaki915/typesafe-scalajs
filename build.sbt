@@ -12,9 +12,17 @@ ThisBuild / scalacOptions ++= Seq(
   "-unchecked"
 )
 
-lazy val dom = project
-  .in(file("."))
+lazy val core = project
+  .in(file("core"))
   .enablePlugins(ScalaJSPlugin)
+  .settings(
+    name := "typesafe-scalajs-core"
+  )
+
+lazy val dom = project
+  .in(file("dom"))
+  .enablePlugins(ScalaJSPlugin)
+  .dependsOn(core)
   .settings(
     name := "typesafe-scalajs-dom",
     libraryDependencies ++= Seq(
