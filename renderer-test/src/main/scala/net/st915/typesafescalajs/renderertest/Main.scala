@@ -1,7 +1,15 @@
 package net.st915.typesafescalajs.renderertest
 
-@main def main(): Unit = {
+import cats.effect.*
+import net.st915.typesafescalajs.renderer.Environment
 
-  println("TEST")
+object Main extends IOApp {
+
+  import cats.syntax.flatMap.*
+
+  import net.st915.typesafescalajs.renderer.environments.global
+
+  def run(args: List[String]): IO[ExitCode] =
+    IO.println(summon[Environment].document) >> IO(ExitCode.Success)
 
 }
