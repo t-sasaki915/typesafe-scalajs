@@ -27,7 +27,22 @@ lazy val dom = project
     name := "typesafe-scalajs-dom",
     libraryDependencies ++= Seq(
       "org.typelevel" %%% "cats-effect" % "3.4.4",
-      "org.scala-js" %%% "scalajs-dom" % "2.1.0",
-      "org.scalatest" %%% "scalatest" % "3.2.10" % "test"
+      "org.scala-js" %%% "scalajs-dom" % "2.1.0"
     )
+  )
+
+lazy val renderer = project
+  .in(file("renderer"))
+  .enablePlugins(ScalaJSPlugin)
+  .dependsOn(dom)
+  .settings(
+    name := "typesafe-scalajs-renderer"
+  )
+
+lazy val rendererTest = project
+  .in(file("renderer-test"))
+  .enablePlugins(ScalaJSPlugin)
+  .dependsOn(renderer)
+  .settings(
+    name := "typesafe-scalajs-renderer-test"
   )
