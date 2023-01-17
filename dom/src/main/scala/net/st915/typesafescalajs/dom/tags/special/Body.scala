@@ -9,8 +9,8 @@ object Body {
 
   type AcceptAttribute = GlobalAttribute | BodyAttribute | VisibleElementAttribute
 
-  def apply(attributes: (AcceptAttribute, _)*): Body =
-    Body(attributes.toSet, Nil)
+  def apply(childs: Node*): Body =
+    Body(Set(), childs.toList)
 
   def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): Body =
     Body(attributes.toSet, childs.toList)

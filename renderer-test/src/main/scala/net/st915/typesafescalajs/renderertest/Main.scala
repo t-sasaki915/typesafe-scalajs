@@ -10,12 +10,12 @@ object Main extends IOApp {
 
   import net.st915.typesafescalajs.renderer.environments.global
 
-  private val head = Head()(
+  private val head = Head(
     Title()("Test Page"),
     Meta(charset := "utf-8")
   )
 
-  private val body = Body()(
+  private val body = Body(
     H1() {
       "Title"
     },

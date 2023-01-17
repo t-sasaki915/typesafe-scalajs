@@ -9,8 +9,8 @@ object Head {
 
   type AcceptAttribute = GlobalAttribute | HeadAttribute
 
-  def apply(attributes: (AcceptAttribute, _)*): Head =
-    Head(attributes.toSet, Nil)
+  def apply(childs: Node*): Head =
+    Head(Set(), childs.toList)
 
   def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): Head =
     Head(attributes.toSet, childs.toList)
