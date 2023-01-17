@@ -48,6 +48,7 @@ trait all {
   final type Quote = visible.Quote
   final type Select = visible.Select
   final type Span = visible.Span
+  final type Table = visible.Table
   final type TableCaption = visible.TableCaption
   final type TableCell = visible.TableCell
   final type TableCol = visible.TableCol
@@ -105,6 +106,7 @@ trait all {
   final val Quote = visible.Quote
   final val Select = visible.Select
   final val Span = visible.Span
+  final val Table = visible.Table
   final val TableCaption = visible.TableCaption
   final val TableCell = visible.TableCell
   final val TableCol = visible.TableCol

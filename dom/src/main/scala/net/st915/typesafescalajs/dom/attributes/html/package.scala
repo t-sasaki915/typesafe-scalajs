@@ -52,6 +52,7 @@ package object html {
   sealed trait SourceAttribute
   sealed trait SpanAttribute
   sealed trait StyleAttribute
+  sealed trait TableAttribute
   sealed trait TableCaptionAttribute
   sealed trait TableCellAttribute
   sealed trait TableColAttribute
