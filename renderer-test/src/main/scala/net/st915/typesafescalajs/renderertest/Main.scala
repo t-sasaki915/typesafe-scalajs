@@ -20,13 +20,16 @@ object Main extends IOApp {
       "Title"
     },
     BR(),
-    Paragraph(className := "text")(
+    Paragraph(className := "text", id := "someId")(
       "Content Line 1",
       BR(),
       "Content Line 2"
     ),
     Button(className := "btn", onClick := (_ => IO(println("Clicked")))) {
       "Button"
+    },
+    Button(className := "disabledBtn", onClick := (_ => IO(println("???"))), disabled) {
+      "Disabled Button"
     },
     Anchor(className := "anchor", href := "github.com") {
       "Anchor"
