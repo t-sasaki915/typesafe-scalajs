@@ -11,6 +11,9 @@ trait all {
   given syncCanCreateNativeElement[F[_]: Sync]: CanCreateNativeElement[F] =
     SyncCanCreateNativeElement[F]
 
+  given syncCanAppendChild[F[_]: Sync]: CanAppendChild[F] =
+    SyncCanAppendChild[F]
+
 }
 
 object all extends all
