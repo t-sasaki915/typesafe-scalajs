@@ -18,4 +18,3 @@ object Body {
 }
 
 final case class Body(attributes: Set[(Body.AcceptAttribute, _)], childs: List[Node])
-    extends Tag[Body.AcceptAttribute]

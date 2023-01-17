@@ -18,4 +18,3 @@ object Head {
 }
 
 final case class Head(attributes: Set[(Head.AcceptAttribute, _)], childs: List[Node])
-    extends Tag[Head.AcceptAttribute]
