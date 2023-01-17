@@ -39,6 +39,8 @@ object SimpleStaticPage {
       }
     )
 
+    // Renderer.renderHead(head) >>
+    //   Renderer.renderBody(body) >>
     IO(ExitCode.Success)
 
   }
