@@ -1,6 +1,7 @@
 package net.st915.typesafescalajs.examples
 
 import cats.effect.*
+import net.st915.typesafescalajs.renderer.{RenderBody, RenderHead}
 
 object SimpleStaticPage {
 
@@ -8,6 +9,9 @@ object SimpleStaticPage {
 
     import cats.syntax.all.*
     import net.st915.typesafescalajs.dom.dsl.*
+
+    import net.st915.typesafescalajs.renderer.environments.global
+    import net.st915.typesafescalajs.renderer.instances.all.given
 
     val head = Head(
       Title()("SimpleStaticPage"),
@@ -39,9 +43,9 @@ object SimpleStaticPage {
       }
     )
 
-    // Renderer.renderHead(head) >>
-    //   Renderer.renderBody(body) >>
-    IO(ExitCode.Success)
+    RenderHead[IO].renderHead(head) >>
+      RenderBody[IO].renderBody(body) >>
+      IO(ExitCode.Success)
 
   }
 
