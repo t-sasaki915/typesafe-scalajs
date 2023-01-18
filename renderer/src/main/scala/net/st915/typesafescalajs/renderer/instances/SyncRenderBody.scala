@@ -6,17 +6,13 @@ import net.st915.typesafescalajs.dom.tags.special.Body
 import net.st915.typesafescalajs.renderer.typeclasses.*
 import net.st915.typesafescalajs.renderer.{Environment, RenderBody}
 
-class SyncRenderBody[F[_]: Sync: CanGetTagId] extends RenderBody[F] {
+class SyncRenderBody[F[_]: Sync: CanApplyAttributes] extends RenderBody[F] {
 
   import cats.syntax.all.*
 
   override def renderBody(body: Body)(using Environment): F[Unit] =
-    body
-      .childs
-      .filter(_.isInstanceOf[Tag[_]])
-      .map(_.asInstanceOf[Tag[_]])
-      .map(CanGetTagId[F].getTagId)
-      .map(_ >>= (tag => Sync[F].pure(println(tag))))
-      .sequence >> Sync[F].unit
+    Sync[F].pure(summon[Environment].document.body) >>= { docBody =>
+      CanApplyAttributes[F].applyAttributes(docBody)(body.attributes)
+    }
 
 }

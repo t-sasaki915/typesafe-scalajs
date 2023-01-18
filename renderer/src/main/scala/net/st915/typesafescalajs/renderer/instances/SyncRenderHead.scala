@@ -6,17 +6,13 @@ import net.st915.typesafescalajs.dom.tags.special.Head
 import net.st915.typesafescalajs.renderer.typeclasses.*
 import net.st915.typesafescalajs.renderer.{Environment, RenderHead}
 
-class SyncRenderHead[F[_]: Sync: CanGetTagId] extends RenderHead[F] {
+class SyncRenderHead[F[_]: Sync: CanApplyAttributes] extends RenderHead[F] {
 
   import cats.syntax.all.*
 
   override def renderHead(head: Head)(using Environment): F[Unit] =
-    head
-      .childs
-      .filter(_.isInstanceOf[Tag[_]])
-      .map(_.asInstanceOf[Tag[_]])
-      .map(CanGetTagId[F].getTagId)
-      .map(_ >>= (tag => Sync[F].pure(println(tag))))
-      .sequence >> Sync[F].unit
+    Sync[F].pure(summon[Environment].document.head) >>= { docHead =>
+      CanApplyAttributes[F].applyAttributes(docHead)(head.attributes)
+    }
 
 }

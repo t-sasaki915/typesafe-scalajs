@@ -14,6 +14,12 @@ trait all {
   given syncCanAppendChild[F[_]: Sync]: CanAppendChild[F] =
     SyncCanAppendChild[F]
 
+  given syncCanApplyAttribute[F[_]: Sync]: CanApplyAttribute[F] =
+    SyncCanApplyAttribute[F]
+
+  given syncCanApplyAttributes[F[_]: Sync]: CanApplyAttributes[F] =
+    SyncCanApplyAttributes[F]
+
 }
 
 object all extends all

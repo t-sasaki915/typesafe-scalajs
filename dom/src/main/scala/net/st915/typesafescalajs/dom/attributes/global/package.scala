@@ -20,8 +20,6 @@ package object global {
 
   case object draggable extends Attribute[Boolean] with GlobalAttribute
 
-  case object hidden extends Attribute[Boolean] with GlobalAttribute
-
   case object id extends Attribute[String] with GlobalAttribute
 
   case object lang extends Attribute[String] with GlobalAttribute
@@ -33,7 +31,5 @@ package object global {
   case object tabIndex extends Attribute[Int] with GlobalAttribute
 
   case object title extends Attribute[String] with GlobalAttribute
-
-  case object translate extends Attribute[Boolean] with GlobalAttribute
 
 }
