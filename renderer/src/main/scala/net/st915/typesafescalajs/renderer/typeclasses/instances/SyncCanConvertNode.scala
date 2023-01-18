@@ -30,9 +30,8 @@ class SyncCanConvertNode[
             .map(_ >>= CanAppendChild[F].appendChild(nativeElem))
             .sequence >> Sync[F].pure(nativeElem)
         } >>= { nativeElem =>
-          CanApplyAttributes[F].applyAttributes(nativeElem)(original.attributes) >> Sync[F].pure(
-            nativeElem
-          )
+          CanApplyAttributes[F].applyAttributes(nativeElem)(original.attributes) >>
+            Sync[F].pure(nativeElem)
         } >>= asNativeNode
 
 }
