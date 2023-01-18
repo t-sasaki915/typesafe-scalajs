@@ -11,6 +11,9 @@ trait all {
   given syncCanCreateNativeElement[F[_]: Sync]: CanCreateNativeElement[F] =
     SyncCanCreateNativeElement[F]
 
+  given syncCanCreateNativeTextNode[F[_]: Sync]: CanCreateNativeTextNode[F] =
+    SyncCanCreateNativeTextNode[F]
+
   given syncCanAppendChild[F[_]: Sync]: CanAppendChild[F] =
     SyncCanAppendChild[F]
 
@@ -19,6 +22,9 @@ trait all {
 
   given syncCanApplyAttributes[F[_]: Sync]: CanApplyAttributes[F] =
     SyncCanApplyAttributes[F]
+
+  given syncCanConvertNode[F[_]: Sync]: CanConvertNode[F] =
+    SyncCanConvertNode[F]
 
 }
 

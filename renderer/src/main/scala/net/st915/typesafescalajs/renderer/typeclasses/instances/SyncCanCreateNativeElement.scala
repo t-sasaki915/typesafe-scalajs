@@ -10,14 +10,13 @@ class SyncCanCreateNativeElement[F[_]: Sync: CanGetTagId] extends CanCreateNativ
 
   import cats.syntax.flatMap.*
 
-  override def createNativeElement[A <: Tag[_], B <: HTMLElement](original: A)(using
-  Environment): F[B] =
+  override def createNativeElement[A <: Tag[_]](original: A)(using Environment): F[HTMLElement] =
     CanGetTagId[F].getTagId(original) >>= { tagId =>
       Sync[F].pure {
         summon[Environment]
           .document
           .createElement(tagId)
-          .asInstanceOf[B]
+          .asInstanceOf[HTMLElement]
       }
     }
 

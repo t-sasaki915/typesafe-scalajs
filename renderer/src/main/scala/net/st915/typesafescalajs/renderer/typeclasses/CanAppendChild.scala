@@ -1,6 +1,6 @@
 package net.st915.typesafescalajs.renderer.typeclasses
 
-import org.scalajs.dom.HTMLElement
+import net.st915.typesafescalajs.renderer.domain.typealiases.NativeNode
 
 object CanAppendChild {
 
@@ -10,6 +10,6 @@ object CanAppendChild {
 
 trait CanAppendChild[F[_]] {
 
-  def appendChild[A <: HTMLElement, B <: HTMLElement](child: A)(parent: B): F[Unit]
+  def appendChild(parent: NativeNode)(child: NativeNode): F[Unit]
 
 }

@@ -12,6 +12,6 @@ object CanCreateNativeElement {
 
 trait CanCreateNativeElement[F[_]] {
 
-  def createNativeElement[A <: Tag[_], B <: HTMLElement](original: A)(using Environment): F[B]
+  def createNativeElement[A <: Tag[_]](original: A)(using Environment): F[HTMLElement]
 
 }
