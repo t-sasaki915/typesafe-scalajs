@@ -90,6 +90,44 @@ class SyncCanApplyAttribute[F[_]: Sync] extends CanApplyAttribute[F] {
                 e.tap(_.charset = value)
               case e: HTMLScriptElement =>
                 e.tap(_.charset = value)
+          case (_: checked.type, value: Boolean) =>
+            element match
+              case e: HTMLInputElement =>
+                e.tap(_.checked = value)
+          case (_: cite.type, value: String) =>
+            element match
+              case e: HTMLQuoteElement =>
+                e.tap(_.cite = value)
+          case (_: cols.type, value: Int) =>
+            element match
+              case e: HTMLTextAreaElement =>
+                e.tap(_.cols = value)
+          case (_: colSpan.type, value: Int) =>
+            element match
+              case e: HTMLTableCellElement =>
+                e.tap(_.colSpan = value)
+          case (_: content.type, value: String) =>
+            element match
+              case e: HTMLMetaElement =>
+                e.tap(_.content = value)
+          case (_: controls.type, value: Boolean) =>
+            element match
+              case e: HTMLAudioElement =>
+                e.tap(_.controls = value)
+              case e: HTMLVideoElement =>
+                e.tap(_.controls = value)
+          case (_: coords.type, value: String) =>
+            element match
+              case e: HTMLAreaElement =>
+                e.tap(_.coords = value)
+          case (_: data.type, value: String) =>
+            element match
+              case e: HTMLObjectElement =>
+                e.tap(_.data = value)
+          case (_: defer.type, value: Boolean) =>
+            element match
+              case e: HTMLScriptElement =>
+                e.tap(_.defer = value)
           case (attr, _) =>
             println(s"Ignoring attribute '$attr'.")
             element

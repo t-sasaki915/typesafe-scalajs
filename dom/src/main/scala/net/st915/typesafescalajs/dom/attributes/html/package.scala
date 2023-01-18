@@ -89,7 +89,7 @@ package object html {
 
   case object cols extends Attribute[Int] with TextAreaAttribute
 
-  case object colSpan extends Attribute[Int] with TableCellAttribute with TableColAttribute
+  case object colSpan extends Attribute[Int] with TableCellAttribute
 
   case object content extends Attribute[String] with MetaAttribute
 
@@ -100,8 +100,6 @@ package object html {
   case object data extends Attribute[String] with ObjectAttribute
 
   case object defer extends FlagAttribute with ScriptAttribute
-
-  case object dirName extends Attribute[String] with InputAttribute with TextAreaAttribute
 
   case object disabled extends FlagAttribute with ButtonAttribute with FieldSetAttribute
       with InputAttribute with OptGroupAttribute with OptionAttribute with SelectAttribute

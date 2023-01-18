@@ -32,7 +32,6 @@ trait all {
   final val coords = html.coords
   final val data = html.data
   final val defer = html.defer
-  final val dirName = html.dirName
   final val disabled = html.disabled
   final val download = html.download
   final val encType = html.encType
