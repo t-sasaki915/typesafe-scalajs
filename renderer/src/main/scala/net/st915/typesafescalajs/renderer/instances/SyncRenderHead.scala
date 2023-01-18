@@ -4,17 +4,19 @@ import cats.effect.Sync
 import net.st915.typesafescalajs.dom.tags.Tag
 import net.st915.typesafescalajs.dom.tags.special.Head
 import net.st915.typesafescalajs.renderer.typeclasses.*
+import net.st915.typesafescalajs.renderer.util.summonHead
 import net.st915.typesafescalajs.renderer.{Environment, RenderHead}
 
-class SyncRenderHead[F[_]: Sync: CanApplyAttributes: CanConvertNodesAndAppend]
+class SyncRenderHead[F[_]: Sync: CanApplyAttributes: CanConvertNodes: CanAppendChilds]
     extends RenderHead[F] {
 
   import cats.syntax.all.*
 
-  override def renderHead(head: Head)(using Environment): F[Unit] =
-    Sync[F].pure(summon[Environment].document.head) >>= { docHead =>
-      CanApplyAttributes[F].applyAttributes(docHead)(head.attributes) >>
-        CanConvertNodesAndAppend[F].convertNodesAndAppend(docHead)(head.childs)
+  override def renderHead(head: Head)(using Environment): F[Unit] = {
+    CanApplyAttributes[F].applyAttributes(head.attributes).run(summonHead) >> {
+      CanConvertNodes[F].convertNodes andThen
+        CanAppendChilds[F].appendChilds(summonHead) run head.childs
     }
+  } >> Sync[F].unit
 
 }

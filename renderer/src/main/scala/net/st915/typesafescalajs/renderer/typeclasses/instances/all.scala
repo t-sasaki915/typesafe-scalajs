@@ -6,7 +6,19 @@ import net.st915.typesafescalajs.renderer.typeclasses.*
 
 trait all {
 
-  given monadCanGetTagId[F[_]: Monad]: CanGetTagId[F] = MonadCanGetTagId[F]
+  given canGetTagId[F[_]: Monad]: CanGetTagId[F] = MonadCanGetTagId[F]
+
+  given canAppendChild[F[_]: Sync]: CanAppendChild[F] =
+    SyncCanAppendChild[F]
+
+  given canAppendChilds[F[_]: Sync]: CanAppendChilds[F] =
+    SyncCanAppendChilds[F]
+
+  given canApplyAttribute[F[_]: Sync]: CanApplyAttribute[F] =
+    SyncCanApplyAttribute[F]
+
+  given canApplyAttributes[F[_]: Sync]: CanApplyAttributes[F] =
+    SyncCanApplyAttributes[F]
 
   given syncCanCreateNativeElement[F[_]: Sync]: CanCreateNativeElement[F] =
     SyncCanCreateNativeElement[F]
@@ -14,20 +26,11 @@ trait all {
   given syncCanCreateNativeTextNode[F[_]: Sync]: CanCreateNativeTextNode[F] =
     SyncCanCreateNativeTextNode[F]
 
-  given syncCanAppendChild[F[_]: Sync]: CanAppendChild[F] =
-    SyncCanAppendChild[F]
-
-  given syncCanApplyAttribute[F[_]: Sync]: CanApplyAttribute[F] =
-    SyncCanApplyAttribute[F]
-
-  given syncCanApplyAttributes[F[_]: Sync]: CanApplyAttributes[F] =
-    SyncCanApplyAttributes[F]
-
   given syncCanConvertNode[F[_]: Sync]: CanConvertNode[F] =
     SyncCanConvertNode[F]
 
-  given syncCanConvertNodesAndAppend[F[_]: Sync]: CanConvertNodesAndAppend[F] =
-    SyncCanConvertNodesAndAppend[F]
+  given syncCanConvertNodes[F[_]: Sync]: CanConvertNodes[F] =
+    SyncCanConvertNodes[F]
 
 }
 

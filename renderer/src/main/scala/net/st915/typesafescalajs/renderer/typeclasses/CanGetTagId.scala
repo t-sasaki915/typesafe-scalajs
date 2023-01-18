@@ -1,5 +1,6 @@
 package net.st915.typesafescalajs.renderer.typeclasses
 
+import cats.data.Kleisli
 import net.st915.typesafescalajs.dom.tags.Tag
 
 object CanGetTagId {
@@ -10,6 +11,6 @@ object CanGetTagId {
 
 trait CanGetTagId[F[_]] {
 
-  def getTagId[A <: Tag[_]](original: A): F[String]
+  def getTagId[A <: Tag[_]]: Kleisli[F, A, String]
 
 }

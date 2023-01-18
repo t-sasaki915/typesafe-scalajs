@@ -1,23 +1,27 @@
 package net.st915.typesafescalajs.renderer.typeclasses.instances
 
+import cats.data.Kleisli
 import cats.effect.Sync
 import net.st915.typesafescalajs.dom.tags.Tag
 import net.st915.typesafescalajs.renderer.Environment
 import net.st915.typesafescalajs.renderer.typeclasses.*
+import net.st915.typesafescalajs.renderer.util.summonDocument
 import org.scalajs.dom.HTMLElement
 
 class SyncCanCreateNativeElement[F[_]: Sync: CanGetTagId] extends CanCreateNativeElement[F] {
 
   import cats.syntax.flatMap.*
 
-  override def createNativeElement[A <: Tag[_]](original: A)(using Environment): F[HTMLElement] =
-    CanGetTagId[F].getTagId(original) >>= { tagId =>
-      Sync[F].pure {
-        summon[Environment]
-          .document
+  private def createElementById(using Environment): Kleisli[F, String, HTMLElement] =
+    Kleisli { tagId =>
+      Sync[F].blocking {
+        summonDocument
           .createElement(tagId)
           .asInstanceOf[HTMLElement]
       }
     }
+
+  override def createNativeElement[A <: Tag[_]](using Environment): Kleisli[F, A, HTMLElement] =
+    CanGetTagId[F].getTagId andThen createElementById
 
 }

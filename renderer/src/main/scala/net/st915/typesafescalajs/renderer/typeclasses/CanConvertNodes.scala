@@ -5,14 +5,14 @@ import net.st915.typesafescalajs.Node
 import net.st915.typesafescalajs.renderer.Environment
 import net.st915.typesafescalajs.renderer.domain.typealiases.NativeNode
 
-object CanConvertNode {
+object CanConvertNodes {
 
-  def apply[F[_]](using ev: CanConvertNode[F]): CanConvertNode[F] = ev
+  def apply[F[_]](using ev: CanConvertNodes[F]): CanConvertNodes[F] = ev
 
 }
 
-trait CanConvertNode[F[_]] {
+trait CanConvertNodes[F[_]] {
 
-  def convertNode(using Environment): Kleisli[F, Node, NativeNode]
+  def convertNodes(using Environment): Kleisli[F, List[Node], List[NativeNode]]
 
 }

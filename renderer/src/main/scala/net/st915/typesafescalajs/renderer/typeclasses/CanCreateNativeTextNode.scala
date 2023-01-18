@@ -1,5 +1,6 @@
 package net.st915.typesafescalajs.renderer.typeclasses
 
+import cats.data.Kleisli
 import net.st915.typesafescalajs.renderer.Environment
 import net.st915.typesafescalajs.renderer.domain.typealiases.NativeTextNode
 
@@ -11,6 +12,6 @@ object CanCreateNativeTextNode {
 
 trait CanCreateNativeTextNode[F[_]] {
 
-  def createNativeTextNode(content: String)(using Environment): F[NativeTextNode]
+  def createNativeTextNode(using Environment): Kleisli[F, String, NativeTextNode]
 
 }

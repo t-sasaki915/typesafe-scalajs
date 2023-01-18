@@ -1,5 +1,6 @@
 package net.st915.typesafescalajs.renderer.typeclasses
 
+import cats.data.Kleisli
 import org.scalajs.dom.HTMLElement
 
 object CanApplyAttribute {
@@ -10,6 +11,6 @@ object CanApplyAttribute {
 
 trait CanApplyAttribute[F[_]] {
 
-  def applyAttribute[A <: HTMLElement, B](element: A)(attribute: (_, B)): F[Unit]
+  def applyAttribute[A <: HTMLElement, B, C](attribute: (B, C)): Kleisli[F, A, A]
 
 }

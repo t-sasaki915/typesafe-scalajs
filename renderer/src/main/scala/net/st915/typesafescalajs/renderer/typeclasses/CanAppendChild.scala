@@ -1,5 +1,6 @@
 package net.st915.typesafescalajs.renderer.typeclasses
 
+import cats.data.Kleisli
 import net.st915.typesafescalajs.renderer.domain.typealiases.NativeNode
 
 object CanAppendChild {
@@ -10,6 +11,6 @@ object CanAppendChild {
 
 trait CanAppendChild[F[_]] {
 
-  def appendChild(parent: NativeNode)(child: NativeNode): F[Unit]
+  def appendChild[A <: NativeNode, B <: NativeNode](parent: A): Kleisli[F, B, A]
 
 }

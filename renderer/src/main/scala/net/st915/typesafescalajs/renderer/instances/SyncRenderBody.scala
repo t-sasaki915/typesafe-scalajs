@@ -4,17 +4,18 @@ import cats.effect.Sync
 import net.st915.typesafescalajs.dom.tags.Tag
 import net.st915.typesafescalajs.dom.tags.special.Body
 import net.st915.typesafescalajs.renderer.typeclasses.*
+import net.st915.typesafescalajs.renderer.util.summonBody
 import net.st915.typesafescalajs.renderer.{Environment, RenderBody}
 
-class SyncRenderBody[F[_]: Sync: CanApplyAttributes: CanConvertNodesAndAppend]
+class SyncRenderBody[F[_]: Sync: CanApplyAttributes: CanConvertNodes: CanAppendChilds]
     extends RenderBody[F] {
 
   import cats.syntax.all.*
 
   override def renderBody(body: Body)(using Environment): F[Unit] =
-    Sync[F].pure(summon[Environment].document.body) >>= { docBody =>
-      CanApplyAttributes[F].applyAttributes(docBody)(body.attributes) >>
-        CanConvertNodesAndAppend[F].convertNodesAndAppend(docBody)(body.childs)
-    }
+    CanApplyAttributes[F].applyAttributes(body.attributes).run(summonBody) >> {
+      CanConvertNodes[F].convertNodes andThen
+        CanAppendChilds[F].appendChilds(summonBody) run body.childs
+    } >> Sync[F].unit
 
 }
