@@ -128,6 +128,65 @@ class SyncCanApplyAttribute[F[_]: Sync] extends CanApplyAttribute[F] {
             element match
               case e: HTMLScriptElement =>
                 e.tap(_.defer = value)
+          case (_: disabled.type, value: Boolean) =>
+            element match
+              case e: HTMLButtonElement =>
+                e.tap(_.disabled = value)
+              case e: HTMLFieldSetElement =>
+                e.tap(_.disabled = value)
+              case e: HTMLInputElement =>
+                e.tap(_.disabled = value)
+              case e: HTMLOptGroupElement =>
+                e.tap(_.disabled = value)
+              case e: HTMLOptionElement =>
+                e.tap(_.disabled = value)
+              case e: HTMLSelectElement =>
+                e.tap(_.disabled = value)
+              case e: HTMLTextAreaElement =>
+                e.tap(_.disabled = value)
+          case (_: encType.type, value: String) =>
+            element match
+              case e: HTMLFormElement =>
+                e.tap(_.enctype = value)
+          case (_: form.type, value: String) =>
+            // TODO
+            element match
+              case e: HTMLButtonElement =>
+                e
+              case e: HTMLFieldSetElement =>
+                e
+              case e: HTMLInputElement =>
+                e
+              case e: HTMLLabelElement =>
+                e
+              case e: HTMLObjectElement =>
+                e
+              case e: HTMLSelectElement =>
+                e
+              case e: HTMLTextAreaElement =>
+                e
+          case (_: formAction.type, value: String) =>
+            element match
+              case e: HTMLButtonElement =>
+                e.tap(_.formAction = value)
+              case e: HTMLInputElement =>
+                e.tap(_.formAction = value)
+          case (_: height.type, value: Int) =>
+            element match
+              case e: HTMLCanvasElement =>
+                e.tap(_.height = value)
+              case e: HTMLEmbedElement =>
+                e.tap(_.height = value.toString)
+              case e: HTMLIFrameElement =>
+                e.tap(_.height = value.toString)
+              case e: HTMLImageElement =>
+                e.tap(_.height = value)
+              case e: HTMLInputElement =>
+                e.tap(_.height = value.toString)
+              case e: HTMLObjectElement =>
+                e.tap(_.height = value.toString)
+              case e: HTMLVideoElement =>
+                e.tap(_.height = value)
           case (attr, _) =>
             println(s"Ignoring attribute '$attr'.")
             element

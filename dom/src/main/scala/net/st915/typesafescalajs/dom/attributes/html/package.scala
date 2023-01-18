@@ -105,19 +105,13 @@ package object html {
       with InputAttribute with OptGroupAttribute with OptionAttribute with SelectAttribute
       with TextAreaAttribute
 
-  case object download extends Attribute[String] with AnchorAttribute with AreaAttribute
-
   case object encType extends Attribute[String] with FormAttribute
-
-  case object `for` extends Attribute[String] with LabelAttribute
 
   case object form extends Attribute[String] with ButtonAttribute with FieldSetAttribute
       with InputAttribute with LabelAttribute with ObjectAttribute with SelectAttribute
       with TextAreaAttribute
 
   case object formAction extends Attribute[String] with ButtonAttribute with InputAttribute
-
-  case object headers extends Attribute[String] with TableCellAttribute with TableColAttribute
 
   case object height extends Attribute[Int] with CanvasAttribute with EmbedAttribute
       with IFrameAttribute with ImageAttribute with InputAttribute with ObjectAttribute
