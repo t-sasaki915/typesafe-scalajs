@@ -9,7 +9,7 @@ import net.st915.typesafescalajs.renderer.domain.typealiases.NativeNode
 import net.st915.typesafescalajs.renderer.typeclasses.*
 
 class SyncCanConvertNode[
-  F[_]: Sync: CanCreateNativeTextNode: CanCreateNativeElement: CanAppendChild
+  F[_]: Sync: CanApplyAttributes: CanCreateNativeTextNode: CanCreateNativeElement: CanAppendChild
 ] extends CanConvertNode[F] {
 
   import cats.syntax.all.*
@@ -29,6 +29,8 @@ class SyncCanConvertNode[
             .map(convertNode)
             .map(_ >>= CanAppendChild[F].appendChild(nativeElem))
             .sequence >> Sync[F].pure(nativeElem)
-        } >>= asNativeNode
+            } >>= { nativeElem =>
+              CanApplyAttributes[F].applyAttributes(nativeElem)(original.attributes) >> Sync[F].pure(nativeElem)
+            } >>= asNativeNode
 
 }

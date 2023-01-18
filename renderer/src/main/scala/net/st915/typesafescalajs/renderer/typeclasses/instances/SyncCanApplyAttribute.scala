@@ -34,6 +34,8 @@ class SyncCanApplyAttribute[F[_]: Sync] extends CanApplyAttribute[F] {
           element.tabIndex = value
         case (_: title.type, value: String) =>
           element.title = value
+        case (attr, _) =>
+          println(s"Ignoring attribute '$attr'.")
     }
 
 }
