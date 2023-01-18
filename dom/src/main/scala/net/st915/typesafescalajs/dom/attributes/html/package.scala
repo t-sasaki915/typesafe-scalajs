@@ -74,7 +74,7 @@ package object html {
 
   case object async extends FlagAttribute with ScriptAttribute
 
-  case object autoComplete extends FlagAttribute with FormAttribute with InputAttribute
+  case object autoComplete extends Attribute[String] with FormAttribute with InputAttribute
 
   case object autoFocus extends FlagAttribute with ButtonAttribute with InputAttribute
       with SelectAttribute with TextAreaAttribute

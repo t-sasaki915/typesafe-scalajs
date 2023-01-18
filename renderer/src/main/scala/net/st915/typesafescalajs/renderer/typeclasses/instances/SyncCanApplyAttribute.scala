@@ -41,6 +41,54 @@ class SyncCanApplyAttribute[F[_]: Sync] extends CanApplyAttribute[F] {
           element match
             case e: HTMLInputElement =>
               e.tap(_.accept = value).pipe(_.asInstanceOf[HTMLElement])
+        case (_: acceptCharset.type, value: String) =>
+          element match
+            case e: HTMLFormElement =>
+              e.tap(_.acceptCharset = value).pipe(_.asInstanceOf[HTMLElement])
+        case (_: action.type, value: String) =>
+          element match
+            case e: HTMLFormElement =>
+              e.tap(_.action = value).pipe(_.asInstanceOf[HTMLElement])
+        case (_: alt.type, value: String) =>
+          element match
+            case e: HTMLAreaElement =>
+              e.tap(_.alt = value).pipe(_.asInstanceOf[HTMLElement])
+            case e: HTMLImageElement =>
+              e.tap(_.alt = value).pipe(_.asInstanceOf[HTMLElement])
+            case e: HTMLInputElement =>
+              e.tap(_.alt = value).pipe(_.asInstanceOf[HTMLElement])
+        case (_: async.type, value: Boolean) =>
+          element match
+            case e: HTMLScriptElement =>
+              e.tap(_.async = value).pipe(_.asInstanceOf[HTMLElement])
+        case (_: autoComplete.type, value: String) =>
+          element match
+            case e: HTMLFormElement =>
+              e.tap(_.autocomplete = value).pipe(_.asInstanceOf[HTMLElement])
+            case e: HTMLInputElement =>
+              e.tap(_.autocomplete = value).pipe(_.asInstanceOf[HTMLElement])
+        case (_: autoFocus.type, value: String) =>
+          element match
+            case e: HTMLButtonElement =>
+              e.tap(_.autofocus = value).pipe(_.asInstanceOf[HTMLElement])
+            case e: HTMLInputElement =>
+              e.tap(_.autofocus = value).pipe(_.asInstanceOf[HTMLElement])
+            case e: HTMLSelectElement =>
+              e.tap(_.autofocus = value).pipe(_.asInstanceOf[HTMLElement])
+            case e: HTMLTextAreaElement =>
+              e.tap(_.autofocus = value).pipe(_.asInstanceOf[HTMLElement])
+        case (_: autoPlay.type, value: Boolean) =>
+          element match
+            case e: HTMLAudioElement =>
+              e.tap(_.autoplay = value).pipe(_.asInstanceOf[HTMLElement])
+            case e: HTMLVideoElement =>
+              e.tap(_.autoplay = value).pipe(_.asInstanceOf[HTMLElement])
+        case (_: charset.type, value: String) =>
+          element match
+            case e: HTMLMetaElement =>
+              e.tap(_.charset = value).pipe(_.asInstanceOf[HTMLElement])
+            case e: HTMLScriptElement =>
+              e.tap(_.charset = value).pipe(_.asInstanceOf[HTMLElement])
         case (attr, _) =>
           println(s"Ignoring attribute '$attr'.")
     }
