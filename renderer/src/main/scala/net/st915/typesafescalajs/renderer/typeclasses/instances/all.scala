@@ -26,6 +26,9 @@ trait all {
   given syncCanConvertNode[F[_]: Sync]: CanConvertNode[F] =
     SyncCanConvertNode[F]
 
+  given syncCanConvertNodesAndAppend[F[_]: Sync]: CanConvertNodesAndAppend[F] =
+    SyncCanConvertNodesAndAppend[F]
+
 }
 
 object all extends all
