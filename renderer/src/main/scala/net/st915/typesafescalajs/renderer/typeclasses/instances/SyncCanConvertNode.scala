@@ -15,7 +15,7 @@ class SyncCanConvertNode[
   import cats.syntax.all.*
 
   private def asNativeNode[A <: NativeNode](node: A): F[NativeNode] =
-    Sync[F].pure(node.asInstanceOf[A])
+    Sync[F].pure(node.asInstanceOf[NativeNode])
 
   override def convertNode(node: Node)(using Environment): F[NativeNode] =
     node match
@@ -29,6 +29,6 @@ class SyncCanConvertNode[
             .map(convertNode)
             .map(_ >>= CanAppendChild[F].appendChild(nativeElem))
             .sequence >> Sync[F].pure(nativeElem)
-        }
+        } >>= asNativeNode
 
 }
