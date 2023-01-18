@@ -23,15 +23,15 @@ class SyncCanConvertNode[
         CanCreateNativeTextNode[F].createNativeTextNode(content) >>=
           asNativeNode
       case original: Tag[_] =>
-        CanCreateNativeElement[F].createNativeElement(original) >>= { nativeElem =>
-          original
+        for {
+          nativeElem <- CanCreateNativeElement[F].createNativeElement(original)
+          _ <- original
             .childs
             .map(convertNode)
             .map(_ >>= CanAppendChild[F].appendChild(nativeElem))
-            .sequence >> Sync[F].pure(nativeElem)
-        } >>= { nativeElem =>
-          CanApplyAttributes[F].applyAttributes(nativeElem)(original.attributes) >>
-            Sync[F].pure(nativeElem)
-        } >>= asNativeNode
+            .sequence
+          _ <- CanApplyAttributes[F].applyAttributes(nativeElem)(original.attributes)
+          nativeNode <- asNativeNode(nativeElem)
+        } yield nativeNode
 
 }

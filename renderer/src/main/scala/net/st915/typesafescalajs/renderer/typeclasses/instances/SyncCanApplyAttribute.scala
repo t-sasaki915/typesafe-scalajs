@@ -3,11 +3,14 @@ package net.st915.typesafescalajs.renderer.typeclasses.instances
 import cats.effect.Sync
 import net.st915.typesafescalajs.dom.attributes.Attribute
 import net.st915.typesafescalajs.renderer.typeclasses.CanApplyAttribute
-import org.scalajs.dom.HTMLElement
+import org.scalajs.dom.*
+
+import scala.util.chaining.*
 
 class SyncCanApplyAttribute[F[_]: Sync] extends CanApplyAttribute[F] {
 
   import net.st915.typesafescalajs.dom.attributes.global.*
+  import net.st915.typesafescalajs.dom.attributes.html.*
 
   override def applyAttribute[A <: HTMLElement, B](element: A)(attribute: (_, B)): F[Unit] =
     Sync[F].blocking {
@@ -34,6 +37,10 @@ class SyncCanApplyAttribute[F[_]: Sync] extends CanApplyAttribute[F] {
           element.tabIndex = value
         case (_: title.type, value: String) =>
           element.title = value
+        case (_: accept.type, value: String) =>
+          element match
+            case e: HTMLInputElement =>
+              e.tap(_.accept = value).pipe(_.asInstanceOf[HTMLElement])
         case (attr, _) =>
           println(s"Ignoring attribute '$attr'.")
     }
