@@ -1,5 +1,6 @@
 package net.st915.typesafescalajs.renderer
 
+import cats.effect.unsafe.IORuntime
 import net.st915.typesafescalajs.dom.tags.special.Body
 
 object RenderBody {
@@ -10,6 +11,6 @@ object RenderBody {
 
 trait RenderBody[F[_]] {
 
-  def renderBody(body: Body)(using Environment): F[Unit]
+  def renderBody(body: Body)(using Environment, IORuntime): F[Unit]
 
 }

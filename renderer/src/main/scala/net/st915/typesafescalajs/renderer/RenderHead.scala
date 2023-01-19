@@ -1,5 +1,6 @@
 package net.st915.typesafescalajs.renderer
 
+import cats.effect.unsafe.IORuntime
 import net.st915.typesafescalajs.dom.tags.special.Head
 
 object RenderHead {
@@ -10,6 +11,6 @@ object RenderHead {
 
 trait RenderHead[F[_]] {
 
-  def renderHead(head: Head)(using Environment): F[Unit]
+  def renderHead(head: Head)(using Environment, IORuntime): F[Unit]
 
 }

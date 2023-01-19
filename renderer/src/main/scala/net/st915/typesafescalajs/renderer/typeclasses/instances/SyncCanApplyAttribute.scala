@@ -2,6 +2,7 @@ package net.st915.typesafescalajs.renderer.typeclasses.instances
 
 import cats.data.Kleisli
 import cats.effect.Sync
+import cats.effect.unsafe.IORuntime
 import net.st915.typesafescalajs.dom.attributes.Attribute
 import net.st915.typesafescalajs.renderer.typeclasses.CanApplyAttribute
 import org.scalajs.dom.*
@@ -12,7 +13,8 @@ class SyncCanApplyAttribute[F[_]: Sync] extends CanApplyAttribute[F] {
 
   import net.st915.typesafescalajs.dom.attributes.all.*
 
-  override def applyAttribute[A <: HTMLElement, B, C](attribute: (B, C)): Kleisli[F, A, A] =
+  override def applyAttribute[A <: HTMLElement, B, C](attribute: (B, C))(using
+  IORuntime): Kleisli[F, A, A] =
     Kleisli { element =>
       Sync[F].blocking {
         (attribute._1.asInstanceOf[Attribute[C]], attribute._2) match

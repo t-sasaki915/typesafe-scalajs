@@ -2,6 +2,7 @@ package net.st915.typesafescalajs.renderer.typeclasses.instances
 
 import cats.data.Kleisli
 import cats.effect.Sync
+import cats.effect.unsafe.IORuntime
 import net.st915.typesafescalajs.Node
 import net.st915.typesafescalajs.dom.TextNode
 import net.st915.typesafescalajs.dom.tags.*
@@ -19,15 +20,17 @@ class SyncCanConvertNode[
   private def asNativeNode[A <: NativeNode]: Kleisli[F, A, NativeNode] =
     Kleisli { node => Sync[F].pure(node.asInstanceOf[NativeNode]) }
 
-  private def applyChilds[A <: HTMLElement](childs: List[Node])(using
-  Environment): Kleisli[F, A, A] =
+  private def applyChilds[A <: HTMLElement](childs: List[Node])(
+    using Environment,
+    IORuntime
+  ): Kleisli[F, A, A] =
     Kleisli { nativeNode =>
       childs
         .map(convertNode.run)
         .foldLeftM(nativeNode) { (acc, child) => child >>= CanAppendChild[F].appendChild(acc).run }
     }
 
-  override def convertNode(using Environment): Kleisli[F, Node, NativeNode] =
+  override def convertNode(using Environment, IORuntime): Kleisli[F, Node, NativeNode] =
     Kleisli { node =>
       node match
         case TextNode(content) =>

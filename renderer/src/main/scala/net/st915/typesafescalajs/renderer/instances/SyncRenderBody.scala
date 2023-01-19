@@ -1,6 +1,7 @@
 package net.st915.typesafescalajs.renderer.instances
 
 import cats.effect.Sync
+import cats.effect.unsafe.IORuntime
 import net.st915.typesafescalajs.dom.tags.Tag
 import net.st915.typesafescalajs.dom.tags.special.Body
 import net.st915.typesafescalajs.renderer.typeclasses.*
@@ -12,7 +13,7 @@ class SyncRenderBody[F[_]: Sync: CanApplyAttributes: CanConvertNodes: CanAppendC
 
   import cats.syntax.all.*
 
-  override def renderBody(body: Body)(using Environment): F[Unit] =
+  override def renderBody(body: Body)(using Environment, IORuntime): F[Unit] =
     CanApplyAttributes[F].applyAttributes(body.attributes).run(summonBody) >> {
       CanConvertNodes[F].convertNodes andThen
         CanAppendChilds[F].appendChilds(summonBody) run body.childs

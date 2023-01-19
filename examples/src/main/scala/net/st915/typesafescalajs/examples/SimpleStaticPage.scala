@@ -10,6 +10,7 @@ object SimpleStaticPage {
     import cats.syntax.all.*
     import net.st915.typesafescalajs.dom.dsl.*
 
+    import cats.effect.unsafe.implicits.global
     import net.st915.typesafescalajs.renderer.environments.global
     import net.st915.typesafescalajs.renderer.instances.all.given
 
