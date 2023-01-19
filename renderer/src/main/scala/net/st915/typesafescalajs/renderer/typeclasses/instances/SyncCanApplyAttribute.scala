@@ -148,7 +148,7 @@ class SyncCanApplyAttribute[F[_]: Sync] extends CanApplyAttribute[F] {
             element match
               case e: HTMLFormElement =>
                 e.tap(_.enctype = value)
-          case (_: form.type, value: String /* not String. HTMLFormElement */) =>
+          case (_: form.type, value: String /* not String. HTMLFormElement */ ) =>
             // TODO
             element match
               case e: HTMLButtonElement =>
@@ -223,7 +223,7 @@ class SyncCanApplyAttribute[F[_]: Sync] extends CanApplyAttribute[F] {
                 e.tap(_.label = value)
               case e: HTMLOptGroupElement =>
                 e.tap(_.label = value)
-          case (_: list.type, value: String /* not String. HTMLElement */) =>
+          case (_: list.type, value: String /* not String. HTMLElement */ ) =>
             element match
               // TODO
               case e: HTMLInputElement =>
@@ -258,6 +258,48 @@ class SyncCanApplyAttribute[F[_]: Sync] extends CanApplyAttribute[F] {
             element match
               case e: HTMLFormElement =>
                 e.tap(_.method = value)
+          case (_: min.type, value: String) =>
+            element match
+              case e: HTMLInputElement =>
+                e.tap(_.min = value)
+          case (_: multiple.type, value: Boolean) =>
+            element match
+              case e: HTMLInputElement =>
+                e.tap(_.multiple = value)
+              case e: HTMLSelectElement =>
+                e.tap(_.multiple = value)
+          case (_: muted.type, value: Boolean) =>
+            element match
+              case e: HTMLAudioElement =>
+                e.tap(_.muted = value)
+              case e: HTMLVideoElement =>
+                e.tap(_.muted = value)
+          case (_: name.type, value: String) =>
+            element match
+              case e: HTMLButtonElement =>
+                e.tap(_.name = value)
+              case e: HTMLFormElement =>
+                e.tap(_.name = value)
+              case e: HTMLIFrameElement =>
+                e.tap(_.name = value)
+              case e: HTMLInputElement =>
+                e.tap(_.name = value)
+              case e: HTMLMapElement =>
+                e.tap(_.name = value)
+              case e: HTMLMetaElement =>
+                e.tap(_.name = value)
+              case e: HTMLObjectElement =>
+                e.tap(_.name = value)
+              case e: HTMLParamElement =>
+                e.tap(_.name = value)
+              case e: HTMLSelectElement =>
+                e.tap(_.name = value)
+              case e: HTMLTextAreaElement =>
+                e.tap(_.name = value)
+          case (_: noValidate.type, value: Boolean) =>
+            element match
+              case e: HTMLFormElement =>
+                e.tap(_.noValidate = value)
           case (attr, _) =>
             println(s"Ignoring attribute '$attr'.")
             element

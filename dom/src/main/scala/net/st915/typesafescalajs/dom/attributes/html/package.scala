@@ -150,7 +150,7 @@ package object html {
 
   case object muted extends FlagAttribute with VideoAttribute with AudioAttribute
 
-  case object name extends Attribute[String] with ButtonAttribute with FieldSetAttribute
+  case object name extends Attribute[String] with ButtonAttribute
       with FormAttribute with IFrameAttribute with InputAttribute with MapAttribute
       with MetaAttribute with ObjectAttribute with ParamAttribute with SelectAttribute
       with TextAreaAttribute
