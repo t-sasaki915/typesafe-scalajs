@@ -148,7 +148,7 @@ class SyncCanApplyAttribute[F[_]: Sync] extends CanApplyAttribute[F] {
             element match
               case e: HTMLFormElement =>
                 e.tap(_.enctype = value)
-          case (_: form.type, value: String) =>
+          case (_: form.type, value: String /* not String. HTMLFormElement */) =>
             // TODO
             element match
               case e: HTMLButtonElement =>
@@ -197,6 +197,67 @@ class SyncCanApplyAttribute[F[_]: Sync] extends CanApplyAttribute[F] {
                 e.tap(_.href = value)
               case e: HTMLLinkElement =>
                 e.tap(_.href = value)
+          case (_: hrefLang.type, value: String) =>
+            element match
+              case e: HTMLAnchorElement =>
+                e.tap(_.hreflang = value)
+              case e: HTMLLinkElement =>
+                e.tap(_.hreflang = value)
+          case (_: httpEquiv.type, value: String) =>
+            element match
+              case e: HTMLMetaElement =>
+                e.tap(_.httpEquiv = value)
+          case (_: isMap.type, value: Boolean) =>
+            element match
+              case e: HTMLImageElement =>
+                e.tap(_.isMap = value)
+          case (_: kind.type, value: String) =>
+            element match
+              case e: HTMLTrackElement =>
+                e.tap(_.kind = value)
+          case (_: label.type, value: String) =>
+            element match
+              case e: HTMLTrackElement =>
+                e.tap(_.label = value)
+              case e: HTMLOptionElement =>
+                e.tap(_.label = value)
+              case e: HTMLOptGroupElement =>
+                e.tap(_.label = value)
+          case (_: list.type, value: String /* not String. HTMLElement */) =>
+            element match
+              // TODO
+              case e: HTMLInputElement =>
+                e
+          case (_: loop.type, value: Boolean) =>
+            element match
+              case e: HTMLAudioElement =>
+                e.tap(_.loop = value)
+              case e: HTMLVideoElement =>
+                e.tap(_.loop = value)
+          case (_: max.type, value: String) =>
+            element match
+              case e: HTMLInputElement =>
+                e.tap(_.max = value)
+              case e: HTMLProgressElement =>
+                e.tap(_.max = value.toDouble)
+          case (_: maxLength.type, value: Int) =>
+            element match
+              case e: HTMLInputElement =>
+                e.tap(_.maxLength = value)
+              case e: HTMLTextAreaElement =>
+                e.tap(_.maxLength = value)
+          case (_: media.type, value: String) =>
+            element match
+              case e: HTMLLinkElement =>
+                e.tap(_.media = value)
+              case e: HTMLSourceElement =>
+                e.tap(_.media = value)
+              case e: HTMLStyleElement =>
+                e.tap(_.media = value)
+          case (_: method.type, value: String) =>
+            element match
+              case e: HTMLFormElement =>
+                e.tap(_.method = value)
           case (attr, _) =>
             println(s"Ignoring attribute '$attr'.")
             element

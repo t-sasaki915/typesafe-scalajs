@@ -120,8 +120,7 @@ package object html {
   case object href extends Attribute[String] with AnchorAttribute with AreaAttribute
       with BaseAttribute with LinkAttribute
 
-  case object hrefLang extends Attribute[String] with AnchorAttribute with AreaAttribute
-      with LinkAttribute
+  case object hrefLang extends Attribute[String] with AnchorAttribute with LinkAttribute
 
   case object httpEquiv extends Attribute[String] with MetaAttribute
 
@@ -140,8 +139,8 @@ package object html {
 
   case object maxLength extends Attribute[Int] with InputAttribute with TextAreaAttribute
 
-  case object media extends Attribute[String] with AnchorAttribute with AreaAttribute
-      with LinkAttribute with SourceAttribute with StyleAttribute
+  case object media extends Attribute[String] with LinkAttribute with SourceAttribute
+      with StyleAttribute
 
   case object method extends Attribute[String] with FormAttribute
 
