@@ -4,6 +4,7 @@ import cats.data.Kleisli
 import cats.effect.Sync
 import cats.effect.unsafe.IORuntime
 import net.st915.typesafescalajs.dom.attributes.Attribute
+import net.st915.typesafescalajs.dom.domain.events.*
 import net.st915.typesafescalajs.renderer.typeclasses.CanApplyAttribute
 import org.scalajs.dom.*
 
