@@ -187,6 +187,16 @@ class SyncCanApplyAttribute[F[_]: Sync] extends CanApplyAttribute[F] {
                 e.tap(_.height = value.toString)
               case e: HTMLVideoElement =>
                 e.tap(_.height = value)
+          case (_: href.type, value: String) =>
+            element match
+              case e: HTMLAnchorElement =>
+                e.tap(_.href = value)
+              case e: HTMLAreaElement =>
+                e.tap(_.href = value)
+              case e: HTMLBaseElement =>
+                e.tap(_.href = value)
+              case e: HTMLLinkElement =>
+                e.tap(_.href = value)
           case (attr, _) =>
             println(s"Ignoring attribute '$attr'.")
             element
