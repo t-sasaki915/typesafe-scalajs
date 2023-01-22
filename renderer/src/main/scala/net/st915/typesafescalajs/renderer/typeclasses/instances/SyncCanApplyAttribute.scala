@@ -1,7 +1,7 @@
 package net.st915.typesafescalajs.renderer.typeclasses.instances
 
 import cats.data.Kleisli
-import cats.effect.Sync
+import cats.effect.{IO, Sync}
 import cats.effect.unsafe.IORuntime
 import net.st915.typesafescalajs.dom.attributes.Attribute
 import net.st915.typesafescalajs.dom.domain.events.*
@@ -303,6 +303,20 @@ class SyncCanApplyAttribute[F[_]: Sync] extends CanApplyAttribute[F] {
             element match
               case e: HTMLFormElement =>
                 e.tap(_.noValidate = value)
+          case (_: onAbort.type, value: (_ => _)) =>
+            value match
+              case v: (UIEvent => IO[Unit]) =>
+                element match
+                  case e: HTMLAudioElement =>
+                    e.tap(_.onabort = e => v(e).unsafeRunAndForget())
+                  case e: HTMLEmbedElement =>
+                    e.tap(_.onabort = e => v(e).unsafeRunAndForget())
+                  case e: HTMLImageElement =>
+                    e.tap(_.onabort = e => v(e).unsafeRunAndForget())
+                  case e: HTMLObjectElement =>
+                    e.tap(_.onabort = e => v(e).unsafeRunAndForget())
+                  case e: HTMLVideoElement =>
+                    e.tap(_.onabort = e => v(e).unsafeRunAndForget())
           case (attr, _) =>
             println(s"Ignoring attribute '$attr'.")
             element
