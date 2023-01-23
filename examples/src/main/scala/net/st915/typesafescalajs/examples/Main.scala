@@ -1,10 +1,14 @@
 package net.st915.typesafescalajs.examples
 
-import cats.effect.*
+import net.st915.typesafescalajs.dom.tags.special.{Body, Head}
+import net.st915.typesafescalajs.renderer.HTMLApp
 
-object Main extends IOApp {
+object Main extends HTMLApp {
 
-  override def run(args: List[String]): IO[ExitCode] =
-    SimpleStaticPage.run
+  override val head: Head =
+    SimpleStaticPage.pageHead
+
+  override val body: Body =
+    SimpleStaticPage.pageBody
 
 }
