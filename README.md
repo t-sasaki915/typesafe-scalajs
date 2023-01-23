@@ -9,6 +9,7 @@ docker start -p "8080:80" typesafe-scalajs-example
 
 # Examples
 * [index.html](https://github.com/stouma915/typesafe-scalajs/blob/main/examples/src/main/resources/index.html)
+* [Main.scala](https://github.com/stouma915/typesafe-scalajs/blob/main/examples/src/main/scala/net/st915/typesafescalajs/examples/Main.scala)
 * [SimpleStaticPage.scala](https://github.com/stouma915/typesafe-scalajs/blob/main/examples/src/main/scala/net/st915/typesafescalajs/examples/SimpleStaticPage.scala)
 
 # Usage
@@ -88,37 +89,18 @@ val bodyWithThreeChildren = Body(
 )
 ```
 
-## Renderer
+## HTMLApp
 ```scala
-import cats.effect.unsafe.implicits.global
-import net.st915.typesafescalajs.renderer.environments.global
-import net.st915.typesafescalajs.renderer.instances.all.given
+import cats.effect.IO
+import net.st915.typesafescalajs.renderer.HTMLApp
+
+object Main extends HTMLApp {
+
+  import net.st915.typesafescalajs.dom.dsl.*
+
+  override val headProgram: IO[Head] = ...
+
+  override val bodyProgram: IO[Body] = ...
+
+}
 ```
-#### Render Head
-```scala
-import net.st915.typesafescalajs.renderer.RenderHead
-
-val head = ...
-
-val program: IO[Unit] = RenderHead.renderHead[IO](head)
-```
-
-#### Render Body
-```scala
-import net.st915.typesafescalajs.renderer.RenderBody
-
-val body = ...
-
-val program: IO[Unit] = RenderBody.renderBody[IO](body)
-```
-
-#### Render Head and Body
-```scala
-import net.st915.typesafescalajs.renderer.{RenderBody, RenderHead}
-
-val head = ...
-val body = ...
-
-val program: IO[Unit] =
-  RenderHead.renderHead[IO](head) >>
-    RenderBody.renderBody[IO](body)
