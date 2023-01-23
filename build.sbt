@@ -18,8 +18,7 @@ lazy val core = project
   .settings(
     name := "typesafe-scalajs-core",
     libraryDependencies ++= Seq(
-      "org.typelevel" %%% "cats-effect" % "3.4.4",
-      "org.scala-js" %%% "scalajs-dom" % "2.1.0"
+      "org.typelevel" %%% "cats-effect" % "3.4.4"
     )
   )
 
@@ -28,7 +27,10 @@ lazy val dom = project
   .enablePlugins(ScalaJSPlugin)
   .dependsOn(core)
   .settings(
-    name := "typesafe-scalajs-dom"
+    name := "typesafe-scalajs-dom",
+    libraryDependencies ++= Seq(
+      "org.scala-js" %%% "scalajs-dom" % "2.1.0"
+    )
   )
 
 lazy val renderer = project
