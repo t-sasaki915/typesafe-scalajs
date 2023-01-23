@@ -494,6 +494,46 @@ class SyncCanApplyAttribute[F[_]: Sync] extends CanApplyAttribute[F] {
                     e.tap(_.onloadeddata = v.unsafeRunWithValue)
                   case e: HTMLVideoElement =>
                     e.tap(_.onloadeddata = v.unsafeRunWithValue)
+          case (_: onLoadedMetaData.type, value: (_ => _)) =>
+            value match
+              case v: (Event => IO[Unit]) =>
+                element match
+                  case e: HTMLAudioElement =>
+                    e.tap(_.onloadedmetadata = v.unsafeRunWithValue)
+                  case e: HTMLVideoElement =>
+                    e.tap(_.onloadedmetadata = v.unsafeRunWithValue)
+          case (_: onLoadStart.type, value: (_ => _)) =>
+            value match
+              case v: (Event => IO[Unit]) =>
+                element match
+                  case e: HTMLAudioElement =>
+                    e.tap(_.onloadstart = v.unsafeRunWithValue)
+                  case e: HTMLVideoElement =>
+                    e.tap(_.onloadstart = v.unsafeRunWithValue)
+          case (_: onMouseDown.type, value: (_ => _)) =>
+            value match
+              case v: (MouseEvent => IO[Unit]) =>
+                element.tap(_.onmousedown = v.unsafeRunWithValue)
+          case (_: onMouseMove.type, value: (_ => _)) =>
+            value match
+              case v: (MouseEvent => IO[Unit]) =>
+                element.tap(_.onmousemove = v.unsafeRunWithValue)
+          case (_: onMouseOut.type, value: (_ =>  _)) =>
+            value match
+              case v: (MouseEvent => IO[Unit]) =>
+                element.tap(_.onmouseout = v.unsafeRunWithValue)
+          case (_: onMouseOver.type, value: (_ => _)) =>
+            value match
+              case v: (MouseEvent => IO[Unit]) =>
+                element.tap(_.onmouseover = v.unsafeRunWithValue)
+          case (_: onMouseUp.type, value: (_ => _)) =>
+            value match
+              case v: (MouseEvent => IO[Unit]) =>
+                element.tap(_.onmouseup = v.unsafeRunWithValue)
+          case (_: onMouseWheel.type, value: (_ => _)) =>
+            value match
+              case v: (WheelEvent => IO[Unit]) =>
+                element.tap(_.onmousewheel = v.unsafeRunWithValue)
       }
     }
 
