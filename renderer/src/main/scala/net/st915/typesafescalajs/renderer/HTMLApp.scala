@@ -6,8 +6,8 @@ import net.st915.typesafescalajs.renderer.{RenderBody, RenderHead}
 
 trait HTMLApp extends IOApp {
 
-  val head: Head
-  val body: Body
+  val head: IO[Head]
+  val body: IO[Body]
 
   override def run(args: List[String]): IO[ExitCode] = {
 
@@ -15,10 +15,12 @@ trait HTMLApp extends IOApp {
     import net.st915.typesafescalajs.renderer.environments.global
     import net.st915.typesafescalajs.renderer.instances.all.given
 
-    RenderHead[IO].renderHead(head) >>
-      RenderBody[IO].renderBody(body) >>
-      IO(ExitCode.Success)
-
+    for {
+      hd <- head
+      bd <- body
+      _ <- RenderHead[IO].renderHead(hd)
+      _ <- RenderBody[IO].renderBody(bd)
+    } yield ExitCode.Success
   } 
 
 }
