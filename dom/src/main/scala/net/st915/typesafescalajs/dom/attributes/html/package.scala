@@ -209,9 +209,7 @@ package object html {
 
   case object onEnded extends Attribute[Event => IO[Unit]] with AudioAttribute with VideoAttribute
 
-  case object onError extends Attribute[ErrorEvent => IO[Unit]] with AudioAttribute
-      with BodyAttribute with EmbedAttribute with ImageAttribute with ObjectAttribute
-      with ScriptAttribute with StyleAttribute with VideoAttribute
+  case object onError extends Attribute[ErrorEvent => IO[Unit]] with BodyAttribute
 
   case object onFocus extends Attribute[FocusEvent => IO[Unit]] with VisibleElementAttribute
 
@@ -226,8 +224,7 @@ package object html {
   case object onKeyUp extends Attribute[KeyboardEvent => IO[Unit]] with VisibleElementAttribute
 
   case object onLoad extends Attribute[Event => IO[Unit]] with BodyAttribute with IFrameAttribute
-      with ImageAttribute with InputAttribute with LinkAttribute with ScriptAttribute
-      with StyleAttribute
+      with ImageAttribute with ScriptAttribute
 
   case object onLoadedData extends Attribute[Event => IO[Unit]] with AudioAttribute
       with VideoAttribute

@@ -418,6 +418,82 @@ class SyncCanApplyAttribute[F[_]: Sync] extends CanApplyAttribute[F] {
             value match
               case v: (DragEvent => IO[Unit]) =>
                 element.tap(_.ondrop = v.unsafeRunWithValue)
+          case (_: onDurationChange.type, value: (_ => _)) =>
+            value match
+              case v: (Event => IO[Unit]) =>
+                element match
+                  case e: HTMLAudioElement =>
+                    e.tap(_.ondurationchange = v.unsafeRunWithValue)
+                  case e: HTMLVideoElement =>
+                    e.tap(_.ondurationchange = v.unsafeRunWithValue)
+          case (_: onEmptied.type, value: (_ => _)) =>
+            value match
+              case v: (Event => IO[Unit]) =>
+                element match
+                  case e: HTMLAudioElement =>
+                    e.tap(_.onemptied = v.unsafeRunWithValue)
+                  case e: HTMLVideoElement =>
+                    e.tap(_.onemptied = v.unsafeRunWithValue)
+          case (_: onEnded.type, value: (_ => _)) =>
+            value match
+              case v: (Event => IO[Unit]) =>
+                element match
+                  case e: HTMLAudioElement =>
+                    e.tap(_.onended = v.unsafeRunWithValue)
+                  case e: HTMLVideoElement =>
+                    e.tap(_.onended = v.unsafeRunWithValue)
+          case (_: onError.type, value: (_ => _)) =>
+            value match
+              case v: (ErrorEvent => IO[Unit]) =>
+                element match
+                  case e: HTMLBodyElement =>
+                    e.tap(_.onerror = v.unsafeRunWithValue)
+          case (_: onFocus.type, value: (_ => _)) =>
+            value match
+              case v: (FocusEvent => IO[Unit]) =>
+                element.tap(_.onfocus = v.unsafeRunWithValue)
+          case (_: onHashChange.type, value: (_ => _)) =>
+            value match
+              case v: (Event => IO[Unit]) =>
+                element match
+                  case e: HTMLBodyElement =>
+                    e.tap(_.onhashchange = v.unsafeRunWithValue)
+          case (_: onInput.type, value: (_ => _)) =>
+            value match
+              case v: (Event => IO[Unit]) =>
+                element.tap(_.oninput = v.unsafeRunWithValue)
+          case (_: onKeyDown.type, value: (_ => _)) =>
+            value match
+              case v: (KeyboardEvent => IO[Unit]) =>
+                element.tap(_.onkeydown = v.unsafeRunWithValue)
+          case (_: onKeyPress.type, value: (_ => _)) =>
+            value match
+              case v: (KeyboardEvent => IO[Unit]) =>
+                element.tap(_.onkeypress = v.unsafeRunWithValue)
+          case (_: onKeyUp.type, value: (_ => _)) =>
+            value match
+              case v: (KeyboardEvent => IO[Unit]) =>
+                element.tap(_.onkeyup = v.unsafeRunWithValue)
+          case (_: onLoad.type, value: (_ => _)) =>
+            value match
+              case v: (Event => IO[Unit]) =>
+                element match
+                  case e: HTMLBodyElement =>
+                    e.tap(_.onload = v.unsafeRunWithValue)
+                  case e: HTMLIFrameElement =>
+                    e.tap(_.onload = v.unsafeRunWithValue)
+                  case e: HTMLImageElement =>
+                    e.tap(_.onload = v.unsafeRunWithValue)
+                  case e: HTMLScriptElement =>
+                    e.tap(_.onload = v.unsafeRunWithValue)
+          case (_: onLoadedData.type, value: (_ => _)) =>
+            value match
+              case v: (Event => IO[Unit]) =>
+                element match
+                  case e: HTMLAudioElement =>
+                    e.tap(_.onloadeddata = v.unsafeRunWithValue)
+                  case e: HTMLVideoElement =>
+                    e.tap(_.onloadeddata = v.unsafeRunWithValue)
       }
     }
 
