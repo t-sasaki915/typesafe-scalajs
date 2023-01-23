@@ -9,67 +9,60 @@ docker start -p "8080:80" typesafe-scalajs-example
 
 # Examples
 * [index.html](https://github.com/stouma915/typesafe-scalajs/blob/main/examples/src/main/resources/index.html)
-```html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <script src="./main.js"></script>
-  </head>
-  <body>
-  </body>
-</html>
-```
 * [SimpleStaticPage.scala](https://github.com/stouma915/typesafe-scalajs/blob/main/examples/src/main/scala/net/st915/typesafescalajs/examples/SimpleStaticPage.scala)
+
+# Usage
+## DOM DSL
 ```scala
-import cats.effect.*
-import net.st915.typesafescalajs.renderer.{RenderBody, RenderHead}
+import net.st915.typesafescalals.dom.dsl.*
+```
 
-object SimpleStaticPage extends IOApp {
+#### Create Element
+```scala
+Paragraph()
+Div()
+Button()
+```
 
-  override def run(args: List[String]): IO[ExitCode] = {
+#### Create Element with attributes
+```scala
+Paragraph(id := "text")
+Div(className := "container")
+Button(onClick := (_ => IO(println("clicked"))), disabled)
+```
 
-    import cats.syntax.all.*
-    import net.st915.typesafescalajs.dom.dsl.*
+#### Create Element with childs
+```scala
+Paragraph() {
+  "Text" // or TextNode("Text")
+}
+Div()(
+  Div(className := "child"),
+  Div(className := "child"),
+  Div(className := "child")
+)
+Button() {
+  "Button"
+}
+```
 
-    import cats.effect.unsafe.implicits.global
-    import net.st915.typesafescalajs.renderer.environments.global
-    import net.st915.typesafescalajs.renderer.instances.all.given
-
-    val head = Head(
-      Title()("SimpleStaticPage"),
-      Meta(charset := "utf-8")
-    )
-
-    val body = Body(
-      H1() {
-        "Simple Static Page Example"
-      },
-      BR(),
-      Paragraph(className := "content")(
-        "Content Line 1",
-        BR(),
-        "Content Line 2"
-      ),
-      Div(className := "buttons")(
-        Button(className := "btn", onClick := (_ => IO(println("Clicked")))) {
-          "Clickable Button"
-        },
-        BR(),
-        Button(className := "btn", onClick := (_ => IO(println("????"))), disabled) {
-          "Disabled Button"
-        }
-      ),
-      BR(),
-      Anchor(className := "link", href := "https://github.com") {
-        "Link to github.com"
-      }
-    )
-
-    RenderHead[IO].renderHead(head) >>
-      RenderBody[IO].renderBody(body) >>
-      IO(ExitCode.Success)
-
+#### Create Element with attributes and childs
+```scala
+Paragraph(id := "text") {
+  "Text"
+}
+Div(className := "container")(
+  Div(className := "child") {
+    "Line 1"
+  },
+  Div(className := "child") {
+    "Line 2"
+  },
+  Div(className := "child") {
+    "Line 3"
   }
-
+)
+Button(onClick := (_ => IO(println("???"))), disabled) {
+  "Disabled Button"
 }
 ```
