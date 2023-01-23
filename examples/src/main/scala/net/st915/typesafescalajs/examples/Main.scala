@@ -6,10 +6,10 @@ import net.st915.typesafescalajs.renderer.HTMLApp
 
 object Main extends HTMLApp {
 
-  override val head: IO[Head] =
+  override val headProgram: IO[Head] =
     IO(SimpleStaticPage.pageHead)
 
-  override val body: IO[Body] =
+  override val bodyProgram: IO[Body] =
     IO(SimpleStaticPage.pageBody)
 
 }
