@@ -19,50 +19,106 @@ import net.st915.typesafescalajs.dom.dsl.*
 
 #### Create Element
 ```scala
-Paragraph()
-Div()
-Button()
+val emptyParagraph = Paragraph()
+val emptyDiv = Div()
+val emptyButton = Button()
 ```
 
 #### Create Element with attributes
 ```scala
-Paragraph(id := "text")
-Div(className := "container")
-Button(onClick := (_ => IO(println("clicked"))), disabled)
+val paragraphWithId = Paragraph(id := "text")
+val divWithClassName = Div(className := "container")
+val disabledButtonWithClickEvent = Button(onClick := (_ => IO(println("clicked"))), disabled)
 ```
 
-#### Create Element with childs
+#### Create Element with children
 ```scala
-Paragraph() {
+val paragraphWithTextNode = Paragraph() {
   "Text" // or TextNode("Text")
 }
-Div()(
+val divWithThreeChildren = Div()(
   Div(className := "child"),
   Div(className := "child"),
   Div(className := "child")
 )
-Button() {
+val buttonWithTextNode = Button() {
   "Button"
 }
 ```
 
-#### Create Element with attributes and childs
+#### Create Element with attributes and children
 ```scala
-Paragraph(id := "text") {
-  "Text"
-}
-Div(className := "container")(
-  Div(className := "child") {
-    "Line 1"
-  },
-  Div(className := "child") {
-    "Line 2"
-  },
-  Div(className := "child") {
-    "Line 3"
+val paragraphWithIdAndTextNode =
+  Paragraph(id := "text") {
+    "Text"
   }
-)
-Button(onClick := (_ => IO(println("???"))), disabled) {
-  "Disabled Button"
+val divWithClassNameAndThreeChildren =
+  Div(className := "container")(
+    Div(className := "child") {
+      "Line 1"
+    },
+    Div(className := "child") {
+      "Line 2"
+    },
+    Div(className := "child") {
+      "Line 3"
+    }
+  )
+val disabledButtonWithClickEventAndTextNode =
+  Button(onClick := (_ => IO(println("???"))), disabled) {
+    "Disabled Button"
+  }
+```
+
+#### Create Head Element
+```scala
+val headWithTitle = Head {
+  Title() {
+    "Page Title"
+  }
 }
 ```
+
+#### Create Body Element
+```scala
+val bodyWithThreeChildren = Body(
+  Div(className := "child"),
+  Div(className := "child"),
+  Div(className := "child")
+)
+```
+
+## Renderer
+```scala
+import cats.effect.unsafe.implicits.global
+import net.st915.typesafescalajs.renderer.environments.global
+import net.st915.typesafescalajs.renderer.instances.all.given
+```
+#### Render Head
+```scala
+import net.st915.typesafescalajs.renderer.RenderHead
+
+val head = ...
+
+val program: IO[Unit] = RenderHead.renderHead[IO](head)
+```
+
+#### Render Body
+```scala
+import net.st915.typesafescalajs.renderer.RenderBody
+
+val body = ...
+
+val program: IO[Unit] = RenderBody.renderBody[IO](body)
+```
+
+#### Render Head and Body
+```scala
+import net.st915.typesafescalajs.renderer.{RenderBody, RenderHead}
+
+val head = ...
+val body = ...
+
+val program: IO[Unit] =
+  RenderHead.renderHead[IO](head) >>
+    RenderBody.renderBody[IO](body)
