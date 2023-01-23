@@ -1,17 +1,34 @@
 # typesafe-scalajs
 Typesafe scalajs
 
-# Example
+# Try Example Code
+```bash
+docker build -t typesafe-scalajs-example .
+docker start -p "8080:80" typesafe-scalajs-example
+```
+
+# Examples
+* [index.html](https://github.com/stouma915/typesafe-scalajs/blob/main/examples/src/main/resources/index.html)
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="./main.js"></script>
+  </head>
+  <body>
+  </body>
+</html>
+```
+* [SimpleStaticPage.scala](https://github.com/stouma915/typesafe-scalajs/blob/main/examples/src/main/scala/net/st915/typesafescalajs/examples/SimpleStaticPage.scala)
 ```scala
 import cats.effect.*
 import net.st915.typesafescalajs.renderer.{RenderBody, RenderHead}
 
-object Main extends IOApp {
-
-  import cats.syntax.all.*
+object SimpleStaticPage extends IOApp {
 
   override def run(args: List[String]): IO[ExitCode] = {
 
+    import cats.syntax.all.*
     import net.st915.typesafescalajs.dom.dsl.*
 
     import cats.effect.unsafe.implicits.global
@@ -19,40 +36,40 @@ object Main extends IOApp {
     import net.st915.typesafescalajs.renderer.instances.all.given
 
     val head = Head(
-      Title() {
-        "Simple Page" // or TextNode("Simple Page")
-      }
+      Title()("SimpleStaticPage"),
+      Meta(charset := "utf-8")
     )
 
     val body = Body(
       H1() {
-        "Page Title"
+        "Simple Static Page Example"
       },
-      Paragraph(className := "content") {
-        "Page Content"
-      },
-      Button(onClick := (_ => IO.println("clicked"))) {
-        "Clickable Button"
+      BR(),
+      Paragraph(className := "content")(
+        "Content Line 1",
+        BR(),
+        "Content Line 2"
+      ),
+      Div(className := "buttons")(
+        Button(className := "btn", onClick := (_ => IO(println("Clicked")))) {
+          "Clickable Button"
+        },
+        BR(),
+        Button(className := "btn", onClick := (_ => IO(println("????"))), disabled) {
+          "Disabled Button"
+        }
+      ),
+      BR(),
+      Anchor(className := "link", href := "https://github.com") {
+        "Link to github.com"
       }
     )
 
-    RenderHead.renderHead[IO](head) >>
-      RenderBody.renderBody[IO](body) >>
+    RenderHead[IO].renderHead(head) >>
+      RenderBody[IO].renderBody(body) >>
       IO(ExitCode.Success)
 
   }
 
 }
-```
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <script src="./main.js"></script>
-  </head>
-  <body>
-  </body>
-</html>
 ```
