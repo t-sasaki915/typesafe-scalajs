@@ -14,7 +14,7 @@ docker start -p "8080:80" typesafe-scalajs-example
 # Usage
 ## DOM DSL
 ```scala
-import net.st915.typesafescalals.dom.dsl.*
+import net.st915.typesafescalajs.dom.dsl.*
 ```
 
 #### Create Element
