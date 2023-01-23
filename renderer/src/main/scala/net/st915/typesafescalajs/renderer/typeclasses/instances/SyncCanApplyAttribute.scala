@@ -348,9 +348,76 @@ class SyncCanApplyAttribute[F[_]: Sync] extends CanApplyAttribute[F] {
                     e.tap(_.oncanplay = v.unsafeRunWithValue)
                   case e: HTMLEmbedElement =>
                     e.tap(_.oncanplay = v.unsafeRunWithValue)
-          case (attr, _) =>
-            println(s"Ignoring attribute '$attr'.")
-            element
+                  case e: HTMLObjectElement =>
+                    e.tap(_.oncanplay = v.unsafeRunWithValue)
+                  case e: HTMLVideoElement =>
+                    e.tap(_.oncanplay = v.unsafeRunWithValue)
+          case (_: onCanPlayThrough.type, value: (_ => _)) =>
+            value match
+              case v: (Event => IO[Unit]) =>
+                element match
+                  case e: HTMLAudioElement =>
+                    e.tap(_.oncanplaythrough = v.unsafeRunWithValue)
+                  case e: HTMLVideoElement =>
+                    e.tap(_.oncanplaythrough = v.unsafeRunWithValue)
+          case (_: onChange.type, value: (_ => _)) =>
+            value match
+              case v: (Event => IO[Unit]) =>
+                element.tap(_.onchange = v.unsafeRunWithValue)
+          case (_: onClick.type, value: (_ => _)) =>
+            value match
+              case v: (MouseEvent => IO[Unit]) =>
+                element.tap(_.onclick = v.unsafeRunWithValue)
+          case (_: onContextMenu.type, value: (_ => _)) =>
+            value match
+              case v: (MouseEvent => IO[Unit]) =>
+                element.tap(_.oncontextmenu = v.unsafeRunWithValue)
+          case (_: onCopy.type, value: (_ => _)) =>
+            value match
+              case v: (ClipboardEvent => IO[Unit]) =>
+                element.tap(_.oncopy = v.unsafeRunWithValue)
+          case (_: onCueChange.type, value: (_ => _)) =>
+            value match
+              case v: (Event => IO[Unit]) =>
+                element match
+                  case e: HTMLTrackElement =>
+                    e.tap(_.oncuechange = v.unsafeRunWithValue)
+          case (_: onCut.type, value: (_ => _)) =>
+            value match
+              case v: (ClipboardEvent => IO[Unit]) =>
+                element.tap(_.oncut = v.unsafeRunWithValue)
+          case (_: onDoubleClick.type, value: (_ => _)) =>
+            value match
+              case v: (MouseEvent => IO[Unit]) =>
+                element.tap(_.ondblclick = v.unsafeRunWithValue)
+          case (_: onDrag.type, value: (_ => _)) =>
+            value match
+              case v: (DragEvent => IO[Unit]) =>
+                element.tap(_.ondrag = v.unsafeRunWithValue)
+          case (_: onDragEnd.type, value: (_ => _)) =>
+            value match
+              case v: (DragEvent => IO[Unit]) =>
+                element.tap(_.ondragend = v.unsafeRunWithValue)
+          case (_: onDragEnter.type, value: (_ => _)) =>
+            value match
+              case v: (DragEvent => IO[Unit]) =>
+                element.tap(_.ondragenter = v.unsafeRunWithValue)
+          case (_: onDragLeave.type, value: (_ => _)) =>
+            value match
+              case v: (DragEvent => IO[Unit]) =>
+                element.tap(_.ondragleave = v.unsafeRunWithValue)
+          case (_: onDragOver.type, value: (_ => _)) =>
+            value match
+              case v: (DragEvent => IO[Unit]) =>
+                element.tap(_.ondragover = v.unsafeRunWithValue)
+          case (_: onDragStart.type, value: (_ => _)) =>
+            value match
+              case v: (DragEvent => IO[Unit]) =>
+                element.tap(_.ondragstart = v.unsafeRunWithValue)
+          case (_: onDrop.type, value: (_ => _)) =>
+            value match
+              case v: (DragEvent => IO[Unit]) =>
+                element.tap(_.ondrop = v.unsafeRunWithValue)
       }
     }
 
