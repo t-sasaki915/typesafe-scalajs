@@ -20,7 +20,7 @@ object Main extends IOApp {
 
     val head = Head(
       Title() {
-        "Simple Page"
+        "Simple Page" // or TextNode("Simple Page")
       }
     )
 
