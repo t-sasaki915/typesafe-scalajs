@@ -14,6 +14,13 @@ class SyncCanApplyAttribute[F[_]: Sync] extends CanApplyAttribute[F] {
 
   import net.st915.typesafescalajs.dom.attributes.all.*
 
+  implicit class FunctionOps[A](func: A => IO[Unit]) {
+
+    def unsafeRunWithValue(using IORuntime): A => Unit = value =>
+      func(value).unsafeRunAndForget()
+
+  }
+
   override def applyAttribute[A <: HTMLElement, B, C](attribute: (B, C))(using
   IORuntime): Kleisli[F, A, A] =
     Kleisli { element =>
@@ -308,15 +315,39 @@ class SyncCanApplyAttribute[F[_]: Sync] extends CanApplyAttribute[F] {
               case v: (UIEvent => IO[Unit]) =>
                 element match
                   case e: HTMLAudioElement =>
-                    e.tap(_.onabort = e => v(e).unsafeRunAndForget())
+                    e.tap(_.onabort = v.unsafeRunWithValue)
                   case e: HTMLEmbedElement =>
-                    e.tap(_.onabort = e => v(e).unsafeRunAndForget())
+                    e.tap(_.onabort = v.unsafeRunWithValue)
                   case e: HTMLImageElement =>
-                    e.tap(_.onabort = e => v(e).unsafeRunAndForget())
+                    e.tap(_.onabort = v.unsafeRunWithValue)
                   case e: HTMLObjectElement =>
-                    e.tap(_.onabort = e => v(e).unsafeRunAndForget())
+                    e.tap(_.onabort = v.unsafeRunWithValue)
                   case e: HTMLVideoElement =>
-                    e.tap(_.onabort = e => v(e).unsafeRunAndForget())
+                    e.tap(_.onabort = v.unsafeRunWithValue)
+          case (_: onAfterPrint.type, value: (_ => _)) =>
+            value match
+              case v: (Event => IO[Unit]) =>
+                element match
+                  case e: HTMLBodyElement =>
+                    e.tap(_.onafterprint = v.unsafeRunWithValue)
+          case (_: onBeforePrint.type, value: (_ => _)) =>
+            value match
+              case v: (Event => IO[Unit]) =>
+                element match
+                  case e: HTMLBodyElement =>
+                    e.tap(_.onbeforeprint = v.unsafeRunWithValue)
+          case (_: onBlur.type, value: (_ => _)) =>
+            value match
+              case v: (FocusEvent => IO[Unit]) =>
+                element.tap(_.onblur = v.unsafeRunWithValue)
+          case (_: onCanPlay.type, value: (_ => _)) =>
+            value match
+              case v: (Event => IO[Unit]) =>
+                element match
+                  case e: HTMLAudioElement =>
+                    e.tap(_.oncanplay = v.unsafeRunWithValue)
+                  case e: HTMLEmbedElement =>
+                    e.tap(_.oncanplay = v.unsafeRunWithValue)
           case (attr, _) =>
             println(s"Ignoring attribute '$attr'.")
             element
