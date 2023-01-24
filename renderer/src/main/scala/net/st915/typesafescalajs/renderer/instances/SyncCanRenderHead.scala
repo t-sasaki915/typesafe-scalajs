@@ -6,10 +6,10 @@ import net.st915.typesafescalajs.dom.tags.Tag
 import net.st915.typesafescalajs.dom.tags.special.Head
 import net.st915.typesafescalajs.renderer.typeclasses.*
 import net.st915.typesafescalajs.renderer.util.summonHead
-import net.st915.typesafescalajs.renderer.{Environment, RenderHead}
+import net.st915.typesafescalajs.renderer.Environment
 
-class SyncRenderHead[F[_]: Sync: CanApplyAttributes: CanConvertNodes: CanAppendChildren]
-    extends RenderHead[F] {
+class SyncCanRenderHead[F[_]: Sync: CanApplyAttributes: CanConvertNodes: CanAppendChildren]
+    extends CanRenderHead[F] {
 
   import cats.syntax.all.*
 

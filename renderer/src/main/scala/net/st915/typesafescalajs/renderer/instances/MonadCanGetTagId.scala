@@ -1,4 +1,4 @@
-package net.st915.typesafescalajs.renderer.typeclasses.instances
+package net.st915.typesafescalajs.renderer.instances
 
 import cats.Monad
 import cats.data.Kleisli

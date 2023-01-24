@@ -2,7 +2,7 @@ package net.st915.typesafescalajs.renderer
 
 import cats.effect.*
 import net.st915.typesafescalajs.dom.tags.special.{Body, Head}
-import net.st915.typesafescalajs.renderer.{RenderBody, RenderHead}
+import net.st915.typesafescalajs.renderer.typeclasses.{CanRenderBody, CanRenderHead}
 
 trait HTMLApp extends IOApp {
 
@@ -18,8 +18,8 @@ trait HTMLApp extends IOApp {
     for {
       head <- headProgram
       body <- bodyProgram
-      _ <- RenderHead[IO].renderHead(head)
-      _ <- RenderBody[IO].renderBody(body)
+      _ <- CanRenderHead[IO].renderHead(head)
+      _ <- CanRenderBody[IO].renderBody(body)
     } yield ExitCode.Success
 
   }
