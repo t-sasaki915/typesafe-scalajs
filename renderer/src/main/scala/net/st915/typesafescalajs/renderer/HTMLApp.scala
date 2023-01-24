@@ -21,6 +21,6 @@ trait HTMLApp extends IOApp {
       _ <- RenderHead[IO].renderHead(head)
       _ <- RenderBody[IO].renderBody(body)
     } yield ExitCode.Success
-  } 
+  }
 
 }

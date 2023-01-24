@@ -1,8 +1,8 @@
 package net.st915.typesafescalajs.renderer.typeclasses.instances
 
 import cats.data.Kleisli
-import cats.effect.{IO, Sync}
 import cats.effect.unsafe.IORuntime
+import cats.effect.{IO, Sync}
 import net.st915.typesafescalajs.dom.attributes.Attribute
 import net.st915.typesafescalajs.dom.domain.events.*
 import net.st915.typesafescalajs.renderer.typeclasses.CanApplyAttribute
@@ -518,7 +518,7 @@ class SyncCanApplyAttribute[F[_]: Sync] extends CanApplyAttribute[F] {
             value match
               case v: (MouseEvent => IO[Unit]) =>
                 element.tap(_.onmousemove = v.unsafeRunWithValue)
-          case (_: onMouseOut.type, value: (_ =>  _)) =>
+          case (_: onMouseOut.type, value: (_ => _)) =>
             value match
               case v: (MouseEvent => IO[Unit]) =>
                 element.tap(_.onmouseout = v.unsafeRunWithValue)
