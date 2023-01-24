@@ -12,10 +12,10 @@ object Param {
   def apply(attributes: (AcceptAttribute, _)*): Param =
     Param(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): Param =
-    Param(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): Param =
+    Param(attributes.toSet, children.toList)
 
 }
 
-final case class Param(attributes: Set[(Param.AcceptAttribute, _)], childs: List[Node])
+final case class Param(attributes: Set[(Param.AcceptAttribute, _)], children: List[Node])
     extends Tag[Param.AcceptAttribute]

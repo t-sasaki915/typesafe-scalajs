@@ -12,10 +12,10 @@ object BR {
   def apply(attributes: (AcceptAttribute, _)*): BR =
     BR(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): BR =
-    BR(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): BR =
+    BR(attributes.toSet, children.toList)
 
 }
 
-final case class BR(attributes: Set[(BR.AcceptAttribute, _)], childs: List[Node])
+final case class BR(attributes: Set[(BR.AcceptAttribute, _)], children: List[Node])
     extends Tag[BR.AcceptAttribute]

@@ -15,12 +15,12 @@ object TableCaption {
   def apply(attributes: (AcceptAttribute, _)*): TableCaption =
     TableCaption(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): TableCaption =
-    TableCaption(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): TableCaption =
+    TableCaption(attributes.toSet, children.toList)
 
 }
 
 final case class TableCaption(
   attributes: Set[(TableCaption.AcceptAttribute, _)],
-  childs: List[Node]
+  children: List[Node]
 ) extends Tag[TableCaption.AcceptAttribute]

@@ -11,8 +11,8 @@ trait all {
   given canAppendChild[F[_]: Sync]: CanAppendChild[F] =
     SyncCanAppendChild[F]
 
-  given canAppendChilds[F[_]: Sync]: CanAppendChilds[F] =
-    SyncCanAppendChilds[F]
+  given canAppendChildren[F[_]: Sync]: CanAppendChildren[F] =
+    SyncCanAppendChildren[F]
 
   given canApplyAttribute[F[_]: Sync]: CanApplyAttribute[F] =
     SyncCanApplyAttribute[F]

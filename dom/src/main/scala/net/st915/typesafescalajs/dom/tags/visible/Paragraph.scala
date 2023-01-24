@@ -12,10 +12,10 @@ object Paragraph {
   def apply(attributes: (AcceptAttribute, _)*): Paragraph =
     Paragraph(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): Paragraph =
-    Paragraph(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): Paragraph =
+    Paragraph(attributes.toSet, children.toList)
 
 }
 
-final case class Paragraph(attributes: Set[(Paragraph.AcceptAttribute, _)], childs: List[Node])
+final case class Paragraph(attributes: Set[(Paragraph.AcceptAttribute, _)], children: List[Node])
     extends Tag[Paragraph.AcceptAttribute]

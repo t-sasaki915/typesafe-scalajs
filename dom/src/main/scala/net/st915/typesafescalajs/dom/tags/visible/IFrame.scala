@@ -12,10 +12,10 @@ object IFrame {
   def apply(attributes: (AcceptAttribute, _)*): IFrame =
     IFrame(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): IFrame =
-    IFrame(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): IFrame =
+    IFrame(attributes.toSet, children.toList)
 
 }
 
-final case class IFrame(attributes: Set[(IFrame.AcceptAttribute, _)], childs: List[Node])
+final case class IFrame(attributes: Set[(IFrame.AcceptAttribute, _)], children: List[Node])
     extends Tag[IFrame.AcceptAttribute]

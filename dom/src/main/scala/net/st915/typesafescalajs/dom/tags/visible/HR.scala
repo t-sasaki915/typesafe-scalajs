@@ -12,10 +12,10 @@ object HR {
   def apply(attributes: (AcceptAttribute, _)*): HR =
     HR(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): HR =
-    HR(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): HR =
+    HR(attributes.toSet, children.toList)
 
 }
 
-final case class HR(attributes: Set[(HR.AcceptAttribute, _)], childs: List[Node])
+final case class HR(attributes: Set[(HR.AcceptAttribute, _)], children: List[Node])
     extends Tag[HR.AcceptAttribute]

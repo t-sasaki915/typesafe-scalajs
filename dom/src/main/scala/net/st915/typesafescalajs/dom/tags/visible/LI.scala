@@ -12,10 +12,10 @@ object LI {
   def apply(attributes: (AcceptAttribute, _)*): LI =
     LI(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): LI =
-    LI(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): LI =
+    LI(attributes.toSet, children.toList)
 
 }
 
-final case class LI(attributes: Set[(LI.AcceptAttribute, _)], childs: List[Node])
+final case class LI(attributes: Set[(LI.AcceptAttribute, _)], children: List[Node])
     extends Tag[LI.AcceptAttribute]

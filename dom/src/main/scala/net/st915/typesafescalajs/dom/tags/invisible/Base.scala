@@ -12,10 +12,10 @@ object Base {
   def apply(attributes: (AcceptAttribute, _)*): Base =
     Base(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): Base =
-    Base(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): Base =
+    Base(attributes.toSet, children.toList)
 
 }
 
-final case class Base(attributes: Set[(Base.AcceptAttribute, _)], childs: List[Node])
+final case class Base(attributes: Set[(Base.AcceptAttribute, _)], children: List[Node])
     extends Tag[Base.AcceptAttribute]

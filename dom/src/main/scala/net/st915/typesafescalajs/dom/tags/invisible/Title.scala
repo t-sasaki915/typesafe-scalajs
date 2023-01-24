@@ -12,10 +12,10 @@ object Title {
   def apply(attributes: (AcceptAttribute, _)*): Title =
     Title(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): Title =
-    Title(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): Title =
+    Title(attributes.toSet, children.toList)
 
 }
 
-final case class Title(attributes: Set[(Title.AcceptAttribute, _)], childs: List[Node])
+final case class Title(attributes: Set[(Title.AcceptAttribute, _)], children: List[Node])
     extends Tag[Title.AcceptAttribute]

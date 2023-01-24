@@ -8,7 +8,7 @@ import net.st915.typesafescalajs.renderer.typeclasses.*
 import net.st915.typesafescalajs.renderer.util.summonHead
 import net.st915.typesafescalajs.renderer.{Environment, RenderHead}
 
-class SyncRenderHead[F[_]: Sync: CanApplyAttributes: CanConvertNodes: CanAppendChilds]
+class SyncRenderHead[F[_]: Sync: CanApplyAttributes: CanConvertNodes: CanAppendChildren]
     extends RenderHead[F] {
 
   import cats.syntax.all.*
@@ -16,7 +16,7 @@ class SyncRenderHead[F[_]: Sync: CanApplyAttributes: CanConvertNodes: CanAppendC
   override def renderHead(head: Head)(using Environment, IORuntime): F[Unit] = {
     CanApplyAttributes[F].applyAttributes(head.attributes).run(summonHead) >> {
       CanConvertNodes[F].convertNodes andThen
-        CanAppendChilds[F].appendChilds(summonHead) run head.childs
+        CanAppendChildren[F].appendChildren(summonHead) run head.children
     }
   } >> Sync[F].unit
 

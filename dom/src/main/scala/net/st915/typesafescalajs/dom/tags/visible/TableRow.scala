@@ -12,10 +12,10 @@ object TableRow {
   def apply(attributes: (AcceptAttribute, _)*): TableRow =
     TableRow(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): TableRow =
-    TableRow(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): TableRow =
+    TableRow(attributes.toSet, children.toList)
 
 }
 
-final case class TableRow(attributes: Set[(TableRow.AcceptAttribute, _)], childs: List[Node])
+final case class TableRow(attributes: Set[(TableRow.AcceptAttribute, _)], children: List[Node])
     extends Tag[TableRow.AcceptAttribute]

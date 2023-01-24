@@ -20,12 +20,12 @@ class SyncCanConvertNode[
   private def asNativeNode[A <: NativeNode]: Kleisli[F, A, NativeNode] =
     Kleisli { node => Sync[F].pure(node.asInstanceOf[NativeNode]) }
 
-  private def applyChilds[A <: HTMLElement](childs: List[Node])(
+  private def applyChildren[A <: HTMLElement](children: List[Node])(
     using Environment,
     IORuntime
   ): Kleisli[F, A, A] =
     Kleisli { nativeNode =>
-      childs
+      children
         .map(convertNode.run)
         .foldLeftM(nativeNode) { (acc, child) => child >>= CanAppendChild[F].appendChild(acc).run }
     }
@@ -39,7 +39,7 @@ class SyncCanConvertNode[
         case original: Tag[_] =>
           CanCreateNativeElement[F].createNativeElement andThen
             CanApplyAttributes[F].applyAttributes(original.attributes) andThen
-            applyChilds(original.childs) andThen
+            applyChildren(original.children) andThen
             asNativeNode run original
     }
 

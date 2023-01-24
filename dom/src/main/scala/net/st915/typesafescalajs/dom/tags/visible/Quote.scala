@@ -12,10 +12,10 @@ object Quote {
   def apply(attributes: (AcceptAttribute, _)*): Quote =
     Quote(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): Quote =
-    Quote(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): Quote =
+    Quote(attributes.toSet, children.toList)
 
 }
 
-final case class Quote(attributes: Set[(Quote.AcceptAttribute, _)], childs: List[Node])
+final case class Quote(attributes: Set[(Quote.AcceptAttribute, _)], children: List[Node])
     extends Tag[Quote.AcceptAttribute]

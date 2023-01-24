@@ -12,10 +12,10 @@ object Source {
   def apply(attributes: (AcceptAttribute, _)*): Source =
     Source(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): Source =
-    Source(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): Source =
+    Source(attributes.toSet, children.toList)
 
 }
 
-final case class Source(attributes: Set[(Source.AcceptAttribute, _)], childs: List[Node])
+final case class Source(attributes: Set[(Source.AcceptAttribute, _)], children: List[Node])
     extends Tag[Source.AcceptAttribute]

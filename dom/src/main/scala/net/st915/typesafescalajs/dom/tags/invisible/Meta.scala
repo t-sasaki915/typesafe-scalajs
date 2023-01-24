@@ -12,10 +12,10 @@ object Meta {
   def apply(attributes: (AcceptAttribute, _)*): Meta =
     Meta(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): Meta =
-    Meta(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): Meta =
+    Meta(attributes.toSet, children.toList)
 
 }
 
-final case class Meta(attributes: Set[(Meta.AcceptAttribute, _)], childs: List[Node])
+final case class Meta(attributes: Set[(Meta.AcceptAttribute, _)], children: List[Node])
     extends Tag[Meta.AcceptAttribute]

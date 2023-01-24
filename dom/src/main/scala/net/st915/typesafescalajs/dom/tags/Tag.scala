@@ -6,6 +6,6 @@ trait Tag[A] extends Node {
 
   def attributes: Set[(A, _)]
 
-  def childs: List[Node]
+  def children: List[Node]
 
 }

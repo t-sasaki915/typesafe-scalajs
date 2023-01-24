@@ -12,10 +12,10 @@ object Style {
   def apply(attributes: (AcceptAttribute, _)*): Style =
     Style(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): Style =
-    Style(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): Style =
+    Style(attributes.toSet, children.toList)
 
 }
 
-final case class Style(attributes: Set[(Style.AcceptAttribute, _)], childs: List[Node])
+final case class Style(attributes: Set[(Style.AcceptAttribute, _)], children: List[Node])
     extends Tag[Style.AcceptAttribute]

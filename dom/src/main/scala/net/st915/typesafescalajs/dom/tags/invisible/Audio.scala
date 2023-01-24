@@ -12,10 +12,10 @@ object Audio {
   def apply(attributes: (AcceptAttribute, _)*): Audio =
     Audio(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): Audio =
-    Audio(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): Audio =
+    Audio(attributes.toSet, children.toList)
 
 }
 
-final case class Audio(attributes: Set[(Audio.AcceptAttribute, _)], childs: List[Node])
+final case class Audio(attributes: Set[(Audio.AcceptAttribute, _)], children: List[Node])
     extends Tag[Audio.AcceptAttribute]

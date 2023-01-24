@@ -12,10 +12,10 @@ object Canvas {
   def apply(attributes: (AcceptAttribute, _)*): Canvas =
     Canvas(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): Canvas =
-    Canvas(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): Canvas =
+    Canvas(attributes.toSet, children.toList)
 
 }
 
-final case class Canvas(attributes: Set[(Canvas.AcceptAttribute, _)], childs: List[Node])
+final case class Canvas(attributes: Set[(Canvas.AcceptAttribute, _)], children: List[Node])
     extends Tag[Canvas.AcceptAttribute]

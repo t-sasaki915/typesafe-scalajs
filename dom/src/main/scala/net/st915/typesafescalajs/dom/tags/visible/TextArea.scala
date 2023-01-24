@@ -12,10 +12,10 @@ object TextArea {
   def apply(attributes: (AcceptAttribute, _)*): TextArea =
     TextArea(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): TextArea =
-    TextArea(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): TextArea =
+    TextArea(attributes.toSet, children.toList)
 
 }
 
-final case class TextArea(attributes: Set[(TextArea.AcceptAttribute, _)], childs: List[Node])
+final case class TextArea(attributes: Set[(TextArea.AcceptAttribute, _)], children: List[Node])
     extends Tag[TextArea.AcceptAttribute]

@@ -12,10 +12,10 @@ object Link {
   def apply(attributes: (AcceptAttribute, _)*): Link =
     Link(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): Link =
-    Link(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): Link =
+    Link(attributes.toSet, children.toList)
 
 }
 
-final case class Link(attributes: Set[(Link.AcceptAttribute, _)], childs: List[Node])
+final case class Link(attributes: Set[(Link.AcceptAttribute, _)], children: List[Node])
     extends Tag[Link.AcceptAttribute]

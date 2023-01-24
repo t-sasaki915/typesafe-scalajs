@@ -12,10 +12,10 @@ object Legend {
   def apply(attributes: (AcceptAttribute, _)*): Legend =
     Legend(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): Legend =
-    Legend(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): Legend =
+    Legend(attributes.toSet, children.toList)
 
 }
 
-final case class Legend(attributes: Set[(Legend.AcceptAttribute, _)], childs: List[Node])
+final case class Legend(attributes: Set[(Legend.AcceptAttribute, _)], children: List[Node])
     extends Tag[Legend.AcceptAttribute]

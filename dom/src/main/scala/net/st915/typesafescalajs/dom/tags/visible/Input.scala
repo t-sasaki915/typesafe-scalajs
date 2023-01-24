@@ -12,10 +12,10 @@ object Input {
   def apply(attributes: (AcceptAttribute, _)*): Input =
     Input(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): Input =
-    Input(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): Input =
+    Input(attributes.toSet, children.toList)
 
 }
 
-final case class Input(attributes: Set[(Input.AcceptAttribute, _)], childs: List[Node])
+final case class Input(attributes: Set[(Input.AcceptAttribute, _)], children: List[Node])
     extends Tag[Input.AcceptAttribute]

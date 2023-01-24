@@ -9,12 +9,12 @@ object Head {
 
   type AcceptAttribute = GlobalAttribute | HeadAttribute
 
-  def apply(childs: Node*): Head =
-    Head(Set(), childs.toList)
+  def apply(children: Node*): Head =
+    Head(Set(), children.toList)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): Head =
-    Head(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): Head =
+    Head(attributes.toSet, children.toList)
 
 }
 
-final case class Head(attributes: Set[(Head.AcceptAttribute, _)], childs: List[Node])
+final case class Head(attributes: Set[(Head.AcceptAttribute, _)], children: List[Node])

@@ -12,10 +12,10 @@ object Script {
   def apply(attributes: (AcceptAttribute, _)*): Script =
     Script(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): Script =
-    Script(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): Script =
+    Script(attributes.toSet, children.toList)
 
 }
 
-final case class Script(attributes: Set[(Script.AcceptAttribute, _)], childs: List[Node])
+final case class Script(attributes: Set[(Script.AcceptAttribute, _)], children: List[Node])
     extends Tag[Script.AcceptAttribute]

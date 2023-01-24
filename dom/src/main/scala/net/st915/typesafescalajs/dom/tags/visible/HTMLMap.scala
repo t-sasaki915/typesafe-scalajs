@@ -12,10 +12,10 @@ object HTMLMap {
   def apply(attributes: (AcceptAttribute, _)*): HTMLMap =
     HTMLMap(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): HTMLMap =
-    HTMLMap(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): HTMLMap =
+    HTMLMap(attributes.toSet, children.toList)
 
 }
 
-final case class HTMLMap(attributes: Set[(HTMLMap.AcceptAttribute, _)], childs: List[Node])
+final case class HTMLMap(attributes: Set[(HTMLMap.AcceptAttribute, _)], children: List[Node])
     extends Tag[HTMLMap.AcceptAttribute]

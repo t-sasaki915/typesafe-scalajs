@@ -12,10 +12,10 @@ object Dialog {
   def apply(attributes: (AcceptAttribute, _)*): Dialog =
     Dialog(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): Dialog =
-    Dialog(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): Dialog =
+    Dialog(attributes.toSet, children.toList)
 
 }
 
-final case class Dialog(attributes: Set[(Dialog.AcceptAttribute, _)], childs: List[Node])
+final case class Dialog(attributes: Set[(Dialog.AcceptAttribute, _)], children: List[Node])
     extends Tag[Dialog.AcceptAttribute]

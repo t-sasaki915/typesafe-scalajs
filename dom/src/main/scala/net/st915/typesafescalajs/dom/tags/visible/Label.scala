@@ -12,10 +12,10 @@ object Label {
   def apply(attributes: (AcceptAttribute, _)*): Label =
     Label(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): Label =
-    Label(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): Label =
+    Label(attributes.toSet, children.toList)
 
 }
 
-final case class Label(attributes: Set[(Label.AcceptAttribute, _)], childs: List[Node])
+final case class Label(attributes: Set[(Label.AcceptAttribute, _)], children: List[Node])
     extends Tag[Label.AcceptAttribute]

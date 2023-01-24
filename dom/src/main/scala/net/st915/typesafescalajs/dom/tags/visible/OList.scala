@@ -12,10 +12,10 @@ object OList {
   def apply(attributes: (AcceptAttribute, _)*): OList =
     OList(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): OList =
-    OList(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): OList =
+    OList(attributes.toSet, children.toList)
 
 }
 
-final case class OList(attributes: Set[(OList.AcceptAttribute, _)], childs: List[Node])
+final case class OList(attributes: Set[(OList.AcceptAttribute, _)], children: List[Node])
     extends Tag[OList.AcceptAttribute]

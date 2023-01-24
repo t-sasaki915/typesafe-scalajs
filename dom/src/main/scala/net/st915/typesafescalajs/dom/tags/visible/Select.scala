@@ -12,10 +12,10 @@ object Select {
   def apply(attributes: (AcceptAttribute, _)*): Select =
     Select(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): Select =
-    Select(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): Select =
+    Select(attributes.toSet, children.toList)
 
 }
 
-final case class Select(attributes: Set[(Select.AcceptAttribute, _)], childs: List[Node])
+final case class Select(attributes: Set[(Select.AcceptAttribute, _)], children: List[Node])
     extends Tag[Select.AcceptAttribute]

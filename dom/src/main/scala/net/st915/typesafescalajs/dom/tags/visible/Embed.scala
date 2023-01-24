@@ -12,10 +12,10 @@ object Embed {
   def apply(attributes: (AcceptAttribute, _)*): Embed =
     Embed(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): Embed =
-    Embed(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): Embed =
+    Embed(attributes.toSet, children.toList)
 
 }
 
-final case class Embed(attributes: Set[(Embed.AcceptAttribute, _)], childs: List[Node])
+final case class Embed(attributes: Set[(Embed.AcceptAttribute, _)], children: List[Node])
     extends Tag[Embed.AcceptAttribute]

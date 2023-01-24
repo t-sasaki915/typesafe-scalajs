@@ -12,10 +12,10 @@ object Anchor {
   def apply(attributes: (AcceptAttribute, _)*): Anchor =
     Anchor(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): Anchor =
-    Anchor(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): Anchor =
+    Anchor(attributes.toSet, children.toList)
 
 }
 
-final case class Anchor(attributes: Set[(Anchor.AcceptAttribute, _)], childs: List[Node])
+final case class Anchor(attributes: Set[(Anchor.AcceptAttribute, _)], children: List[Node])
     extends Tag[Anchor.AcceptAttribute]

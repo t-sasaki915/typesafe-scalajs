@@ -12,10 +12,10 @@ object Span {
   def apply(attributes: (AcceptAttribute, _)*): Span =
     Span(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): Span =
-    Span(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): Span =
+    Span(attributes.toSet, children.toList)
 
 }
 
-final case class Span(attributes: Set[(Span.AcceptAttribute, _)], childs: List[Node])
+final case class Span(attributes: Set[(Span.AcceptAttribute, _)], children: List[Node])
     extends Tag[Span.AcceptAttribute]

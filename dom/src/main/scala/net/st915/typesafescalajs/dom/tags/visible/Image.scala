@@ -12,10 +12,10 @@ object Image {
   def apply(attributes: (AcceptAttribute, _)*): Image =
     Image(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): Image =
-    Image(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): Image =
+    Image(attributes.toSet, children.toList)
 
 }
 
-final case class Image(attributes: Set[(Image.AcceptAttribute, _)], childs: List[Node])
+final case class Image(attributes: Set[(Image.AcceptAttribute, _)], children: List[Node])
     extends Tag[Image.AcceptAttribute]

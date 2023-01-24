@@ -15,12 +15,12 @@ object TableSection {
   def apply(attributes: (AcceptAttribute, _)*): TableSection =
     TableSection(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): TableSection =
-    TableSection(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): TableSection =
+    TableSection(attributes.toSet, children.toList)
 
 }
 
 final case class TableSection(
   attributes: Set[(TableSection.AcceptAttribute, _)],
-  childs: List[Node]
+  children: List[Node]
 ) extends Tag[TableSection.AcceptAttribute]

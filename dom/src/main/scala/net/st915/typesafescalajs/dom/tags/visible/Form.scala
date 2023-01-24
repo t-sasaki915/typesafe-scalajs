@@ -12,10 +12,10 @@ object Form {
   def apply(attributes: (AcceptAttribute, _)*): Form =
     Form(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): Form =
-    Form(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): Form =
+    Form(attributes.toSet, children.toList)
 
 }
 
-final case class Form(attributes: Set[(Form.AcceptAttribute, _)], childs: List[Node])
+final case class Form(attributes: Set[(Form.AcceptAttribute, _)], children: List[Node])
     extends Tag[Form.AcceptAttribute]

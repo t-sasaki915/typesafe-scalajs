@@ -12,10 +12,10 @@ object Pre {
   def apply(attributes: (AcceptAttribute, _)*): Pre =
     Pre(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): Pre =
-    Pre(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): Pre =
+    Pre(attributes.toSet, children.toList)
 
 }
 
-final case class Pre(attributes: Set[(Pre.AcceptAttribute, _)], childs: List[Node])
+final case class Pre(attributes: Set[(Pre.AcceptAttribute, _)], children: List[Node])
     extends Tag[Pre.AcceptAttribute]

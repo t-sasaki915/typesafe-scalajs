@@ -12,10 +12,10 @@ object Div {
   def apply(attributes: (AcceptAttribute, _)*): Div =
     Div(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): Div =
-    Div(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): Div =
+    Div(attributes.toSet, children.toList)
 
 }
 
-final case class Div(attributes: Set[(Div.AcceptAttribute, _)], childs: List[Node])
+final case class Div(attributes: Set[(Div.AcceptAttribute, _)], children: List[Node])
     extends Tag[Div.AcceptAttribute]

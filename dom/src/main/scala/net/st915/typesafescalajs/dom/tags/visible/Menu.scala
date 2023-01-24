@@ -12,10 +12,10 @@ object Menu {
   def apply(attributes: (AcceptAttribute, _)*): Menu =
     Menu(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): Menu =
-    Menu(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): Menu =
+    Menu(attributes.toSet, children.toList)
 
 }
 
-final case class Menu(attributes: Set[(Menu.AcceptAttribute, _)], childs: List[Node])
+final case class Menu(attributes: Set[(Menu.AcceptAttribute, _)], children: List[Node])
     extends Tag[Menu.AcceptAttribute]

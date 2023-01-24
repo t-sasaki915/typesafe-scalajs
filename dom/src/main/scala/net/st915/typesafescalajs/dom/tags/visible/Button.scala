@@ -12,10 +12,10 @@ object Button {
   def apply(attributes: (AcceptAttribute, _)*): Button =
     Button(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): Button =
-    Button(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): Button =
+    Button(attributes.toSet, children.toList)
 
 }
 
-final case class Button(attributes: Set[(Button.AcceptAttribute, _)], childs: List[Node])
+final case class Button(attributes: Set[(Button.AcceptAttribute, _)], children: List[Node])
     extends Tag[Button.AcceptAttribute]

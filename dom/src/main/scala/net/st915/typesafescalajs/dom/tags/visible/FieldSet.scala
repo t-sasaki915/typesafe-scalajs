@@ -12,10 +12,10 @@ object FieldSet {
   def apply(attributes: (AcceptAttribute, _)*): FieldSet =
     FieldSet(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): FieldSet =
-    FieldSet(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): FieldSet =
+    FieldSet(attributes.toSet, children.toList)
 
 }
 
-final case class FieldSet(attributes: Set[(FieldSet.AcceptAttribute, _)], childs: List[Node])
+final case class FieldSet(attributes: Set[(FieldSet.AcceptAttribute, _)], children: List[Node])
     extends Tag[FieldSet.AcceptAttribute]

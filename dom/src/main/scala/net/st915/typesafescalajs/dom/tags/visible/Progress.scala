@@ -12,10 +12,10 @@ object Progress {
   def apply(attributes: (AcceptAttribute, _)*): Progress =
     Progress(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): Progress =
-    Progress(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): Progress =
+    Progress(attributes.toSet, children.toList)
 
 }
 
-final case class Progress(attributes: Set[(Progress.AcceptAttribute, _)], childs: List[Node])
+final case class Progress(attributes: Set[(Progress.AcceptAttribute, _)], children: List[Node])
     extends Tag[Progress.AcceptAttribute]

@@ -12,10 +12,10 @@ object H4 {
   def apply(attributes: (AcceptAttribute, _)*): H4 =
     H4(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): H4 =
-    H4(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): H4 =
+    H4(attributes.toSet, children.toList)
 
 }
 
-final case class H4(attributes: Set[(H4.AcceptAttribute, _)], childs: List[Node])
+final case class H4(attributes: Set[(H4.AcceptAttribute, _)], children: List[Node])
     extends Tag[H4.AcceptAttribute]

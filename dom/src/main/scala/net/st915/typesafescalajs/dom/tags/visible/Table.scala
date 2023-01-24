@@ -12,10 +12,10 @@ object Table {
   def apply(attributes: (AcceptAttribute, _)*): Table =
     Table(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): Table =
-    Table(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): Table =
+    Table(attributes.toSet, children.toList)
 
 }
 
-final case class Table(attributes: Set[(Table.AcceptAttribute, _)], childs: List[Node])
+final case class Table(attributes: Set[(Table.AcceptAttribute, _)], children: List[Node])
     extends Tag[Table.AcceptAttribute]

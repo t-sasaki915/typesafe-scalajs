@@ -12,10 +12,10 @@ object HTMLOption {
   def apply(attributes: (AcceptAttribute, _)*): HTMLOption =
     HTMLOption(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): HTMLOption =
-    HTMLOption(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): HTMLOption =
+    HTMLOption(attributes.toSet, children.toList)
 
 }
 
-final case class HTMLOption(attributes: Set[(HTMLOption.AcceptAttribute, _)], childs: List[Node])
+final case class HTMLOption(attributes: Set[(HTMLOption.AcceptAttribute, _)], children: List[Node])
     extends Tag[HTMLOption.AcceptAttribute]

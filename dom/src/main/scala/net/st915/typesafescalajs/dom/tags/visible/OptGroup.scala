@@ -12,10 +12,10 @@ object OptGroup {
   def apply(attributes: (AcceptAttribute, _)*): OptGroup =
     OptGroup(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): OptGroup =
-    OptGroup(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): OptGroup =
+    OptGroup(attributes.toSet, children.toList)
 
 }
 
-final case class OptGroup(attributes: Set[(OptGroup.AcceptAttribute, _)], childs: List[Node])
+final case class OptGroup(attributes: Set[(OptGroup.AcceptAttribute, _)], children: List[Node])
     extends Tag[OptGroup.AcceptAttribute]

@@ -12,10 +12,10 @@ object Video {
   def apply(attributes: (AcceptAttribute, _)*): Video =
     Video(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): Video =
-    Video(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): Video =
+    Video(attributes.toSet, children.toList)
 
 }
 
-final case class Video(attributes: Set[(Video.AcceptAttribute, _)], childs: List[Node])
+final case class Video(attributes: Set[(Video.AcceptAttribute, _)], children: List[Node])
     extends Tag[Video.AcceptAttribute]

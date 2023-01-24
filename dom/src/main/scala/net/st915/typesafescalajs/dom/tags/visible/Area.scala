@@ -12,10 +12,10 @@ object Area {
   def apply(attributes: (AcceptAttribute, _)*): Area =
     Area(attributes.toSet, Nil)
 
-  def apply(attributes: (AcceptAttribute, _)*)(childs: Node*): Area =
-    Area(attributes.toSet, childs.toList)
+  def apply(attributes: (AcceptAttribute, _)*)(children: Node*): Area =
+    Area(attributes.toSet, children.toList)
 
 }
 
-final case class Area(attributes: Set[(Area.AcceptAttribute, _)], childs: List[Node])
+final case class Area(attributes: Set[(Area.AcceptAttribute, _)], children: List[Node])
     extends Tag[Area.AcceptAttribute]
