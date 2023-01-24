@@ -27,24 +27,30 @@ val emptyButton = Button()
 
 #### Create Element with attributes
 ```scala
-val paragraphWithId = Paragraph(id := "text")
-val divWithClassName = Div(className := "container")
-val disabledButtonWithClickEvent = Button(onClick := (_ => IO(println("clicked"))), disabled)
+val paragraphWithId =
+  Paragraph(id := "text")
+val divWithClassName =
+  Div(className := "container")
+val disabledButtonWithClickEvent =
+  Button(onClick := (_ => IO(println("clicked"))), disabled)
 ```
 
 #### Create Element with children
 ```scala
-val paragraphWithTextNode = Paragraph() {
-  "Text" // or TextNode("Text")
-}
-val divWithThreeChildren = Div()(
-  Div(className := "child"),
-  Div(className := "child"),
-  Div(className := "child")
-)
-val buttonWithTextNode = Button() {
-  "Button"
-}
+val paragraphWithTextNode =
+  Paragraph() {
+    "Text" // or TextNode("Text")
+  }
+val divWithThreeChildren =
+  Div()(
+    Div(className := "child"),
+    Div(className := "child"),
+    Div(className := "child")
+  )
+val buttonWithTextNode =
+  Button() {
+    "Button"
+  }
 ```
 
 #### Create Element with attributes and children
@@ -73,20 +79,22 @@ val disabledButtonWithClickEventAndTextNode =
 
 #### Create Head Element
 ```scala
-val headWithTitle = Head {
-  Title() {
-    "Page Title"
+val headWithTitle =
+  Head {
+    Title() {
+      "Page Title"
+    }
   }
-}
 ```
 
 #### Create Body Element
 ```scala
-val bodyWithThreeChildren = Body(
-  Div(className := "child"),
-  Div(className := "child"),
-  Div(className := "child")
-)
+val bodyWithThreeChildren =
+  Body(
+    Div(className := "child"),
+    Div(className := "child"),
+    Div(className := "child")
+  )
 ```
 
 ## HTMLApp
