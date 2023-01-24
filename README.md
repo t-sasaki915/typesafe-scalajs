@@ -4,7 +4,7 @@ Typesafe scalajs
 # Try Example Code
 ```bash
 docker build -t typesafe-scalajs-example .
-docker start -p "8080:80" typesafe-scalajs-example
+docker run -p "8080:80" typesafe-scalajs-example
 ```
 
 # Examples
