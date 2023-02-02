@@ -1,5 +1,5 @@
 # typesafe-scalajs
-Typesafe scalajs
+Typesafe Scala.js
 
 # Try Example Code
 ```bash
