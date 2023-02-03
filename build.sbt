@@ -1,5 +1,5 @@
 ThisBuild / version := "1.0.0"
-ThisBuild / description := "Typesafe scalajs"
+ThisBuild / description := "Typesafe Scala.js"
 ThisBuild / scalaVersion := "3.2.1"
 
 ThisBuild / semanticdbEnabled := true
