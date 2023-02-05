@@ -4,9 +4,9 @@ import cats.effect.Sync
 import cats.effect.unsafe.IORuntime
 import net.st915.typesafescalajs.dom.tags.Tag
 import net.st915.typesafescalajs.dom.tags.special.Head
+import net.st915.typesafescalajs.renderer.Environment
 import net.st915.typesafescalajs.renderer.typeclasses.*
 import net.st915.typesafescalajs.renderer.util.summonHead
-import net.st915.typesafescalajs.renderer.Environment
 
 class SyncCanRenderHead[F[_]: Sync: CanApplyAttributes: CanConvertNodes: CanAppendChildren]
     extends CanRenderHead[F] {

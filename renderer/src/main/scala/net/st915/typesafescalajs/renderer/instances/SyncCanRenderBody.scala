@@ -4,9 +4,9 @@ import cats.effect.Sync
 import cats.effect.unsafe.IORuntime
 import net.st915.typesafescalajs.dom.tags.Tag
 import net.st915.typesafescalajs.dom.tags.special.Body
+import net.st915.typesafescalajs.renderer.Environment
 import net.st915.typesafescalajs.renderer.typeclasses.*
 import net.st915.typesafescalajs.renderer.util.summonBody
-import net.st915.typesafescalajs.renderer.Environment
 
 class SyncCanRenderBody[F[_]: Sync: CanApplyAttributes: CanConvertNodes: CanAppendChildren]
     extends CanRenderBody[F] {
