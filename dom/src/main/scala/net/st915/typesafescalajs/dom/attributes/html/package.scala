@@ -251,10 +251,6 @@ package object html {
 
   case object onOnline extends Attribute[Event => IO[Unit]] with BodyAttribute
 
-  case object onPageHide extends Attribute[PageTransitionEvent => IO[Unit]] with BodyAttribute
-
-  case object onPageShow extends Attribute[PageTransitionEvent => IO[Unit]] with BodyAttribute
-
   case object onPaste extends Attribute[ClipboardEvent => IO[Unit]] with VisibleElementAttribute
 
   case object onPause extends Attribute[Event => IO[Unit]] with AudioAttribute with VideoAttribute

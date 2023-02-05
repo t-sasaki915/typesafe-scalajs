@@ -97,8 +97,6 @@ trait all {
   final val onMouseWheel = html.onMouseWheel
   final val onOffline = html.onOffline
   final val onOnline = html.onOnline
-  final val onPageHide = html.onPageHide
-  final val onPageShow = html.onPageShow
   final val onPaste = html.onPaste
   final val onPause = html.onPause
   final val onPlay = html.onPlay

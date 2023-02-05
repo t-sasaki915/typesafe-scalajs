@@ -534,6 +534,72 @@ class SyncCanApplyAttribute[F[_]: Sync] extends CanApplyAttribute[F] {
             value match
               case v: (WheelEvent => IO[Unit]) =>
                 element.tap(_.onmousewheel = v.unsafeRunWithValue)
+          case (_: onOffline.type, value: (_ => _)) =>
+            value match
+              case v: (Event => IO[Unit]) =>
+                element match
+                  case e: HTMLBodyElement =>
+                    e.tap(_.onoffline = v.unsafeRunWithValue)
+          case (_: onOnline.type, value: (_ => _)) =>
+            value match
+              case v: (Event => IO[Unit]) =>
+                element match
+                  case e: HTMLBodyElement =>
+                    e.tap(_.ononline = v.unsafeRunWithValue)
+          case (_: onPaste.type, value: (_ => _)) =>
+            value match
+              case v: (ClipboardEvent => IO[Unit]) =>
+                element.tap(_.onpaste = v.unsafeRunWithValue)
+          case (_: onPause.type, value: (_ => _)) =>
+            value match
+              case v: (Event => IO[Unit]) =>
+                element match
+                  case e: HTMLAudioElement =>
+                    e.tap(_.onpause = v.unsafeRunWithValue)
+                  case e: HTMLVideoElement =>
+                    e.tap(_.onpause = v.unsafeRunWithValue)
+          case (_: onPlay.type, value: (_ => _)) =>
+            value match
+              case v: (Event => IO[Unit]) =>
+                element match
+                  case e: HTMLAudioElement =>
+                    e.tap(_.onplay = v.unsafeRunWithValue)
+                  case e: HTMLVideoElement =>
+                    e.tap(_.onplay = v.unsafeRunWithValue)
+          case (_: onPlaying.type, value: (_ => _)) =>
+            value match
+              case v: (Event => IO[Unit]) =>
+                element match
+                  case e: HTMLAudioElement =>
+                    e.tap(_.onplaying = v.unsafeRunWithValue)
+                  case e: HTMLVideoElement =>
+                    e.tap(_.onplaying = v.unsafeRunWithValue)
+          case (_: onPopState.type, value: (_ => _)) =>
+            value match
+              case v: (PopStateEvent => IO[Unit]) =>
+                element match
+                  case e: HTMLBodyElement =>
+                    e.tap(_.onpopstate = v.unsafeRunWithValue)
+          case (_: onRateChange.type, value: (_ => _)) =>
+            value match
+              case v: (Event => IO[Unit]) =>
+                element match
+                  case e: HTMLAudioElement =>
+                    e.tap(_.onratechange = v.unsafeRunWithValue)
+                  case e: HTMLVideoElement =>
+                    e.tap(_.onratechange = v.unsafeRunWithValue)
+          case (_: onReset.type, value: (_ => _)) =>
+            value match
+              case v: (Event => IO[Unit]) =>
+                element match
+                  case e: HTMLFormElement =>
+                    e.tap(_.onreset = v.unsafeRunWithValue)
+          case (_: onResize.type, value: (_ => _)) =>
+            value match
+              case v: (UIEvent => IO[Unit]) =>
+                element match
+                  case e: HTMLBodyElement =>
+                    e.tap(_.onresize = v.unsafeRunWithValue)
       }
     }
 
