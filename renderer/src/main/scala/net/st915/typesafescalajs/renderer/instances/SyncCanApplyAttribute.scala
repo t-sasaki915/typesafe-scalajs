@@ -600,6 +600,66 @@ class SyncCanApplyAttribute[F[_]: Sync] extends CanApplyAttribute[F] {
                 element match
                   case e: HTMLBodyElement =>
                     e.tap(_.onresize = v.unsafeRunWithValue)
+          case (_: onScroll.type, value: (_ => _)) =>
+            value match
+              case v: (UIEvent => IO[Unit]) =>
+                element.tap(_.onscroll = v.unsafeRunWithValue)
+          case (_: onSeeked.type, value: (_ => _)) =>
+            value match
+              case v: (Event => IO[Unit]) =>
+                element match
+                  case e: HTMLAudioElement =>
+                    e.tap(_.onseeked = v.unsafeRunWithValue)
+                  case e: HTMLVideoElement =>
+                    e.tap(_.onseeked = v.unsafeRunWithValue)
+          case (_: onSeeking.type, value: (_ => _)) =>
+            value match
+              case v: (Event => IO[Unit]) =>
+                element match
+                  case e: HTMLAudioElement =>
+                    e.tap(_.onseeking = v.unsafeRunWithValue)
+                  case e: HTMLVideoElement =>
+                    e.tap(_.onseeking = v.unsafeRunWithValue)
+          case (_: onSelect.type, value: (_ => _)) =>
+            value match
+              case v: (UIEvent => IO[Unit]) =>
+                element.tap(_.onselect = v.unsafeRunWithValue)
+          case (_: onStalled.type, value: (_ => _)) =>
+            value match
+              case v: (Event => IO[Unit]) =>
+                element match
+                  case e: HTMLAudioElement =>
+                    e.tap(_.onstalled = v.unsafeRunWithValue)
+                  case e: HTMLVideoElement =>
+                    e.tap(_.onstalled = v.unsafeRunWithValue)
+          case (_: onStorage.type, value: (_ => _)) =>
+            value match
+              case v: (StorageEvent => IO[Unit]) =>
+                element match
+                  case e: HTMLBodyElement =>
+                    e.tap(_.onstorage = v.unsafeRunWithValue)
+          case (_: onSubmit.type, value: (_ => _)) =>
+            value match
+              case v: (Event => IO[Unit]) =>
+                element match
+                  case e: HTMLFormElement =>
+                    e.tap(_.onsubmit = v.unsafeRunWithValue)
+          case (_: onSuspend.type, value: (_ => _)) =>
+            value match
+              case v: (Event => IO[Unit]) =>
+                element match
+                  case e: HTMLAudioElement =>
+                    e.tap(_.onsuspend = v.unsafeRunWithValue)
+                  case e: HTMLVideoElement =>
+                    e.tap(_.onsuspend = v.unsafeRunWithValue)
+          case (_: onTimeUpdate.type, value: (_ => _)) =>
+            value match
+              case v: (Event => IO[Unit]) =>
+                element match
+                  case e: HTMLAudioElement =>
+                    e.tap(_.ontimeupdate = v.unsafeRunWithValue)
+                  case e: HTMLVideoElement =>
+                    e.tap(_.ontimeupdate = v.unsafeRunWithValue)
       }
     }
 
