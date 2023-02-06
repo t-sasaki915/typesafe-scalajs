@@ -690,6 +690,63 @@ class SyncCanApplyAttribute[F[_]: Sync] extends CanApplyAttribute[F] {
                     e.tap(_.onwheel = v.unsafeRunWithValue)
                   case e: HTMLVideoElement =>
                     e.tap(_.onwheel = v.unsafeRunWithValue)
+          case (_: pattern.type, value: String) =>
+            element match
+              case e: HTMLInputElement =>
+                e.tap(_.pattern = value)
+          case (_: placeholder.type, value: String) =>
+            element match
+              case e: HTMLInputElement =>
+                e.tap(_.placeholder = value)
+              case e: HTMLTextAreaElement =>
+                e.tap(_.placeholder = value)
+          case (_: poster.type, value: String) =>
+            element match
+              case e: HTMLVideoElement =>
+                e.tap(_.poster = value)
+          case (_: preload.type, value: String) =>
+            element match
+              case e: HTMLAudioElement =>
+                e.tap(_.preload = value)
+              case e: HTMLVideoElement =>
+                e.tap(_.preload = value)
+          case (_: readonly.type, value: Boolean) =>
+            element match
+              case e: HTMLInputElement =>
+                e.tap(_.readOnly = value)
+              case e: HTMLTextAreaElement =>
+                e.tap(_.readOnly = value)
+          case (_: rel.type, value: String) =>
+            element match
+              case e: HTMLAnchorElement =>
+                e.tap(_.rel = value)
+              case e: HTMLLinkElement =>
+                e.tap(_.rel = value)
+          case (_: required.type, value: Boolean) =>
+            element match
+              case e: HTMLInputElement =>
+                e.tap(_.required = value)
+              case e: HTMLSelectElement =>
+                e.tap(_.required = value)
+              case e: HTMLTextAreaElement =>
+                e.tap(_.required = value)
+          case (_: rows.type, value: Int) =>
+            element match
+              case e: HTMLTextAreaElement =>
+                e.tap(_.rows = value)
+          case (_: rowSpan.type, value: Int) =>
+            element match
+              case e: HTMLTableCellElement =>
+                e.tap(_.rowSpan = value)
+          case (_: sandbox.type, value: Boolean /* not Boolean. List */) =>
+            // TODO
+            element match
+              case e: HTMLIFrameElement =>
+                e
+          case (_: selected.type, value: Boolean) =>
+            element match
+              case e: HTMLOptionElement =>
+                e.tap(_.selected = value)
       }
     }
 

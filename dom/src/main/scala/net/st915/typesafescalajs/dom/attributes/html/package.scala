@@ -307,21 +307,16 @@ package object html {
 
   case object readonly extends FlagAttribute with InputAttribute with TextAreaAttribute
 
-  case object rel extends Attribute[String] with AnchorAttribute with AreaAttribute
-      with FormAttribute with LinkAttribute
+  case object rel extends Attribute[String] with AnchorAttribute with LinkAttribute
 
   case object required extends FlagAttribute with InputAttribute with SelectAttribute
       with TextAreaAttribute
 
-  case object reversed extends FlagAttribute with OListAttribute
-
   case object rows extends Attribute[Int] with TextAreaAttribute
 
-  case object rowSpan extends Attribute[Int] with TableCellAttribute with TableRowAttribute
+  case object rowSpan extends Attribute[Int] with TableCellAttribute
 
   case object sandbox extends FlagAttribute with IFrameAttribute
-
-  case object scope extends Attribute[String] with TableRowAttribute
 
   case object selected extends FlagAttribute with OptionAttribute
 

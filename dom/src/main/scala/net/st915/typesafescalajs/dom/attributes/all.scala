@@ -125,11 +125,9 @@ trait all {
   final val readonly = html.readonly
   final val rel = html.rel
   final val required = html.required
-  final val reversed = html.reversed
   final val rows = html.rows
   final val rowSpan = html.rowSpan
   final val sandbox = html.sandbox
-  final val scope = html.scope
   final val selected = html.selected
   final val shape = html.shape
   final val size = html.size
