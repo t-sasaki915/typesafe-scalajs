@@ -747,6 +747,118 @@ class SyncCanApplyAttribute[F[_]: Sync] extends CanApplyAttribute[F] {
             element match
               case e: HTMLOptionElement =>
                 e.tap(_.selected = value)
+          case (_: shape.type, value: String) =>
+            element match
+              case e: HTMLAreaElement =>
+                e.tap(_.shape = value)
+          case (_: size.type, value: Int) =>
+            element match
+              case e: HTMLInputElement =>
+                e.tap(_.size = value)
+              case e: HTMLSelectElement =>
+                e.tap(_.size = value)
+          case (_: span.type, value: Int) =>
+            element match
+              case e: HTMLTableColElement =>
+                e.tap(_.span = value)
+          case (_: src.type, value: String) =>
+            element match
+              case e: HTMLAudioElement =>
+                e.tap(_.src = value)
+              case e: HTMLEmbedElement =>
+                e.tap(_.src = value)
+              case e: HTMLIFrameElement =>
+                e.tap(_.src = value)
+              case e: HTMLImageElement =>
+                e.tap(_.src = value)
+              case e: HTMLInputElement =>
+                e.tap(_.src = value)
+              case e: HTMLScriptElement =>
+                e.tap(_.src = value)
+              case e: HTMLSourceElement =>
+                e.tap(_.src = value)
+              case e: HTMLTrackElement =>
+                e.tap(_.src = value)
+              case e: HTMLVideoElement =>
+                e.tap(_.src = value)
+          case (_: srcLang.type, value: String) =>
+            element match
+              case e: HTMLTrackElement =>
+                e.tap(_.srclang = value)
+          case (_: start.type, value: Int) =>
+            element match
+              case e: HTMLOListElement =>
+                e.tap(_.start = value)
+          case (_: step.type, value: Int) =>
+            element match
+              case e: HTMLInputElement =>
+                e.tap(_.step = value.toString)
+          case (_: target.type, value: String) =>
+            element match
+              case e: HTMLAnchorElement =>
+                e.tap(_.target = value)
+              case e: HTMLAreaElement =>
+                e.tap(_.target = value)
+              case e: HTMLBaseElement =>
+                e.tap(_.target = value)
+              case e: HTMLFormElement =>
+                e.tap(_.target = value)
+          case (_: `type`.type, value: String) =>
+            element match
+              case e: HTMLAnchorElement =>
+                e.tap(_.`type` = value)
+              case e: HTMLButtonElement =>
+                e.tap(_.`type` = value)
+              case e: HTMLInputElement =>
+                e.tap(_.`type` = value)
+              case e: HTMLLinkElement =>
+                e.tap(_.`type` = value)
+              case e: HTMLMenuElement =>
+                e.tap(_.`type` = value)
+              case e: HTMLObjectElement =>
+                e.tap(_.`type` = value)
+              case e: HTMLScriptElement =>
+                e.tap(_.`type` = value)
+              case e: HTMLSourceElement =>
+                e.tap(_.`type` = value)
+              case e: HTMLStyleElement =>
+                e.tap(_.`type` = value)
+          case (_: useMap.type, value: String) =>
+            element match
+              case e: HTMLImageElement =>
+                e.tap(_.useMap = value)
+              case e: HTMLObjectElement =>
+                e.tap(_.useMap = value)
+          case (_: value.type, value: String) =>
+            element match
+              case e: HTMLButtonElement =>
+                e.tap(_.value = value)
+              case e: HTMLInputElement =>
+                e.tap(_.value = value)
+              case e: HTMLOptionElement =>
+                e.tap(_.value = value)
+              case e: HTMLParamElement =>
+                e.tap(_.value = value)
+          case (_: width.type, value: Int) =>
+            element match
+              case e: HTMLCanvasElement =>
+                e.tap(_.width = value)
+              case e: HTMLEmbedElement =>
+                e.tap(_.width = value.toString)
+              case e: HTMLIFrameElement =>
+                e.tap(_.width = value.toString)
+              case e: HTMLImageElement =>
+                e.tap(_.width = value)
+              case e: HTMLInputElement =>
+                e.tap(_.width = value.toString)
+              case e: HTMLObjectElement =>
+                e.tap(_.width = value.toString)
+              case e: HTMLVideoElement =>
+                e.tap(_.width = value)
+          case (_: wrap.type, value: String) =>
+            element match
+              case e: HTMLTextAreaElement =>
+                e.tap(_.wrap = value)
       }
     }
 

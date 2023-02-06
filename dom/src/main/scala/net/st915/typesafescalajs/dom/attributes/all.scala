@@ -131,12 +131,9 @@ trait all {
   final val selected = html.selected
   final val shape = html.shape
   final val size = html.size
-  final val sizes = html.sizes
   final val span = html.span
   final val src = html.src
-  final val srcDoc = html.srcDoc
   final val srcLang = html.srcLang
-  final val srcSet = html.srcSet
   final val start = html.start
   final val step = html.step
   final val target = html.target

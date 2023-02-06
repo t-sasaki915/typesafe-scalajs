@@ -324,20 +324,13 @@ package object html {
 
   case object size extends Attribute[Int] with InputAttribute with SelectAttribute
 
-  case object sizes extends Attribute[String] with ImageAttribute with LinkAttribute
-      with SourceAttribute
-
-  case object span extends Attribute[Int] with TableColAttribute with TableSectionAttribute
+  case object span extends Attribute[Int] with TableColAttribute
 
   case object src extends Attribute[String] with AudioAttribute with EmbedAttribute
       with IFrameAttribute with ImageAttribute with InputAttribute with ScriptAttribute
       with SourceAttribute with TrackAttribute with VideoAttribute
 
-  case object srcDoc extends Attribute[String] with IFrameAttribute
-
   case object srcLang extends Attribute[String] with TrackAttribute
-
-  case object srcSet extends Attribute[String] with ImageAttribute with SourceAttribute
 
   case object start extends Attribute[Int] with OListAttribute
 
@@ -347,8 +340,8 @@ package object html {
       with BaseAttribute with FormAttribute
 
   case object `type` extends Attribute[String] with AnchorAttribute with ButtonAttribute
-      with EmbedAttribute with InputAttribute with LinkAttribute with MenuAttribute
-      with ObjectAttribute with ScriptAttribute with SourceAttribute with StyleAttribute
+      with InputAttribute with LinkAttribute with MenuAttribute with ObjectAttribute
+      with ScriptAttribute with SourceAttribute with StyleAttribute
 
   case object useMap extends Attribute[String] with ImageAttribute with ObjectAttribute
 
