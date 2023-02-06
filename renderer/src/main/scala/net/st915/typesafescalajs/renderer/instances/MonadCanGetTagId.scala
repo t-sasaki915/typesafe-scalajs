@@ -5,7 +5,7 @@ import cats.data.Kleisli
 import net.st915.typesafescalajs.dom.tags.Tag
 import net.st915.typesafescalajs.renderer.typeclasses.CanGetTagId
 
-class MonadCanGetTagId[F[_]: Monad] extends CanGetTagId[F] {
+final class MonadCanGetTagId[F[_]: Monad] extends CanGetTagId[F] {
 
   import net.st915.typesafescalajs.dom.tags.all.*
 

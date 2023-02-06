@@ -8,7 +8,7 @@ import net.st915.typesafescalajs.renderer.Environment
 import net.st915.typesafescalajs.renderer.domain.typealiases.NativeNode
 import net.st915.typesafescalajs.renderer.typeclasses.*
 
-class SyncCanConvertNodes[F[_]: Sync: CanConvertNode] extends CanConvertNodes[F] {
+final class SyncCanConvertNodes[F[_]: Sync: CanConvertNode] extends CanConvertNodes[F] {
 
   import cats.syntax.all.*
 

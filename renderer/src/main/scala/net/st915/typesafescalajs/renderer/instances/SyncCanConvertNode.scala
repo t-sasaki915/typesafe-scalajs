@@ -11,7 +11,7 @@ import net.st915.typesafescalajs.renderer.domain.typealiases.NativeNode
 import net.st915.typesafescalajs.renderer.typeclasses.*
 import org.scalajs.dom.HTMLElement
 
-class SyncCanConvertNode[
+final class SyncCanConvertNode[
   F[_]: Sync: CanApplyAttributes: CanCreateNativeTextNode: CanCreateNativeElement: CanAppendChild
 ] extends CanConvertNode[F] {
 

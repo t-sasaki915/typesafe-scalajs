@@ -8,7 +8,7 @@ import net.st915.typesafescalajs.renderer.typeclasses.*
 import net.st915.typesafescalajs.renderer.util.summonDocument
 import org.scalajs.dom.HTMLElement
 
-class SyncCanCreateNativeElement[F[_]: Sync: CanGetTagId] extends CanCreateNativeElement[F] {
+final class SyncCanCreateNativeElement[F[_]: Sync: CanGetTagId] extends CanCreateNativeElement[F] {
 
   import cats.syntax.flatMap.*
 

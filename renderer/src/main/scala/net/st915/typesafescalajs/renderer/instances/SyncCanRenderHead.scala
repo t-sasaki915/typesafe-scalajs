@@ -8,7 +8,7 @@ import net.st915.typesafescalajs.renderer.Environment
 import net.st915.typesafescalajs.renderer.typeclasses.*
 import net.st915.typesafescalajs.renderer.util.summonHead
 
-class SyncCanRenderHead[F[_]: Sync: CanApplyAttributes: CanConvertNodes: CanAppendChildren]
+final class SyncCanRenderHead[F[_]: Sync: CanApplyAttributes: CanConvertNodes: CanAppendChildren]
     extends CanRenderHead[F] {
 
   import cats.syntax.all.*

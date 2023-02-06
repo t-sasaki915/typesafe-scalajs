@@ -6,7 +6,7 @@ import cats.effect.unsafe.IORuntime
 import net.st915.typesafescalajs.renderer.typeclasses.*
 import org.scalajs.dom.HTMLElement
 
-class SyncCanApplyAttributes[F[_]: Sync: CanApplyAttribute] extends CanApplyAttributes[F] {
+final class SyncCanApplyAttributes[F[_]: Sync: CanApplyAttribute] extends CanApplyAttributes[F] {
 
   import cats.syntax.all.*
 

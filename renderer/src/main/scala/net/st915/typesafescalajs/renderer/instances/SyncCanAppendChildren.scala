@@ -5,7 +5,7 @@ import cats.effect.Sync
 import net.st915.typesafescalajs.renderer.domain.typealiases.NativeNode
 import net.st915.typesafescalajs.renderer.typeclasses.*
 
-class SyncCanAppendChildren[F[_]: Sync: CanAppendChild] extends CanAppendChildren[F] {
+final class SyncCanAppendChildren[F[_]: Sync: CanAppendChild] extends CanAppendChildren[F] {
 
   import cats.syntax.all.*
 

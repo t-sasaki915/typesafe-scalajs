@@ -10,7 +10,7 @@ import org.scalajs.dom.*
 
 import scala.util.chaining.*
 
-class SyncCanApplyAttribute[F[_]: Sync] extends CanApplyAttribute[F] {
+final class SyncCanApplyAttribute[F[_]: Sync] extends CanApplyAttribute[F] {
 
   import net.st915.typesafescalajs.dom.attributes.all.*
 
