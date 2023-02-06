@@ -5,7 +5,7 @@ import net.st915.typesafescalajs.renderer.domain.typealiases.NativeNode
 
 object CanAppendChildren {
 
-  def apply[F[_]](using ev: CanAppendChildren[F]): CanAppendChildren[F] = ev
+  def apply[F[_]](using CanAppendChildren[F]): CanAppendChildren[F] = summon
 
 }
 

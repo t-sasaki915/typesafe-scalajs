@@ -6,7 +6,7 @@ import net.st915.typesafescalajs.renderer.domain.typealiases.NativeTextNode
 
 object CanCreateNativeTextNode {
 
-  def apply[F[_]](using ev: CanCreateNativeTextNode[F]): CanCreateNativeTextNode[F] = ev
+  def apply[F[_]](using CanCreateNativeTextNode[F]): CanCreateNativeTextNode[F] = summon
 
 }
 

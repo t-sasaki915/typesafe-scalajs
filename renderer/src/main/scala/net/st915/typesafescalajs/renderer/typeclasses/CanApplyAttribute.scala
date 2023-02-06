@@ -6,7 +6,7 @@ import org.scalajs.dom.HTMLElement
 
 object CanApplyAttribute {
 
-  def apply[F[_]](using ev: CanApplyAttribute[F]): CanApplyAttribute[F] = ev
+  def apply[F[_]](using CanApplyAttribute[F]): CanApplyAttribute[F] = summon
 
 }
 

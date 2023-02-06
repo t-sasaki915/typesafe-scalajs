@@ -6,7 +6,7 @@ import net.st915.typesafescalajs.renderer.Environment
 
 object CanRenderBody {
 
-  def apply[F[_]](using ev: CanRenderBody[F]): CanRenderBody[F] = ev
+  def apply[F[_]](using CanRenderBody[F]): CanRenderBody[F] = summon
 
 }
 

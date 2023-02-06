@@ -8,7 +8,7 @@ import net.st915.typesafescalajs.renderer.domain.typealiases.NativeNode
 
 object CanConvertNodes {
 
-  def apply[F[_]](using ev: CanConvertNodes[F]): CanConvertNodes[F] = ev
+  def apply[F[_]](using CanConvertNodes[F]): CanConvertNodes[F] = summon
 
 }
 

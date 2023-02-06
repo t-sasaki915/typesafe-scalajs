@@ -7,7 +7,7 @@ import org.scalajs.dom.HTMLElement
 
 object CanCreateNativeElement {
 
-  def apply[F[_]](using ev: CanCreateNativeElement[F]): CanCreateNativeElement[F] = ev
+  def apply[F[_]](using CanCreateNativeElement[F]): CanCreateNativeElement[F] = summon
 
 }
 

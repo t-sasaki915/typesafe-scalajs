@@ -5,7 +5,7 @@ import net.st915.typesafescalajs.dom.tags.Tag
 
 object CanGetTagId {
 
-  def apply[F[_]](using ev: CanGetTagId[F]): CanGetTagId[F] = ev
+  def apply[F[_]](using CanGetTagId[F]): CanGetTagId[F] = summon
 
 }
 
