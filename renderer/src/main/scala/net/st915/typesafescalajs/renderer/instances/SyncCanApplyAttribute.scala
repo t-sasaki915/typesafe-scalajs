@@ -660,6 +660,36 @@ class SyncCanApplyAttribute[F[_]: Sync] extends CanApplyAttribute[F] {
                     e.tap(_.ontimeupdate = v.unsafeRunWithValue)
                   case e: HTMLVideoElement =>
                     e.tap(_.ontimeupdate = v.unsafeRunWithValue)
+          case (_: onUnload.type, value: (_ => _)) =>
+            value match
+              case v: (Event => IO[Unit]) =>
+                element match
+                  case e: HTMLBodyElement =>
+                    e.tap(_.onunload = v.unsafeRunWithValue)
+          case (_: onVolumeChange.type, value: (_ => _)) =>
+            value match
+              case v: (Event => IO[Unit]) =>
+                element match
+                  case e: HTMLAudioElement =>
+                    e.tap(_.onvolumechange = v.unsafeRunWithValue)
+                  case e: HTMLVideoElement =>
+                    e.tap(_.onvolumechange = v.unsafeRunWithValue)
+          case (_: onWaiting.type, value: (_ => _)) =>
+            value match
+              case v: (Event => IO[Unit]) =>
+                element match
+                  case e: HTMLAudioElement =>
+                    e.tap(_.onwaiting = v.unsafeRunWithValue)
+                  case e: HTMLVideoElement =>
+                    e.tap(_.onwaiting = v.unsafeRunWithValue)
+          case (_: onWheel.type, value: (_ => _)) =>
+            value match
+              case v: (MouseEvent => IO[Unit]) =>
+                element match
+                  case e: HTMLAudioElement =>
+                    e.tap(_.onwheel = v.unsafeRunWithValue)
+                  case e: HTMLVideoElement =>
+                    e.tap(_.onwheel = v.unsafeRunWithValue)
       }
     }
 
