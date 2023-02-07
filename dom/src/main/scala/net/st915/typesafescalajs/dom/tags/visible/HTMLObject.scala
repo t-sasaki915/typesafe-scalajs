@@ -18,4 +18,8 @@ object HTMLObject {
 }
 
 final case class HTMLObject(attributes: Set[(HTMLObject.AcceptAttribute, _)], children: List[Node])
-    extends Tag[HTMLObject.AcceptAttribute]
+    extends Tag[HTMLObject.AcceptAttribute] {
+
+  override val tagName: String = "object"
+  
+}

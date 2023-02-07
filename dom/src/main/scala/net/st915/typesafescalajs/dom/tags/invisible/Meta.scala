@@ -18,4 +18,8 @@ object Meta {
 }
 
 final case class Meta(attributes: Set[(Meta.AcceptAttribute, _)], children: List[Node])
-    extends Tag[Meta.AcceptAttribute]
+    extends Tag[Meta.AcceptAttribute] {
+
+  override val tagName: String = "meta"
+
+}

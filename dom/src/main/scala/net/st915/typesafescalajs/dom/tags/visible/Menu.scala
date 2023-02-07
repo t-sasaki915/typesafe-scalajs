@@ -18,4 +18,8 @@ object Menu {
 }
 
 final case class Menu(attributes: Set[(Menu.AcceptAttribute, _)], children: List[Node])
-    extends Tag[Menu.AcceptAttribute]
+    extends Tag[Menu.AcceptAttribute] {
+
+  override val tagName: String = "menu"
+
+}

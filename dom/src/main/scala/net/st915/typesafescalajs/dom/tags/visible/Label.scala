@@ -18,4 +18,8 @@ object Label {
 }
 
 final case class Label(attributes: Set[(Label.AcceptAttribute, _)], children: List[Node])
-    extends Tag[Label.AcceptAttribute]
+    extends Tag[Label.AcceptAttribute] {
+
+  override val tagName: String = "label"
+
+}

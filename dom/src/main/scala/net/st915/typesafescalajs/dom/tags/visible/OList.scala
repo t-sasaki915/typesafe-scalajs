@@ -18,4 +18,8 @@ object OList {
 }
 
 final case class OList(attributes: Set[(OList.AcceptAttribute, _)], children: List[Node])
-    extends Tag[OList.AcceptAttribute]
+    extends Tag[OList.AcceptAttribute] {
+
+  override val tagName: String = "ol"
+
+}

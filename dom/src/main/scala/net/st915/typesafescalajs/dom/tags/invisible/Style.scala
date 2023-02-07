@@ -18,4 +18,8 @@ object Style {
 }
 
 final case class Style(attributes: Set[(Style.AcceptAttribute, _)], children: List[Node])
-    extends Tag[Style.AcceptAttribute]
+    extends Tag[Style.AcceptAttribute] {
+
+  override val tagName: String = "style"
+
+}

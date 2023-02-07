@@ -18,4 +18,8 @@ object Source {
 }
 
 final case class Source(attributes: Set[(Source.AcceptAttribute, _)], children: List[Node])
-    extends Tag[Source.AcceptAttribute]
+    extends Tag[Source.AcceptAttribute] {
+
+  override val tagName: String = "source"
+  
+}

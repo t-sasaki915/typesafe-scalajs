@@ -18,4 +18,8 @@ object HTMLMap {
 }
 
 final case class HTMLMap(attributes: Set[(HTMLMap.AcceptAttribute, _)], children: List[Node])
-    extends Tag[HTMLMap.AcceptAttribute]
+    extends Tag[HTMLMap.AcceptAttribute] {
+
+  override val tagName: String = "map"
+
+}

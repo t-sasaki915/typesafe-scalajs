@@ -18,4 +18,8 @@ object Video {
 }
 
 final case class Video(attributes: Set[(Video.AcceptAttribute, _)], children: List[Node])
-    extends Tag[Video.AcceptAttribute]
+    extends Tag[Video.AcceptAttribute] {
+
+  override val tagName: String = "video"
+
+}

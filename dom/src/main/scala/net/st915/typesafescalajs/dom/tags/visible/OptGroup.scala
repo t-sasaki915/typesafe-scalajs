@@ -18,4 +18,8 @@ object OptGroup {
 }
 
 final case class OptGroup(attributes: Set[(OptGroup.AcceptAttribute, _)], children: List[Node])
-    extends Tag[OptGroup.AcceptAttribute]
+    extends Tag[OptGroup.AcceptAttribute] {
+
+  override val tagName: String = "optgroup"
+
+}

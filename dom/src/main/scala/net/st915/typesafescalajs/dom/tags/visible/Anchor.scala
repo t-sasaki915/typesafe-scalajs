@@ -18,4 +18,8 @@ object Anchor {
 }
 
 final case class Anchor(attributes: Set[(Anchor.AcceptAttribute, _)], children: List[Node])
-    extends Tag[Anchor.AcceptAttribute]
+    extends Tag[Anchor.AcceptAttribute] {
+
+  override val tagName: String = "a"
+  
+}

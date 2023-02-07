@@ -18,4 +18,8 @@ object TableRow {
 }
 
 final case class TableRow(attributes: Set[(TableRow.AcceptAttribute, _)], children: List[Node])
-    extends Tag[TableRow.AcceptAttribute]
+    extends Tag[TableRow.AcceptAttribute] {
+
+  override val tagName: String = "tr"
+  
+}

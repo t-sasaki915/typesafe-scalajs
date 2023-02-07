@@ -18,4 +18,8 @@ object Script {
 }
 
 final case class Script(attributes: Set[(Script.AcceptAttribute, _)], children: List[Node])
-    extends Tag[Script.AcceptAttribute]
+    extends Tag[Script.AcceptAttribute] {
+
+  override val tagName: String = "script"
+
+}

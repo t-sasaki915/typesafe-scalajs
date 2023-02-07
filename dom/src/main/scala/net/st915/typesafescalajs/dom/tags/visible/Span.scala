@@ -18,4 +18,8 @@ object Span {
 }
 
 final case class Span(attributes: Set[(Span.AcceptAttribute, _)], children: List[Node])
-    extends Tag[Span.AcceptAttribute]
+    extends Tag[Span.AcceptAttribute] {
+
+  override val tagName: String = "span"
+
+}

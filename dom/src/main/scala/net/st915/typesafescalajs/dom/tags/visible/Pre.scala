@@ -18,4 +18,8 @@ object Pre {
 }
 
 final case class Pre(attributes: Set[(Pre.AcceptAttribute, _)], children: List[Node])
-    extends Tag[Pre.AcceptAttribute]
+    extends Tag[Pre.AcceptAttribute] {
+
+  override val tagName: String = "pre"
+  
+}

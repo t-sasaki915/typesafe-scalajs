@@ -6,8 +6,6 @@ import net.st915.typesafescalajs.renderer.typeclasses.*
 
 trait all {
 
-  given canGetTagId[F[_]: Monad]: CanGetTagId[F] = MonadCanGetTagId[F]
-
   given canAppendChild[F[_]: Sync]: CanAppendChild[F] =
     SyncCanAppendChild[F]
 

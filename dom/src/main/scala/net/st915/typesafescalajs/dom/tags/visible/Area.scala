@@ -18,4 +18,8 @@ object Area {
 }
 
 final case class Area(attributes: Set[(Area.AcceptAttribute, _)], children: List[Node])
-    extends Tag[Area.AcceptAttribute]
+    extends Tag[Area.AcceptAttribute] {
+
+  override val tagName: String = "area"
+
+}

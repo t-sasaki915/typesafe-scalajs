@@ -18,4 +18,8 @@ object FieldSet {
 }
 
 final case class FieldSet(attributes: Set[(FieldSet.AcceptAttribute, _)], children: List[Node])
-    extends Tag[FieldSet.AcceptAttribute]
+    extends Tag[FieldSet.AcceptAttribute] {
+
+  override val tagName: String = "fieldset"
+  
+}

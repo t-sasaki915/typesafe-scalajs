@@ -18,4 +18,8 @@ object Select {
 }
 
 final case class Select(attributes: Set[(Select.AcceptAttribute, _)], children: List[Node])
-    extends Tag[Select.AcceptAttribute]
+    extends Tag[Select.AcceptAttribute] {
+
+  override val tagName: String = "select"
+
+}

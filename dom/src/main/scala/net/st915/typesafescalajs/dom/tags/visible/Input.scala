@@ -18,4 +18,8 @@ object Input {
 }
 
 final case class Input(attributes: Set[(Input.AcceptAttribute, _)], children: List[Node])
-    extends Tag[Input.AcceptAttribute]
+    extends Tag[Input.AcceptAttribute] {
+
+  override val tagName: String = "input"
+
+}

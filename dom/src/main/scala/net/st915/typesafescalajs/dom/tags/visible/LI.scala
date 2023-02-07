@@ -18,4 +18,8 @@ object LI {
 }
 
 final case class LI(attributes: Set[(LI.AcceptAttribute, _)], children: List[Node])
-    extends Tag[LI.AcceptAttribute]
+    extends Tag[LI.AcceptAttribute] {
+
+  override val tagName: String = "li"
+
+}

@@ -18,4 +18,8 @@ object Embed {
 }
 
 final case class Embed(attributes: Set[(Embed.AcceptAttribute, _)], children: List[Node])
-    extends Tag[Embed.AcceptAttribute]
+    extends Tag[Embed.AcceptAttribute] {
+
+  override val tagName: String = "embed"
+
+}

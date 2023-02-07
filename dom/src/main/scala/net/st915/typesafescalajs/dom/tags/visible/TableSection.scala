@@ -23,4 +23,8 @@ object TableSection {
 final case class TableSection(
   attributes: Set[(TableSection.AcceptAttribute, _)],
   children: List[Node]
-) extends Tag[TableSection.AcceptAttribute]
+) extends Tag[TableSection.AcceptAttribute] {
+
+  override val tagName: String = "th"
+  
+}

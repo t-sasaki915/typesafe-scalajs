@@ -4,8 +4,10 @@ import net.st915.typesafescalajs.Node
 
 trait Tag[A] extends Node {
 
-  def attributes: Set[(A, _)]
+  val tagName: String
 
-  def children: List[Node]
+  val attributes: Set[(A, _)]
+
+  val children: List[Node]
 
 }

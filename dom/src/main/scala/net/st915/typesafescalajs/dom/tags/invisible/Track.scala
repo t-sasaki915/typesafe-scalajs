@@ -18,4 +18,8 @@ object Track {
 }
 
 final case class Track(attributes: Set[(Track.AcceptAttribute, _)], children: List[Node])
-    extends Tag[Track.AcceptAttribute]
+    extends Tag[Track.AcceptAttribute] {
+
+  override val tagName: String = "track"
+
+}

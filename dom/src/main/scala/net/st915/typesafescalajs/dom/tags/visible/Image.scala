@@ -18,4 +18,8 @@ object Image {
 }
 
 final case class Image(attributes: Set[(Image.AcceptAttribute, _)], children: List[Node])
-    extends Tag[Image.AcceptAttribute]
+    extends Tag[Image.AcceptAttribute] {
+
+  override val tagName: String = "img"
+  
+}

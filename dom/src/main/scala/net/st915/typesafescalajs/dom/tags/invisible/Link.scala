@@ -18,4 +18,8 @@ object Link {
 }
 
 final case class Link(attributes: Set[(Link.AcceptAttribute, _)], children: List[Node])
-    extends Tag[Link.AcceptAttribute]
+    extends Tag[Link.AcceptAttribute] {
+
+  override val tagName: String = "link"
+
+}

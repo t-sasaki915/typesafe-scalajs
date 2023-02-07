@@ -18,4 +18,8 @@ object Progress {
 }
 
 final case class Progress(attributes: Set[(Progress.AcceptAttribute, _)], children: List[Node])
-    extends Tag[Progress.AcceptAttribute]
+    extends Tag[Progress.AcceptAttribute] {
+
+  override val tagName: String = "progress"
+
+}

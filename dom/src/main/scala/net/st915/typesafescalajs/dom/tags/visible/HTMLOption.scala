@@ -18,4 +18,8 @@ object HTMLOption {
 }
 
 final case class HTMLOption(attributes: Set[(HTMLOption.AcceptAttribute, _)], children: List[Node])
-    extends Tag[HTMLOption.AcceptAttribute]
+    extends Tag[HTMLOption.AcceptAttribute] {
+
+  override val tagName: String = "option"
+  
+}

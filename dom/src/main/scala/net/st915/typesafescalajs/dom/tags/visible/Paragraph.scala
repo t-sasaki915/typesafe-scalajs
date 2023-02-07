@@ -18,4 +18,8 @@ object Paragraph {
 }
 
 final case class Paragraph(attributes: Set[(Paragraph.AcceptAttribute, _)], children: List[Node])
-    extends Tag[Paragraph.AcceptAttribute]
+    extends Tag[Paragraph.AcceptAttribute] {
+
+  override val tagName: String = "p"
+
+}

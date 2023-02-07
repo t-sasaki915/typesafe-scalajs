@@ -18,4 +18,8 @@ object Param {
 }
 
 final case class Param(attributes: Set[(Param.AcceptAttribute, _)], children: List[Node])
-    extends Tag[Param.AcceptAttribute]
+    extends Tag[Param.AcceptAttribute] {
+
+  override val tagName: String = "param"
+
+}

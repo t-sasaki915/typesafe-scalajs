@@ -18,4 +18,8 @@ object TextArea {
 }
 
 final case class TextArea(attributes: Set[(TextArea.AcceptAttribute, _)], children: List[Node])
-    extends Tag[TextArea.AcceptAttribute]
+    extends Tag[TextArea.AcceptAttribute] {
+
+  override val tagName: String = "textarea"
+
+}

@@ -18,4 +18,8 @@ object Title {
 }
 
 final case class Title(attributes: Set[(Title.AcceptAttribute, _)], children: List[Node])
-    extends Tag[Title.AcceptAttribute]
+    extends Tag[Title.AcceptAttribute] {
+
+  override val tagName: String = "title"
+
+}

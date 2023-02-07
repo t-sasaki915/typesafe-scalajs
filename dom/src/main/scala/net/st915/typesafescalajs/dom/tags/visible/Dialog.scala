@@ -18,4 +18,8 @@ object Dialog {
 }
 
 final case class Dialog(attributes: Set[(Dialog.AcceptAttribute, _)], children: List[Node])
-    extends Tag[Dialog.AcceptAttribute]
+    extends Tag[Dialog.AcceptAttribute] {
+
+  override val tagName: String = "dialog"
+
+}

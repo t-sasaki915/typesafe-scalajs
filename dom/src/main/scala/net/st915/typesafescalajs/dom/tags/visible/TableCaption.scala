@@ -23,4 +23,8 @@ object TableCaption {
 final case class TableCaption(
   attributes: Set[(TableCaption.AcceptAttribute, _)],
   children: List[Node]
-) extends Tag[TableCaption.AcceptAttribute]
+) extends Tag[TableCaption.AcceptAttribute] {
+
+  override val tagName: String = "caption"
+
+}

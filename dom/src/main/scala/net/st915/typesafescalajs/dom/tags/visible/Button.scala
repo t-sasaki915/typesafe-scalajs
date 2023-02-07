@@ -18,4 +18,8 @@ object Button {
 }
 
 final case class Button(attributes: Set[(Button.AcceptAttribute, _)], children: List[Node])
-    extends Tag[Button.AcceptAttribute]
+    extends Tag[Button.AcceptAttribute] {
+
+  override val tagName: String = "button"
+
+}

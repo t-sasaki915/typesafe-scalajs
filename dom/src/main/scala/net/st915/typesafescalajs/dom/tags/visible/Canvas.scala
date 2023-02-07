@@ -18,4 +18,8 @@ object Canvas {
 }
 
 final case class Canvas(attributes: Set[(Canvas.AcceptAttribute, _)], children: List[Node])
-    extends Tag[Canvas.AcceptAttribute]
+    extends Tag[Canvas.AcceptAttribute] {
+
+  override val tagName: String = "canvas"
+  
+}

@@ -18,4 +18,8 @@ object Audio {
 }
 
 final case class Audio(attributes: Set[(Audio.AcceptAttribute, _)], children: List[Node])
-    extends Tag[Audio.AcceptAttribute]
+    extends Tag[Audio.AcceptAttribute] {
+
+  override val tagName: String = "audio"
+
+}

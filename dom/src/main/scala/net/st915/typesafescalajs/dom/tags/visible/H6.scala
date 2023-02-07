@@ -18,4 +18,8 @@ object H6 {
 }
 
 final case class H6(attributes: Set[(H6.AcceptAttribute, _)], children: List[Node])
-    extends Tag[H6.AcceptAttribute]
+    extends Tag[H6.AcceptAttribute] {
+
+  override val tagName: String = "h6"
+  
+}

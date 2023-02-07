@@ -18,4 +18,8 @@ object Quote {
 }
 
 final case class Quote(attributes: Set[(Quote.AcceptAttribute, _)], children: List[Node])
-    extends Tag[Quote.AcceptAttribute]
+    extends Tag[Quote.AcceptAttribute] {
+
+  override val tagName: String = "blockquote"
+
+}

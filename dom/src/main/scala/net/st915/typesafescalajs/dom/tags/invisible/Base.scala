@@ -18,4 +18,8 @@ object Base {
 }
 
 final case class Base(attributes: Set[(Base.AcceptAttribute, _)], children: List[Node])
-    extends Tag[Base.AcceptAttribute]
+    extends Tag[Base.AcceptAttribute] {
+
+  override val tagName: String = "base"
+
+}

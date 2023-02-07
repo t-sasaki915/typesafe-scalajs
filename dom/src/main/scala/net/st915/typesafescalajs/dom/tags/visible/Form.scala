@@ -18,4 +18,8 @@ object Form {
 }
 
 final case class Form(attributes: Set[(Form.AcceptAttribute, _)], children: List[Node])
-    extends Tag[Form.AcceptAttribute]
+    extends Tag[Form.AcceptAttribute] {
+
+  override val tagName: String = "form"
+  
+}

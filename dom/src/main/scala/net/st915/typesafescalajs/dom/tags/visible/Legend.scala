@@ -18,4 +18,8 @@ object Legend {
 }
 
 final case class Legend(attributes: Set[(Legend.AcceptAttribute, _)], children: List[Node])
-    extends Tag[Legend.AcceptAttribute]
+    extends Tag[Legend.AcceptAttribute] {
+
+  override val tagName: String = "legend"
+
+}

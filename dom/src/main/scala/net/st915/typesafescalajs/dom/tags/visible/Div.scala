@@ -18,4 +18,8 @@ object Div {
 }
 
 final case class Div(attributes: Set[(Div.AcceptAttribute, _)], children: List[Node])
-    extends Tag[Div.AcceptAttribute]
+    extends Tag[Div.AcceptAttribute] {
+
+  override val tagName: String = "div"
+  
+}
