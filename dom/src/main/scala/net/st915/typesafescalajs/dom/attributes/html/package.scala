@@ -3,7 +3,7 @@ package net.st915.typesafescalajs.dom.attributes
 import cats.effect.IO
 import net.st915.typesafescalajs.dom.attributes.{Attribute, FlagAttribute}
 import net.st915.typesafescalajs.dom.domain.events.*
-import net.st915.typesafescalajs.dom.values.IFrameRestriction
+import net.st915.typesafescalajs.dom.predefvalues.SandboxValue
 
 /**
  * *
@@ -317,7 +317,7 @@ package object html {
 
   case object rowSpan extends Attribute[Int] with TableCellAttribute
 
-  case object sandbox extends AllowEmptyAttribute[Set[IFrameRestriction]] with IFrameAttribute
+  case object sandbox extends AllowEmptyAttribute[Set[SandboxValue]] with IFrameAttribute
 
   case object selected extends FlagAttribute with OptionAttribute
 
