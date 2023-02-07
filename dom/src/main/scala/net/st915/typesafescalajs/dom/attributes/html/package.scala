@@ -317,7 +317,7 @@ package object html {
 
   case object rowSpan extends Attribute[Int] with TableCellAttribute
 
-  case object sandbox extends Attribute[Set[IFrameRestriction]] with IFrameAttribute
+  case object sandbox extends AllowEmptyAttribute[Set[IFrameRestriction]] with IFrameAttribute
 
   case object selected extends FlagAttribute with OptionAttribute
 

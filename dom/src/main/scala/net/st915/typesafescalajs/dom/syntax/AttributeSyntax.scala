@@ -1,14 +1,19 @@
 package net.st915.typesafescalajs.dom.syntax
 
-import net.st915.typesafescalajs.dom.attributes.{Attribute, FlagAttribute}
+import cats.Monoid
+import net.st915.typesafescalajs.dom.attributes.{AllowEmptyAttribute, Attribute, FlagAttribute}
 
 import scala.annotation.targetName
 import scala.language.implicitConversions
 
 trait AttributeSyntax {
 
-  implicit def autoApplyFlagAttribute[A <: FlagAttribute](flagAttribute: A): (A, Boolean) =
-    (flagAttribute, true)
+  implicit def flatAttributeAutoComplete[A <: FlagAttribute](attr: A): (A, Boolean) =
+    (attr, true)
+
+  implicit def allowEmptyAttributeAutoComplete[A <: AllowEmptyAttribute[B], B: Monoid](attr: A)
+    : (A, B) =
+    (attr, Monoid[B].empty)
 
   extension [A <: Attribute[B], B](x: A) {
 
