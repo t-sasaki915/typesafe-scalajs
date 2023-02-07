@@ -17,7 +17,7 @@ final class SyncCanApplyAttribute[F[_]: Sync] extends CanApplyAttribute[F] {
 
   implicit class FunctionOps[A](func: A => IO[Unit]) {
 
-    def unsafeRunWithValue(using IORuntime): A => Unit = value =>
+    def unsafeRunEvent(using IORuntime): A => Unit = value =>
       func(value).unsafeRunAndForget()
 
   }
@@ -316,381 +316,381 @@ final class SyncCanApplyAttribute[F[_]: Sync] extends CanApplyAttribute[F] {
               case v: (UIEvent => IO[Unit]) =>
                 element match
                   case e: HTMLAudioElement =>
-                    e.tap(_.onabort = v.unsafeRunWithValue)
+                    e.tap(_.onabort = v.unsafeRunEvent)
                   case e: HTMLEmbedElement =>
-                    e.tap(_.onabort = v.unsafeRunWithValue)
+                    e.tap(_.onabort = v.unsafeRunEvent)
                   case e: HTMLImageElement =>
-                    e.tap(_.onabort = v.unsafeRunWithValue)
+                    e.tap(_.onabort = v.unsafeRunEvent)
                   case e: HTMLObjectElement =>
-                    e.tap(_.onabort = v.unsafeRunWithValue)
+                    e.tap(_.onabort = v.unsafeRunEvent)
                   case e: HTMLVideoElement =>
-                    e.tap(_.onabort = v.unsafeRunWithValue)
+                    e.tap(_.onabort = v.unsafeRunEvent)
           case (_: onAfterPrint.type, value: (_ => _)) =>
             value match
               case v: (Event => IO[Unit]) =>
                 element match
                   case e: HTMLBodyElement =>
-                    e.tap(_.onafterprint = v.unsafeRunWithValue)
+                    e.tap(_.onafterprint = v.unsafeRunEvent)
           case (_: onBeforePrint.type, value: (_ => _)) =>
             value match
               case v: (Event => IO[Unit]) =>
                 element match
                   case e: HTMLBodyElement =>
-                    e.tap(_.onbeforeprint = v.unsafeRunWithValue)
+                    e.tap(_.onbeforeprint = v.unsafeRunEvent)
           case (_: onBlur.type, value: (_ => _)) =>
             value match
               case v: (FocusEvent => IO[Unit]) =>
-                element.tap(_.onblur = v.unsafeRunWithValue)
+                element.tap(_.onblur = v.unsafeRunEvent)
           case (_: onCanPlay.type, value: (_ => _)) =>
             value match
               case v: (Event => IO[Unit]) =>
                 element match
                   case e: HTMLAudioElement =>
-                    e.tap(_.oncanplay = v.unsafeRunWithValue)
+                    e.tap(_.oncanplay = v.unsafeRunEvent)
                   case e: HTMLEmbedElement =>
-                    e.tap(_.oncanplay = v.unsafeRunWithValue)
+                    e.tap(_.oncanplay = v.unsafeRunEvent)
                   case e: HTMLObjectElement =>
-                    e.tap(_.oncanplay = v.unsafeRunWithValue)
+                    e.tap(_.oncanplay = v.unsafeRunEvent)
                   case e: HTMLVideoElement =>
-                    e.tap(_.oncanplay = v.unsafeRunWithValue)
+                    e.tap(_.oncanplay = v.unsafeRunEvent)
           case (_: onCanPlayThrough.type, value: (_ => _)) =>
             value match
               case v: (Event => IO[Unit]) =>
                 element match
                   case e: HTMLAudioElement =>
-                    e.tap(_.oncanplaythrough = v.unsafeRunWithValue)
+                    e.tap(_.oncanplaythrough = v.unsafeRunEvent)
                   case e: HTMLVideoElement =>
-                    e.tap(_.oncanplaythrough = v.unsafeRunWithValue)
+                    e.tap(_.oncanplaythrough = v.unsafeRunEvent)
           case (_: onChange.type, value: (_ => _)) =>
             value match
               case v: (Event => IO[Unit]) =>
-                element.tap(_.onchange = v.unsafeRunWithValue)
+                element.tap(_.onchange = v.unsafeRunEvent)
           case (_: onClick.type, value: (_ => _)) =>
             value match
               case v: (MouseEvent => IO[Unit]) =>
-                element.tap(_.onclick = v.unsafeRunWithValue)
+                element.tap(_.onclick = v.unsafeRunEvent)
           case (_: onContextMenu.type, value: (_ => _)) =>
             value match
               case v: (MouseEvent => IO[Unit]) =>
-                element.tap(_.oncontextmenu = v.unsafeRunWithValue)
+                element.tap(_.oncontextmenu = v.unsafeRunEvent)
           case (_: onCopy.type, value: (_ => _)) =>
             value match
               case v: (ClipboardEvent => IO[Unit]) =>
-                element.tap(_.oncopy = v.unsafeRunWithValue)
+                element.tap(_.oncopy = v.unsafeRunEvent)
           case (_: onCueChange.type, value: (_ => _)) =>
             value match
               case v: (Event => IO[Unit]) =>
                 element match
                   case e: HTMLTrackElement =>
-                    e.tap(_.oncuechange = v.unsafeRunWithValue)
+                    e.tap(_.oncuechange = v.unsafeRunEvent)
           case (_: onCut.type, value: (_ => _)) =>
             value match
               case v: (ClipboardEvent => IO[Unit]) =>
-                element.tap(_.oncut = v.unsafeRunWithValue)
+                element.tap(_.oncut = v.unsafeRunEvent)
           case (_: onDoubleClick.type, value: (_ => _)) =>
             value match
               case v: (MouseEvent => IO[Unit]) =>
-                element.tap(_.ondblclick = v.unsafeRunWithValue)
+                element.tap(_.ondblclick = v.unsafeRunEvent)
           case (_: onDrag.type, value: (_ => _)) =>
             value match
               case v: (DragEvent => IO[Unit]) =>
-                element.tap(_.ondrag = v.unsafeRunWithValue)
+                element.tap(_.ondrag = v.unsafeRunEvent)
           case (_: onDragEnd.type, value: (_ => _)) =>
             value match
               case v: (DragEvent => IO[Unit]) =>
-                element.tap(_.ondragend = v.unsafeRunWithValue)
+                element.tap(_.ondragend = v.unsafeRunEvent)
           case (_: onDragEnter.type, value: (_ => _)) =>
             value match
               case v: (DragEvent => IO[Unit]) =>
-                element.tap(_.ondragenter = v.unsafeRunWithValue)
+                element.tap(_.ondragenter = v.unsafeRunEvent)
           case (_: onDragLeave.type, value: (_ => _)) =>
             value match
               case v: (DragEvent => IO[Unit]) =>
-                element.tap(_.ondragleave = v.unsafeRunWithValue)
+                element.tap(_.ondragleave = v.unsafeRunEvent)
           case (_: onDragOver.type, value: (_ => _)) =>
             value match
               case v: (DragEvent => IO[Unit]) =>
-                element.tap(_.ondragover = v.unsafeRunWithValue)
+                element.tap(_.ondragover = v.unsafeRunEvent)
           case (_: onDragStart.type, value: (_ => _)) =>
             value match
               case v: (DragEvent => IO[Unit]) =>
-                element.tap(_.ondragstart = v.unsafeRunWithValue)
+                element.tap(_.ondragstart = v.unsafeRunEvent)
           case (_: onDrop.type, value: (_ => _)) =>
             value match
               case v: (DragEvent => IO[Unit]) =>
-                element.tap(_.ondrop = v.unsafeRunWithValue)
+                element.tap(_.ondrop = v.unsafeRunEvent)
           case (_: onDurationChange.type, value: (_ => _)) =>
             value match
               case v: (Event => IO[Unit]) =>
                 element match
                   case e: HTMLAudioElement =>
-                    e.tap(_.ondurationchange = v.unsafeRunWithValue)
+                    e.tap(_.ondurationchange = v.unsafeRunEvent)
                   case e: HTMLVideoElement =>
-                    e.tap(_.ondurationchange = v.unsafeRunWithValue)
+                    e.tap(_.ondurationchange = v.unsafeRunEvent)
           case (_: onEmptied.type, value: (_ => _)) =>
             value match
               case v: (Event => IO[Unit]) =>
                 element match
                   case e: HTMLAudioElement =>
-                    e.tap(_.onemptied = v.unsafeRunWithValue)
+                    e.tap(_.onemptied = v.unsafeRunEvent)
                   case e: HTMLVideoElement =>
-                    e.tap(_.onemptied = v.unsafeRunWithValue)
+                    e.tap(_.onemptied = v.unsafeRunEvent)
           case (_: onEnded.type, value: (_ => _)) =>
             value match
               case v: (Event => IO[Unit]) =>
                 element match
                   case e: HTMLAudioElement =>
-                    e.tap(_.onended = v.unsafeRunWithValue)
+                    e.tap(_.onended = v.unsafeRunEvent)
                   case e: HTMLVideoElement =>
-                    e.tap(_.onended = v.unsafeRunWithValue)
+                    e.tap(_.onended = v.unsafeRunEvent)
           case (_: onError.type, value: (_ => _)) =>
             value match
               case v: (ErrorEvent => IO[Unit]) =>
                 element match
                   case e: HTMLBodyElement =>
-                    e.tap(_.onerror = v.unsafeRunWithValue)
+                    e.tap(_.onerror = v.unsafeRunEvent)
           case (_: onFocus.type, value: (_ => _)) =>
             value match
               case v: (FocusEvent => IO[Unit]) =>
-                element.tap(_.onfocus = v.unsafeRunWithValue)
+                element.tap(_.onfocus = v.unsafeRunEvent)
           case (_: onHashChange.type, value: (_ => _)) =>
             value match
               case v: (Event => IO[Unit]) =>
                 element match
                   case e: HTMLBodyElement =>
-                    e.tap(_.onhashchange = v.unsafeRunWithValue)
+                    e.tap(_.onhashchange = v.unsafeRunEvent)
           case (_: onInput.type, value: (_ => _)) =>
             value match
               case v: (Event => IO[Unit]) =>
-                element.tap(_.oninput = v.unsafeRunWithValue)
+                element.tap(_.oninput = v.unsafeRunEvent)
           case (_: onKeyDown.type, value: (_ => _)) =>
             value match
               case v: (KeyboardEvent => IO[Unit]) =>
-                element.tap(_.onkeydown = v.unsafeRunWithValue)
+                element.tap(_.onkeydown = v.unsafeRunEvent)
           case (_: onKeyPress.type, value: (_ => _)) =>
             value match
               case v: (KeyboardEvent => IO[Unit]) =>
-                element.tap(_.onkeypress = v.unsafeRunWithValue)
+                element.tap(_.onkeypress = v.unsafeRunEvent)
           case (_: onKeyUp.type, value: (_ => _)) =>
             value match
               case v: (KeyboardEvent => IO[Unit]) =>
-                element.tap(_.onkeyup = v.unsafeRunWithValue)
+                element.tap(_.onkeyup = v.unsafeRunEvent)
           case (_: onLoad.type, value: (_ => _)) =>
             value match
               case v: (Event => IO[Unit]) =>
                 element match
                   case e: HTMLBodyElement =>
-                    e.tap(_.onload = v.unsafeRunWithValue)
+                    e.tap(_.onload = v.unsafeRunEvent)
                   case e: HTMLIFrameElement =>
-                    e.tap(_.onload = v.unsafeRunWithValue)
+                    e.tap(_.onload = v.unsafeRunEvent)
                   case e: HTMLImageElement =>
-                    e.tap(_.onload = v.unsafeRunWithValue)
+                    e.tap(_.onload = v.unsafeRunEvent)
                   case e: HTMLScriptElement =>
-                    e.tap(_.onload = v.unsafeRunWithValue)
+                    e.tap(_.onload = v.unsafeRunEvent)
           case (_: onLoadedData.type, value: (_ => _)) =>
             value match
               case v: (Event => IO[Unit]) =>
                 element match
                   case e: HTMLAudioElement =>
-                    e.tap(_.onloadeddata = v.unsafeRunWithValue)
+                    e.tap(_.onloadeddata = v.unsafeRunEvent)
                   case e: HTMLVideoElement =>
-                    e.tap(_.onloadeddata = v.unsafeRunWithValue)
+                    e.tap(_.onloadeddata = v.unsafeRunEvent)
           case (_: onLoadedMetaData.type, value: (_ => _)) =>
             value match
               case v: (Event => IO[Unit]) =>
                 element match
                   case e: HTMLAudioElement =>
-                    e.tap(_.onloadedmetadata = v.unsafeRunWithValue)
+                    e.tap(_.onloadedmetadata = v.unsafeRunEvent)
                   case e: HTMLVideoElement =>
-                    e.tap(_.onloadedmetadata = v.unsafeRunWithValue)
+                    e.tap(_.onloadedmetadata = v.unsafeRunEvent)
           case (_: onLoadStart.type, value: (_ => _)) =>
             value match
               case v: (Event => IO[Unit]) =>
                 element match
                   case e: HTMLAudioElement =>
-                    e.tap(_.onloadstart = v.unsafeRunWithValue)
+                    e.tap(_.onloadstart = v.unsafeRunEvent)
                   case e: HTMLVideoElement =>
-                    e.tap(_.onloadstart = v.unsafeRunWithValue)
+                    e.tap(_.onloadstart = v.unsafeRunEvent)
           case (_: onMouseDown.type, value: (_ => _)) =>
             value match
               case v: (MouseEvent => IO[Unit]) =>
-                element.tap(_.onmousedown = v.unsafeRunWithValue)
+                element.tap(_.onmousedown = v.unsafeRunEvent)
           case (_: onMouseMove.type, value: (_ => _)) =>
             value match
               case v: (MouseEvent => IO[Unit]) =>
-                element.tap(_.onmousemove = v.unsafeRunWithValue)
+                element.tap(_.onmousemove = v.unsafeRunEvent)
           case (_: onMouseOut.type, value: (_ => _)) =>
             value match
               case v: (MouseEvent => IO[Unit]) =>
-                element.tap(_.onmouseout = v.unsafeRunWithValue)
+                element.tap(_.onmouseout = v.unsafeRunEvent)
           case (_: onMouseOver.type, value: (_ => _)) =>
             value match
               case v: (MouseEvent => IO[Unit]) =>
-                element.tap(_.onmouseover = v.unsafeRunWithValue)
+                element.tap(_.onmouseover = v.unsafeRunEvent)
           case (_: onMouseUp.type, value: (_ => _)) =>
             value match
               case v: (MouseEvent => IO[Unit]) =>
-                element.tap(_.onmouseup = v.unsafeRunWithValue)
+                element.tap(_.onmouseup = v.unsafeRunEvent)
           case (_: onMouseWheel.type, value: (_ => _)) =>
             value match
               case v: (WheelEvent => IO[Unit]) =>
-                element.tap(_.onmousewheel = v.unsafeRunWithValue)
+                element.tap(_.onmousewheel = v.unsafeRunEvent)
           case (_: onOffline.type, value: (_ => _)) =>
             value match
               case v: (Event => IO[Unit]) =>
                 element match
                   case e: HTMLBodyElement =>
-                    e.tap(_.onoffline = v.unsafeRunWithValue)
+                    e.tap(_.onoffline = v.unsafeRunEvent)
           case (_: onOnline.type, value: (_ => _)) =>
             value match
               case v: (Event => IO[Unit]) =>
                 element match
                   case e: HTMLBodyElement =>
-                    e.tap(_.ononline = v.unsafeRunWithValue)
+                    e.tap(_.ononline = v.unsafeRunEvent)
           case (_: onPaste.type, value: (_ => _)) =>
             value match
               case v: (ClipboardEvent => IO[Unit]) =>
-                element.tap(_.onpaste = v.unsafeRunWithValue)
+                element.tap(_.onpaste = v.unsafeRunEvent)
           case (_: onPause.type, value: (_ => _)) =>
             value match
               case v: (Event => IO[Unit]) =>
                 element match
                   case e: HTMLAudioElement =>
-                    e.tap(_.onpause = v.unsafeRunWithValue)
+                    e.tap(_.onpause = v.unsafeRunEvent)
                   case e: HTMLVideoElement =>
-                    e.tap(_.onpause = v.unsafeRunWithValue)
+                    e.tap(_.onpause = v.unsafeRunEvent)
           case (_: onPlay.type, value: (_ => _)) =>
             value match
               case v: (Event => IO[Unit]) =>
                 element match
                   case e: HTMLAudioElement =>
-                    e.tap(_.onplay = v.unsafeRunWithValue)
+                    e.tap(_.onplay = v.unsafeRunEvent)
                   case e: HTMLVideoElement =>
-                    e.tap(_.onplay = v.unsafeRunWithValue)
+                    e.tap(_.onplay = v.unsafeRunEvent)
           case (_: onPlaying.type, value: (_ => _)) =>
             value match
               case v: (Event => IO[Unit]) =>
                 element match
                   case e: HTMLAudioElement =>
-                    e.tap(_.onplaying = v.unsafeRunWithValue)
+                    e.tap(_.onplaying = v.unsafeRunEvent)
                   case e: HTMLVideoElement =>
-                    e.tap(_.onplaying = v.unsafeRunWithValue)
+                    e.tap(_.onplaying = v.unsafeRunEvent)
           case (_: onPopState.type, value: (_ => _)) =>
             value match
               case v: (PopStateEvent => IO[Unit]) =>
                 element match
                   case e: HTMLBodyElement =>
-                    e.tap(_.onpopstate = v.unsafeRunWithValue)
+                    e.tap(_.onpopstate = v.unsafeRunEvent)
           case (_: onRateChange.type, value: (_ => _)) =>
             value match
               case v: (Event => IO[Unit]) =>
                 element match
                   case e: HTMLAudioElement =>
-                    e.tap(_.onratechange = v.unsafeRunWithValue)
+                    e.tap(_.onratechange = v.unsafeRunEvent)
                   case e: HTMLVideoElement =>
-                    e.tap(_.onratechange = v.unsafeRunWithValue)
+                    e.tap(_.onratechange = v.unsafeRunEvent)
           case (_: onReset.type, value: (_ => _)) =>
             value match
               case v: (Event => IO[Unit]) =>
                 element match
                   case e: HTMLFormElement =>
-                    e.tap(_.onreset = v.unsafeRunWithValue)
+                    e.tap(_.onreset = v.unsafeRunEvent)
           case (_: onResize.type, value: (_ => _)) =>
             value match
               case v: (UIEvent => IO[Unit]) =>
                 element match
                   case e: HTMLBodyElement =>
-                    e.tap(_.onresize = v.unsafeRunWithValue)
+                    e.tap(_.onresize = v.unsafeRunEvent)
           case (_: onScroll.type, value: (_ => _)) =>
             value match
               case v: (UIEvent => IO[Unit]) =>
-                element.tap(_.onscroll = v.unsafeRunWithValue)
+                element.tap(_.onscroll = v.unsafeRunEvent)
           case (_: onSeeked.type, value: (_ => _)) =>
             value match
               case v: (Event => IO[Unit]) =>
                 element match
                   case e: HTMLAudioElement =>
-                    e.tap(_.onseeked = v.unsafeRunWithValue)
+                    e.tap(_.onseeked = v.unsafeRunEvent)
                   case e: HTMLVideoElement =>
-                    e.tap(_.onseeked = v.unsafeRunWithValue)
+                    e.tap(_.onseeked = v.unsafeRunEvent)
           case (_: onSeeking.type, value: (_ => _)) =>
             value match
               case v: (Event => IO[Unit]) =>
                 element match
                   case e: HTMLAudioElement =>
-                    e.tap(_.onseeking = v.unsafeRunWithValue)
+                    e.tap(_.onseeking = v.unsafeRunEvent)
                   case e: HTMLVideoElement =>
-                    e.tap(_.onseeking = v.unsafeRunWithValue)
+                    e.tap(_.onseeking = v.unsafeRunEvent)
           case (_: onSelect.type, value: (_ => _)) =>
             value match
               case v: (UIEvent => IO[Unit]) =>
-                element.tap(_.onselect = v.unsafeRunWithValue)
+                element.tap(_.onselect = v.unsafeRunEvent)
           case (_: onStalled.type, value: (_ => _)) =>
             value match
               case v: (Event => IO[Unit]) =>
                 element match
                   case e: HTMLAudioElement =>
-                    e.tap(_.onstalled = v.unsafeRunWithValue)
+                    e.tap(_.onstalled = v.unsafeRunEvent)
                   case e: HTMLVideoElement =>
-                    e.tap(_.onstalled = v.unsafeRunWithValue)
+                    e.tap(_.onstalled = v.unsafeRunEvent)
           case (_: onStorage.type, value: (_ => _)) =>
             value match
               case v: (StorageEvent => IO[Unit]) =>
                 element match
                   case e: HTMLBodyElement =>
-                    e.tap(_.onstorage = v.unsafeRunWithValue)
+                    e.tap(_.onstorage = v.unsafeRunEvent)
           case (_: onSubmit.type, value: (_ => _)) =>
             value match
               case v: (Event => IO[Unit]) =>
                 element match
                   case e: HTMLFormElement =>
-                    e.tap(_.onsubmit = v.unsafeRunWithValue)
+                    e.tap(_.onsubmit = v.unsafeRunEvent)
           case (_: onSuspend.type, value: (_ => _)) =>
             value match
               case v: (Event => IO[Unit]) =>
                 element match
                   case e: HTMLAudioElement =>
-                    e.tap(_.onsuspend = v.unsafeRunWithValue)
+                    e.tap(_.onsuspend = v.unsafeRunEvent)
                   case e: HTMLVideoElement =>
-                    e.tap(_.onsuspend = v.unsafeRunWithValue)
+                    e.tap(_.onsuspend = v.unsafeRunEvent)
           case (_: onTimeUpdate.type, value: (_ => _)) =>
             value match
               case v: (Event => IO[Unit]) =>
                 element match
                   case e: HTMLAudioElement =>
-                    e.tap(_.ontimeupdate = v.unsafeRunWithValue)
+                    e.tap(_.ontimeupdate = v.unsafeRunEvent)
                   case e: HTMLVideoElement =>
-                    e.tap(_.ontimeupdate = v.unsafeRunWithValue)
+                    e.tap(_.ontimeupdate = v.unsafeRunEvent)
           case (_: onUnload.type, value: (_ => _)) =>
             value match
               case v: (Event => IO[Unit]) =>
                 element match
                   case e: HTMLBodyElement =>
-                    e.tap(_.onunload = v.unsafeRunWithValue)
+                    e.tap(_.onunload = v.unsafeRunEvent)
           case (_: onVolumeChange.type, value: (_ => _)) =>
             value match
               case v: (Event => IO[Unit]) =>
                 element match
                   case e: HTMLAudioElement =>
-                    e.tap(_.onvolumechange = v.unsafeRunWithValue)
+                    e.tap(_.onvolumechange = v.unsafeRunEvent)
                   case e: HTMLVideoElement =>
-                    e.tap(_.onvolumechange = v.unsafeRunWithValue)
+                    e.tap(_.onvolumechange = v.unsafeRunEvent)
           case (_: onWaiting.type, value: (_ => _)) =>
             value match
               case v: (Event => IO[Unit]) =>
                 element match
                   case e: HTMLAudioElement =>
-                    e.tap(_.onwaiting = v.unsafeRunWithValue)
+                    e.tap(_.onwaiting = v.unsafeRunEvent)
                   case e: HTMLVideoElement =>
-                    e.tap(_.onwaiting = v.unsafeRunWithValue)
+                    e.tap(_.onwaiting = v.unsafeRunEvent)
           case (_: onWheel.type, value: (_ => _)) =>
             value match
               case v: (MouseEvent => IO[Unit]) =>
                 element match
                   case e: HTMLAudioElement =>
-                    e.tap(_.onwheel = v.unsafeRunWithValue)
+                    e.tap(_.onwheel = v.unsafeRunEvent)
                   case e: HTMLVideoElement =>
-                    e.tap(_.onwheel = v.unsafeRunWithValue)
+                    e.tap(_.onwheel = v.unsafeRunEvent)
           case (_: pattern.type, value: String) =>
             element match
               case e: HTMLInputElement =>
