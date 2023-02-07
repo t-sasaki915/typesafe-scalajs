@@ -21,5 +21,5 @@ final case class HTMLOption(attributes: Set[(HTMLOption.AcceptAttribute, _)], ch
     extends Tag[HTMLOption.AcceptAttribute] {
 
   override val tagName: String = "option"
-  
+
 }

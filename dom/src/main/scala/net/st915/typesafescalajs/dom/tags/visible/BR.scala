@@ -21,5 +21,5 @@ final case class BR(attributes: Set[(BR.AcceptAttribute, _)], children: List[Nod
     extends Tag[BR.AcceptAttribute] {
 
   override val tagName: String = "br"
-  
+
 }

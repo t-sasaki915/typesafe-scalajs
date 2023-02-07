@@ -21,5 +21,5 @@ final case class HTMLObject(attributes: Set[(HTMLObject.AcceptAttribute, _)], ch
     extends Tag[HTMLObject.AcceptAttribute] {
 
   override val tagName: String = "object"
-  
+
 }

@@ -21,5 +21,5 @@ final case class TableCell(attributes: Set[(TableCell.AcceptAttribute, _)], chil
     extends Tag[TableCell.AcceptAttribute] {
 
   override val tagName: String = "td"
-  
+
 }

@@ -21,5 +21,5 @@ final case class Anchor(attributes: Set[(Anchor.AcceptAttribute, _)], children: 
     extends Tag[Anchor.AcceptAttribute] {
 
   override val tagName: String = "a"
-  
+
 }

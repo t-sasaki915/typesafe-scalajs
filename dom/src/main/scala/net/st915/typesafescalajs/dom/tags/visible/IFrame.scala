@@ -21,5 +21,5 @@ final case class IFrame(attributes: Set[(IFrame.AcceptAttribute, _)], children: 
     extends Tag[IFrame.AcceptAttribute] {
 
   override val tagName: String = "iframe"
-  
+
 }

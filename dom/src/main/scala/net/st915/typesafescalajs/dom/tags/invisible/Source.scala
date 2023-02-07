@@ -21,5 +21,5 @@ final case class Source(attributes: Set[(Source.AcceptAttribute, _)], children: 
     extends Tag[Source.AcceptAttribute] {
 
   override val tagName: String = "source"
-  
+
 }

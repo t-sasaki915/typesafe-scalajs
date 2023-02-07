@@ -21,5 +21,5 @@ final case class Div(attributes: Set[(Div.AcceptAttribute, _)], children: List[N
     extends Tag[Div.AcceptAttribute] {
 
   override val tagName: String = "div"
-  
+
 }

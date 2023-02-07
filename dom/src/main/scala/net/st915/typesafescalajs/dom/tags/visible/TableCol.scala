@@ -21,5 +21,5 @@ final case class TableCol(attributes: Set[(TableCol.AcceptAttribute, _)], childr
     extends Tag[TableCol.AcceptAttribute] {
 
   override val tagName: String = "col"
-  
+
 }

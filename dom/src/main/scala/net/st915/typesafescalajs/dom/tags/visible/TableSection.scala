@@ -26,5 +26,5 @@ final case class TableSection(
 ) extends Tag[TableSection.AcceptAttribute] {
 
   override val tagName: String = "th"
-  
+
 }

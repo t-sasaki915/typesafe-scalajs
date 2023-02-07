@@ -21,5 +21,5 @@ final case class H6(attributes: Set[(H6.AcceptAttribute, _)], children: List[Nod
     extends Tag[H6.AcceptAttribute] {
 
   override val tagName: String = "h6"
-  
+
 }

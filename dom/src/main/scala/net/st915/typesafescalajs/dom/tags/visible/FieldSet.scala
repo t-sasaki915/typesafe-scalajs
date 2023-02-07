@@ -21,5 +21,5 @@ final case class FieldSet(attributes: Set[(FieldSet.AcceptAttribute, _)], childr
     extends Tag[FieldSet.AcceptAttribute] {
 
   override val tagName: String = "fieldset"
-  
+
 }

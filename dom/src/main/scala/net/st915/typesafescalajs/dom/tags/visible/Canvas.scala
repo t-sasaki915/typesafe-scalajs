@@ -21,5 +21,5 @@ final case class Canvas(attributes: Set[(Canvas.AcceptAttribute, _)], children: 
     extends Tag[Canvas.AcceptAttribute] {
 
   override val tagName: String = "canvas"
-  
+
 }

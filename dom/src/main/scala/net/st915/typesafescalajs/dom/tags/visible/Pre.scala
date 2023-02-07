@@ -21,5 +21,5 @@ final case class Pre(attributes: Set[(Pre.AcceptAttribute, _)], children: List[N
     extends Tag[Pre.AcceptAttribute] {
 
   override val tagName: String = "pre"
-  
+
 }
