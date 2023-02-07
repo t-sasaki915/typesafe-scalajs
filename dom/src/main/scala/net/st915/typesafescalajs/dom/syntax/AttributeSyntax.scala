@@ -1,9 +1,8 @@
 package net.st915.typesafescalajs.dom.syntax
 
 import cats.Monoid
-import net.st915.typesafescalajs.dom.attributes.{AllowEmptyAttribute, Attribute, FlagAttribute}
+import net.st915.typesafescalajs.dom.attributes.{AllowEmptyAttribute, FlagAttribute}
 
-import scala.annotation.targetName
 import scala.language.implicitConversions
 
 trait AttributeSyntax {
