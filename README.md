@@ -39,7 +39,7 @@ val disabledButtonWithClickEvent =
 ```scala
 val paragraphWithTextNode =
   Paragraph() {
-    "Text" // or TextNode("Text")
+    "Text"
   }
 val divWithThreeChildren =
   Div()(
@@ -95,6 +95,46 @@ val bodyWithThreeChildren =
     Div(className := "child"),
     Div(className := "child")
   )
+```
+
+#### Implicit Conversions
+##### Implicit Conversion of String
+```scala
+Span()(
+  "ABC",
+  Span() {
+    "DEF"
+  }
+)
+```
+This will be:
+```scala
+Span()(
+  TextNode("ABC"),
+  Span() {
+    TextNode("DEF")
+  }
+)
+```
+##### Implicit Conversion of FlagAttribute (e.g. `async` `disabled` `autoPlay`)
+```scala
+Script(src := "aaa.js", async)
+Button(id := "btn", disabled)
+Audio(autoPlay)
+```
+This will be:
+```scala
+Script(src := "aaa.js", async := true)
+Button(id := "btn", disabled := true)
+Audio(autoPlay := true)
+```
+##### Implicit Conversion of AllowEmptyAttribute (e.g. `sandbox`)
+```scala
+IFrame(src := "aaa.html", sandbox)
+```
+This will be:
+```scala
+IFrame(src := "aaa.html", sandbox := Set())
 ```
 
 ## HTMLApp
