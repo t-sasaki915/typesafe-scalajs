@@ -5,6 +5,7 @@ import cats.effect.unsafe.IORuntime
 import cats.effect.{IO, Sync}
 import net.st915.typesafescalajs.dom.attributes.Attribute
 import net.st915.typesafescalajs.dom.domain.events.*
+import net.st915.typesafescalajs.dom.values.IFrameRestriction
 import net.st915.typesafescalajs.renderer.typeclasses.CanApplyAttribute
 import org.scalajs.dom.*
 
@@ -738,11 +739,13 @@ final class SyncCanApplyAttribute[F[_]: Sync] extends CanApplyAttribute[F] {
             element match
               case e: HTMLTableCellElement =>
                 e.tap(_.rowSpan = value)
-          case (_: sandbox.type, value: Boolean /* not Boolean. List */) =>
-            // TODO
-            element match
-              case e: HTMLIFrameElement =>
-                e
+          case (_: sandbox.type, value: Set[_]) =>
+            value match
+              case v: Set[IFrameRestriction] =>
+                element match
+                  case e: HTMLIFrameElement =>
+                    val rests = if (v.isEmpty) IFrameRestriction.values.toSet else v
+                    rests.foldLeft(e) { (acc, r) => acc.tap(_.sandbox.add(r.raw)) }
           case (_: selected.type, value: Boolean) =>
             element match
               case e: HTMLOptionElement =>
