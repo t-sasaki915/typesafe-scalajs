@@ -1,3 +1,10 @@
 package net.st915.typesafescalajs.dom.attributes
 
-trait Attribute[A]
+import scala.annotation.targetName
+
+trait Attribute[A] {
+
+  @targetName(":=")
+  def :=(value: A): (this.type, A) = (this, value)
+
+}

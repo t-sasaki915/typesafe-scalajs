@@ -33,8 +33,7 @@ object SimpleStaticPage {
     BR(),
     Anchor(className := "link", href := "https://github.com") {
       "Link to github.com"
-    },
-    IFrame(src := "https://google.com", sandbox)
+    }
   )
 
 }

@@ -15,11 +15,4 @@ trait AttributeSyntax {
     : (A, B) =
     (attr, Monoid[B].empty)
 
-  extension [A <: Attribute[B], B](x: A) {
-
-    @targetName(":=")
-    def :=(value: B): (A, B) = (x, value)
-
-  }
-
 }
