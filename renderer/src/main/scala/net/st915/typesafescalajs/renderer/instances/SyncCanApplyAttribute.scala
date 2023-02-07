@@ -749,9 +749,7 @@ final class SyncCanApplyAttribute[F[_]: Sync] extends CanApplyAttribute[F] {
                         .map(_.raw)
                         .foldLeft(e) { (acc, r) => acc.tap(_.sandbox.add(r)) }
                     else
-                      // improve this
-                      e.tap(_.sandbox.add("allow-presentation"))
-                        .tap(_.sandbox.remove("allow-presentation"))
+                      e.tap(_.setAttribute("sandbox", ""))
           case (_: selected.type, value: Boolean) =>
             element match
               case e: HTMLOptionElement =>
