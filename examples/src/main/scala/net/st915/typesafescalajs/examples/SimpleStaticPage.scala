@@ -5,7 +5,6 @@ import cats.effect.IO
 object SimpleStaticPage {
 
   import net.st915.typesafescalajs.dom.dsl.*
-  import net.st915.typesafescalajs.dom.values.IFrameRestriction
 
   val pageHead: Head = Head(
     Title()("SimpleStaticPage"),

@@ -744,8 +744,12 @@ final class SyncCanApplyAttribute[F[_]: Sync] extends CanApplyAttribute[F] {
               case v: Set[IFrameRestriction] =>
                 element match
                   case e: HTMLIFrameElement =>
-                    val rests = if (v.isEmpty) IFrameRestriction.values.toSet else v
-                    rests.foldLeft(e) { (acc, r) => acc.tap(_.sandbox.add(r.raw)) }
+                    if (v.nonEmpty)
+                      v.map(_.raw).foldLeft(e) { (acc, r) => acc.tap(_.sandbox.add(r)) }
+                    else
+                      e.tap(_.sandbox.add("allow-presentation")).tap(
+                        _.sandbox.remove("allow-presentation")
+                      )
           case (_: selected.type, value: Boolean) =>
             element match
               case e: HTMLOptionElement =>
