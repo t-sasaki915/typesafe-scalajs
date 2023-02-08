@@ -114,7 +114,7 @@ Span()(
 )
 ```
 
-##### Implicit Conversion of FlagAttribute (e.g. `async` `disabled` `autoPlay`)
+##### Implicit Conversion of [FlagAttribute](https://github.com/stouma915/typesafe-scalajs/blob/main/dom/src/main/scala/net/st915/typesafescalajs/dom/attributes/FlagAttribute.scala) (e.g. `async` `disabled` `autoPlay`)
 ```scala
 Script(src := "aaa.js", async)
 Button(id := "btn", disabled)
@@ -127,7 +127,7 @@ Button(id := "btn", disabled := true)
 Audio(autoPlay := true)
 ```
 
-##### Implicit Conversion of AllowEmptyAttribute (e.g. `sandbox`)
+##### Implicit Conversion of [AllowEmptyAttribute](https://github.com/stouma915/typesafe-scalajs/blob/main/dom/src/main/scala/net/st915/typesafescalajs/dom/attributes/AllowEmptyAttribute.scala) (e.g. `sandbox`)
 ```scala
 IFrame(src := "aaa.html", sandbox)
 ```
