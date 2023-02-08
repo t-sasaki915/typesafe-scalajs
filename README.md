@@ -7,12 +7,8 @@ docker build -t typesafe-scalajs-example .
 docker run -p "8080:80" typesafe-scalajs-example
 ```
 
-# Examples
-* [index.html](https://github.com/stouma915/typesafe-scalajs/blob/main/examples/src/main/resources/index.html)
-* [Main.scala](https://github.com/stouma915/typesafe-scalajs/blob/main/examples/src/main/scala/net/st915/typesafescalajs/examples/Main.scala)
-* [SimpleStaticPage.scala](https://github.com/stouma915/typesafe-scalajs/blob/main/examples/src/main/scala/net/st915/typesafescalajs/examples/SimpleStaticPage.scala)
-
 # Usage
+
 ## DOM DSL
 ```scala
 import net.st915.typesafescalajs.dom.dsl.*
@@ -98,6 +94,7 @@ val bodyWithThreeChildren =
 ```
 
 #### Implicit Conversions
+
 ##### Implicit Conversion of String
 ```scala
 Span()(
@@ -116,6 +113,7 @@ Span()(
   }
 )
 ```
+
 ##### Implicit Conversion of FlagAttribute (e.g. `async` `disabled` `autoPlay`)
 ```scala
 Script(src := "aaa.js", async)
@@ -128,6 +126,7 @@ Script(src := "aaa.js", async := true)
 Button(id := "btn", disabled := true)
 Audio(autoPlay := true)
 ```
+
 ##### Implicit Conversion of AllowEmptyAttribute (e.g. `sandbox`)
 ```scala
 IFrame(src := "aaa.html", sandbox)
