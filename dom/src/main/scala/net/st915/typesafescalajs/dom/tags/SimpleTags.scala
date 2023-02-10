@@ -110,4 +110,56 @@ object SimpleTags {
       extends Tag[AcceptAttributes.Label]:
     override val tagName: String = "label"
 
+  case class SimpleLegend(attributes: Set[(AcceptAttributes.Legend, _)], children: List[Node])
+      extends Tag[AcceptAttributes.Legend]:
+    override val tagName: String = "legend"
+
+  case class SimpleLink(attributes: Set[(AcceptAttributes.Link, _)], children: List[Node])
+      extends Tag[AcceptAttributes.Link]:
+    override val tagName: String = "link"
+
+  case class SimpleLI(attributes: Set[(AcceptAttributes.LI, _)], children: List[Node])
+      extends Tag[AcceptAttributes.LI]:
+    override val tagName: String = "li"
+
+  case class SimpleMenu(attributes: Set[(AcceptAttributes.Menu, _)], children: List[Node])
+      extends Tag[AcceptAttributes.Menu]:
+    override val tagName: String = "menu"
+
+  case class SimpleMeta(attributes: Set[(AcceptAttributes.Meta, _)], children: List[Node])
+      extends Tag[AcceptAttributes.Meta]:
+    override val tagName: String = "meta"
+
+  case class SimpleOList(attributes: Set[(AcceptAttributes.OList, _)], children: List[Node])
+      extends Tag[AcceptAttributes.OList]:
+    override val tagName: String = "ol"
+
+  case class SimpleOptGroup(attributes: Set[(AcceptAttributes.OptGroup, _)], children: List[Node])
+      extends Tag[AcceptAttributes.OptGroup]:
+    override val tagName: String = "optgroup"
+
+  case class SimpleParagraph(attributes: Set[(AcceptAttributes.Paragraph, _)], children: List[Node])
+      extends Tag[AcceptAttributes.Paragraph]:
+    override val tagName: String = "p"
+
+  case class SimpleParam(attributes: Set[(AcceptAttributes.Param, _)], children: List[Node])
+      extends Tag[AcceptAttributes.Param]:
+    override val tagName: String = "param"
+
+  case class SimplePre(attributes: Set[(AcceptAttributes.Pre, _)], children: List[Node])
+      extends Tag[AcceptAttributes.Pre]:
+    override val tagName: String = "pre"
+
+  case class SimpleProgress(attributes: Set[(AcceptAttributes.Progress, _)], children: List[Node])
+      extends Tag[AcceptAttributes.Progress]:
+    override val tagName: String = "progress"
+
+  case class SimpleQuote(attributes: Set[(AcceptAttributes.Quote, _)], children: List[Node])
+      extends Tag[AcceptAttributes.Quote]:
+    override val tagName: String = "blockquote"
+
+  case class SimpleScript(attributes: Set[(AcceptAttributes.Script, _)], children: List[Node])
+      extends Tag[AcceptAttributes.Script]:
+    override val tagName: String = "script"
+
 }
