@@ -162,4 +162,62 @@ object SimpleTags {
       extends Tag[AcceptAttributes.Script]:
     override val tagName: String = "script"
 
+  case class SimpleSelect(attributes: Set[(AcceptAttributes.Select, _)], children: List[Node])
+      extends Tag[AcceptAttributes.Select]:
+    override val tagName: String = "select"
+
+  case class SimpleSource(attributes: Set[(AcceptAttributes.Source, _)], children: List[Node])
+      extends Tag[AcceptAttributes.Source]:
+    override val tagName: String = "source"
+
+  case class SimpleSpan(attributes: Set[(AcceptAttributes.Span, _)], children: List[Node])
+      extends Tag[AcceptAttributes.Span]:
+    override val tagName: String = "span"
+
+  case class SimpleStyle(attributes: Set[(AcceptAttributes.Style, _)], children: List[Node])
+      extends Tag[AcceptAttributes.Style]:
+    override val tagName: String = "style"
+
+  case class SimpleTable(attributes: Set[(AcceptAttributes.Table, _)], children: List[Node])
+      extends Tag[AcceptAttributes.Table]:
+    override val tagName: String = "table"
+
+  case class SimpleTableCaption(attributes: Set[(AcceptAttributes.TableCaption, _)],
+                                children: List[Node]
+  ) extends Tag[AcceptAttributes.TableCaption]:
+    override val tagName: String = "caption"
+
+  case class SimpleTableCell(attributes: Set[(AcceptAttributes.TableCell, _)], children: List[Node])
+      extends Tag[AcceptAttributes.TableCell]:
+    override val tagName: String = "td"
+
+  case class SimpleTableCol(attributes: Set[(AcceptAttributes.TableCol, _)], children: List[Node])
+      extends Tag[AcceptAttributes.TableCol]:
+    override val tagName: String = "col"
+
+  case class SimpleTableRow(attributes: Set[(AcceptAttributes.TableRow, _)], children: List[Node])
+      extends Tag[AcceptAttributes.TableRow]:
+    override val tagName: String = "tr"
+
+  case class SimpleTableSection(attributes: Set[(AcceptAttributes.TableSection, _)],
+                                children: List[Node]
+  ) extends Tag[AcceptAttributes.TableSection]:
+    override val tagName: String = "th"
+
+  case class SimpleTextArea(attributes: Set[(AcceptAttributes.TextArea, _)], children: List[Node])
+      extends Tag[AcceptAttributes.TextArea]:
+    override val tagName: String = "textarea"
+
+  case class SimpleTitle(attributes: Set[(AcceptAttributes.Title, _)], children: List[Node])
+      extends Tag[AcceptAttributes.Title]:
+    override val tagName: String = "title"
+
+  case class SimpleTrack(attributes: Set[(AcceptAttributes.Track, _)], children: List[Node])
+      extends Tag[AcceptAttributes.Track]:
+    override val tagName: String = "track"
+
+  case class SimpleVideo(attributes: Set[(AcceptAttributes.Video, _)], children: List[Node])
+      extends Tag[AcceptAttributes.Video]:
+    override val tagName: String = "video"
+
 }
