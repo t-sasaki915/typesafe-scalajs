@@ -60,4 +60,54 @@ object SimpleTags {
       extends Tag[AcceptAttributes.H2]:
     override val tagName: String = "h2"
 
+  case class SimpleH3(attributes: Set[(AcceptAttributes.H3, _)], children: List[Node])
+      extends Tag[AcceptAttributes.H3]:
+    override val tagName: String = "h3"
+
+  case class SimpleH4(attributes: Set[(AcceptAttributes.H4, _)], children: List[Node])
+      extends Tag[AcceptAttributes.H4]:
+    override val tagName: String = "h4"
+
+  case class SimpleH5(attributes: Set[(AcceptAttributes.H5, _)], children: List[Node])
+      extends Tag[AcceptAttributes.H5]:
+    override val tagName: String = "h5"
+
+  case class SimpleH6(attributes: Set[(AcceptAttributes.H6, _)], children: List[Node])
+      extends Tag[AcceptAttributes.H6]:
+    override val tagName: String = "h6"
+
+  case class SimpleHR(attributes: Set[(AcceptAttributes.HR, _)], children: List[Node])
+      extends Tag[AcceptAttributes.HR]:
+    override val tagName: String = "hr"
+
+  case class SimpleHTMLMap(attributes: Set[(AcceptAttributes.HTMLMap, _)], children: List[Node])
+      extends Tag[AcceptAttributes.HTMLMap]:
+    override val tagName: String = "map"
+
+  case class SimpleHTMLObject(attributes: Set[(AcceptAttributes.HTMLObject, _)],
+                              children: List[Node]
+  ) extends Tag[AcceptAttributes.HTMLObject]:
+    override val tagName: String = "object"
+
+  case class SimpleHTMLOption(attributes: Set[(AcceptAttributes.HTMLOption, _)],
+                              children: List[Node]
+  ) extends Tag[AcceptAttributes.HTMLOption]:
+    override val tagName: String = "option"
+
+  case class SimpleIFrame(attributes: Set[(AcceptAttributes.IFrame, _)], children: List[Node])
+      extends Tag[AcceptAttributes.IFrame]:
+    override val tagName: String = "iframe"
+
+  case class SimpleImage(attributes: Set[(AcceptAttributes.Image, _)], children: List[Node])
+      extends Tag[AcceptAttributes.Image]:
+    override val tagName: String = "img"
+
+  case class SimpleInput(attributes: Set[(AcceptAttributes.Input, _)], children: List[Node])
+      extends Tag[AcceptAttributes.Input]:
+    override val tagName: String = "input"
+
+  case class SimpleLabel(attributes: Set[(AcceptAttributes.Label, _)], children: List[Node])
+      extends Tag[AcceptAttributes.Label]:
+    override val tagName: String = "label"
+
 }
