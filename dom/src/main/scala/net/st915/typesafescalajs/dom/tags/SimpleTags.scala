@@ -220,4 +220,8 @@ object SimpleTags {
       extends Tag[AcceptAttributes.Video]:
     override val tagName: String = "video"
 
+  case class SimpleBody(attributes: Set[(AcceptAttributes.Body, _)], children: List[Node])
+
+  case class SimpleHead(attributes: Set[(AcceptAttributes.Head, _)], children: List[Node])
+
 }
