@@ -1,7 +1,7 @@
 package net.st915.typesafescalajs.renderer
 
 import cats.effect.*
-import net.st915.typesafescalajs.dom.tags.special.{Body, Head}
+import net.st915.typesafescalajs.dom.tags.Tags.{Body, Head}
 import net.st915.typesafescalajs.renderer.typeclasses.{CanRenderBody, CanRenderHead}
 
 trait HTMLApp extends IOApp {

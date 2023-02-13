@@ -84,14 +84,12 @@ object Tags {
       extends Tag[AcceptAttributes.HTMLMap]:
     override val tagName: String = "map"
 
-  case class HTMLObject(attributes: Set[(AcceptAttributes.HTMLObject, _)],
-                              children: List[Node]
-  ) extends Tag[AcceptAttributes.HTMLObject]:
+  case class HTMLObject(attributes: Set[(AcceptAttributes.HTMLObject, _)], children: List[Node])
+      extends Tag[AcceptAttributes.HTMLObject]:
     override val tagName: String = "object"
 
-  case class HTMLOption(attributes: Set[(AcceptAttributes.HTMLOption, _)],
-                              children: List[Node]
-  ) extends Tag[AcceptAttributes.HTMLOption]:
+  case class HTMLOption(attributes: Set[(AcceptAttributes.HTMLOption, _)], children: List[Node])
+      extends Tag[AcceptAttributes.HTMLOption]:
     override val tagName: String = "option"
 
   case class IFrame(attributes: Set[(AcceptAttributes.IFrame, _)], children: List[Node])
@@ -182,9 +180,8 @@ object Tags {
       extends Tag[AcceptAttributes.Table]:
     override val tagName: String = "table"
 
-  case class TableCaption(attributes: Set[(AcceptAttributes.TableCaption, _)],
-                                children: List[Node]
-  ) extends Tag[AcceptAttributes.TableCaption]:
+  case class TableCaption(attributes: Set[(AcceptAttributes.TableCaption, _)], children: List[Node])
+      extends Tag[AcceptAttributes.TableCaption]:
     override val tagName: String = "caption"
 
   case class TableCell(attributes: Set[(AcceptAttributes.TableCell, _)], children: List[Node])
@@ -199,9 +196,8 @@ object Tags {
       extends Tag[AcceptAttributes.TableRow]:
     override val tagName: String = "tr"
 
-  case class TableSection(attributes: Set[(AcceptAttributes.TableSection, _)],
-                                children: List[Node]
-  ) extends Tag[AcceptAttributes.TableSection]:
+  case class TableSection(attributes: Set[(AcceptAttributes.TableSection, _)], children: List[Node])
+      extends Tag[AcceptAttributes.TableSection]:
     override val tagName: String = "th"
 
   case class TextArea(attributes: Set[(AcceptAttributes.TextArea, _)], children: List[Node])

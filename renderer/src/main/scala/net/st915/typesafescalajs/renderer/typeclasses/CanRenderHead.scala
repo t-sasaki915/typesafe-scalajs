@@ -1,7 +1,7 @@
 package net.st915.typesafescalajs.renderer.typeclasses
 
 import cats.effect.unsafe.IORuntime
-import net.st915.typesafescalajs.dom.tags.special.Head
+import net.st915.typesafescalajs.dom.tags.Tags.Head
 import net.st915.typesafescalajs.renderer.Environment
 
 object CanRenderHead {
