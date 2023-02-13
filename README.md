@@ -97,7 +97,7 @@ val bodyWithThreeChildren =
 
 ##### Implicit Conversion of String
 ```scala
-Span()(
+Span(
   "ABC",
   Span {
     "DEF"
