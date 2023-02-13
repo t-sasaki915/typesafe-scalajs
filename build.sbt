@@ -41,10 +41,18 @@ lazy val renderer = project
     name := "typesafe-scalajs-renderer"
   )
 
+lazy val app = project
+  .in(file("app"))
+  .enablePlugins(ScalaJSPlugin)
+  .dependsOn(renderer)
+  .settings(
+    name := "typesafe-scalajs-app"
+  )
+
 lazy val examples = project
   .in(file("examples"))
   .enablePlugins(ScalaJSPlugin)
-  .dependsOn(renderer)
+  .dependsOn(app)
   .settings(
     name := "typesafe-scalajs-examples",
     scalaJSUseMainModuleInitializer := true

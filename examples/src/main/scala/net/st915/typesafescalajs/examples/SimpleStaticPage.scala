@@ -1,20 +1,19 @@
 package net.st915.typesafescalajs.examples
 
 import cats.effect.IO
-import net.st915.typesafescalajs.renderer.HTMLApp
+import net.st915.typesafescalajs.app.HTMLApp
 
 class SimpleStaticPage extends HTMLApp {
 
   import net.st915.typesafescalajs.dom.dsl.*
 
-  override val headProgram: IO[Head] = IO {
+  override val head: Head =
     Head(
       Title("SimpleStaticPage"),
       Meta(charset := "utf-8")
     )
-  }
 
-  override val bodyProgram: IO[Body] = IO {
+  override val body: Body =
     Body(
       H1 {
         "Simple Static Page Example"
@@ -36,9 +35,8 @@ class SimpleStaticPage extends HTMLApp {
       ),
       BR(),
       Anchor(className := "link", href := "https://github.com") {
-        "Link to github.com"
+        "Go to GitHub"
       }
     )
-  }
 
 }

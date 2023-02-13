@@ -1,10 +1,10 @@
-package net.st915.typesafescalajs.renderer
+package net.st915.typesafescalajs.app
 
 import cats.effect.*
 import net.st915.typesafescalajs.dom.tags.Tags.{Body, Head}
 import net.st915.typesafescalajs.renderer.typeclasses.{CanRenderBody, CanRenderHead}
 
-trait HTMLApp extends IOApp {
+trait HTMLIOApp extends IOApp {
 
   val headProgram: IO[Head]
   val bodyProgram: IO[Body]
