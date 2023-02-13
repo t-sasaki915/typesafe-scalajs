@@ -34,17 +34,17 @@ val disabledButtonWithClickEvent =
 #### Create Element with children
 ```scala
 val paragraphWithTextNode =
-  Paragraph() {
+  Paragraph {
     "Text"
   }
 val divWithThreeChildren =
-  Div()(
+  Div(
     Div(className := "child"),
     Div(className := "child"),
     Div(className := "child")
   )
 val buttonWithTextNode =
-  Button() {
+  Button {
     "Button"
   }
 ```
@@ -77,7 +77,7 @@ val disabledButtonWithClickEventAndTextNode =
 ```scala
 val headWithTitle =
   Head {
-    Title() {
+    Title {
       "Page Title"
     }
   }
@@ -99,16 +99,16 @@ val bodyWithThreeChildren =
 ```scala
 Span()(
   "ABC",
-  Span() {
+  Span {
     "DEF"
   }
 )
 ```
 This will be:
 ```scala
-Span()(
+Span(
   TextNode("ABC"),
-  Span() {
+  Span {
     TextNode("DEF")
   }
 )
@@ -145,9 +145,9 @@ object Main extends HTMLApp {
 
   import net.st915.typesafescalajs.dom.dsl.*
 
-  override val headProgram: IO[Head] = ...
+  override val headProgram: IO[Head] = ???
 
-  override val bodyProgram: IO[Body] = ...
+  override val bodyProgram: IO[Body] = ???
 
 }
 ```
