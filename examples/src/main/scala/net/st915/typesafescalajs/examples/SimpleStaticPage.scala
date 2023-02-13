@@ -7,12 +7,12 @@ object SimpleStaticPage {
   import net.st915.typesafescalajs.dom.dsl.*
 
   val pageHead: Head = Head(
-    Title()("SimpleStaticPage"),
+    Title("SimpleStaticPage"),
     Meta(charset := "utf-8")
   )
 
   val pageBody: Body = Body(
-    H1() {
+    H1 {
       "Simple Static Page Example"
     },
     BR(),
