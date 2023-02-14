@@ -33,6 +33,14 @@ lazy val dom = project
     )
   )
 
+lazy val editor = project
+  .in(file("editor"))
+  .enablePlugins(ScalaJSPlugin)
+  .dependsOn(dom)
+  .settings(
+    name := "typesafe-scalajs-editor"
+  )
+
 lazy val renderer = project
   .in(file("renderer"))
   .enablePlugins(ScalaJSPlugin)
@@ -44,7 +52,7 @@ lazy val renderer = project
 lazy val app = project
   .in(file("app"))
   .enablePlugins(ScalaJSPlugin)
-  .dependsOn(renderer)
+  .dependsOn(editor, renderer)
   .settings(
     name := "typesafe-scalajs-app"
   )
