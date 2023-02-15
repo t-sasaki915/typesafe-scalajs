@@ -21,7 +21,7 @@ final class SyncCanGetNativeElementById[F[_]: Sync] extends CanGetNativeElementB
         .asInstanceOf[HTMLElement]
         .pipe { nativeElem =>
           if (nativeElem eq null)
-            Left(ElementNotFound(id))
+            Left(ElementNotFound(s"There is no element has id '$id'"))
           else
             Right(nativeElem)
         }

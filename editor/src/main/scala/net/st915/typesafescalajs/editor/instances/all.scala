@@ -9,3 +9,5 @@ trait all {
     SyncCanGetNativeElementById[F]
 
 }
+
+object all extends all
