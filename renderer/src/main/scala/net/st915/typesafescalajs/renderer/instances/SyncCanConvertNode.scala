@@ -4,9 +4,8 @@ import cats.data.Kleisli
 import cats.effect.Sync
 import cats.effect.unsafe.IORuntime
 import net.st915.typesafescalajs.Node
-import net.st915.typesafescalajs.dom.TextNode
 import net.st915.typesafescalajs.dom.tags.*
-import net.st915.typesafescalajs.renderer.Environment
+import net.st915.typesafescalajs.dom.{Environment, TextNode}
 import net.st915.typesafescalajs.renderer.domain.typealiases.NativeNode
 import net.st915.typesafescalajs.renderer.typeclasses.*
 import org.scalajs.dom.HTMLElement

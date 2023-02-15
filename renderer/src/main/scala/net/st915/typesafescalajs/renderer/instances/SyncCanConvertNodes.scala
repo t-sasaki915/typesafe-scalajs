@@ -4,7 +4,7 @@ import cats.data.Kleisli
 import cats.effect.Sync
 import cats.effect.unsafe.IORuntime
 import net.st915.typesafescalajs.Node
-import net.st915.typesafescalajs.renderer.Environment
+import net.st915.typesafescalajs.dom.Environment
 import net.st915.typesafescalajs.renderer.domain.typealiases.NativeNode
 import net.st915.typesafescalajs.renderer.typeclasses.*
 

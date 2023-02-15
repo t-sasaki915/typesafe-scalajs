@@ -1,4 +1,4 @@
-package net.st915.typesafescalajs.renderer
+package net.st915.typesafescalajs.dom
 
 import org.scalajs.dom.{HTMLDocument, Window}
 

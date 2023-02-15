@@ -1,5 +1,6 @@
 package net.st915.typesafescalajs.renderer
 
+import net.st915.typesafescalajs.dom.Environment
 import org.scalajs.dom.{HTMLDocument, HTMLElement, HTMLHeadElement}
 
 package object util {

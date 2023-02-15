@@ -1,8 +1,8 @@
 package net.st915.typesafescalajs.renderer.typeclasses
 
 import cats.effect.unsafe.IORuntime
+import net.st915.typesafescalajs.dom.Environment
 import net.st915.typesafescalajs.dom.tags.Tags.Body
-import net.st915.typesafescalajs.renderer.Environment
 
 object CanRenderBody {
 

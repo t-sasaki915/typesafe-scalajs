@@ -1,6 +1,4 @@
-package net.st915.typesafescalajs.renderer
-
-import net.st915.typesafescalajs.renderer.Environment
+package net.st915.typesafescalajs.dom
 
 package object environments {
 

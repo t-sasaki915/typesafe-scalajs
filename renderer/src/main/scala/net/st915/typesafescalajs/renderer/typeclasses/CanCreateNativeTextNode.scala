@@ -1,7 +1,7 @@
 package net.st915.typesafescalajs.renderer.typeclasses
 
 import cats.data.Kleisli
-import net.st915.typesafescalajs.renderer.Environment
+import net.st915.typesafescalajs.dom.Environment
 import net.st915.typesafescalajs.renderer.domain.typealiases.NativeTextNode
 
 object CanCreateNativeTextNode {

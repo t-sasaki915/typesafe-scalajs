@@ -2,7 +2,7 @@ package net.st915.typesafescalajs.renderer.instances
 
 import cats.data.Kleisli
 import cats.effect.Sync
-import net.st915.typesafescalajs.renderer.Environment
+import net.st915.typesafescalajs.dom.Environment
 import net.st915.typesafescalajs.renderer.domain.typealiases.NativeTextNode
 import net.st915.typesafescalajs.renderer.typeclasses.CanCreateNativeTextNode
 import net.st915.typesafescalajs.renderer.util.summonDocument

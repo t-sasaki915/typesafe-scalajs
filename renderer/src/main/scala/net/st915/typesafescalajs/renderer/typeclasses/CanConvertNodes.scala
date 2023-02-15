@@ -3,7 +3,7 @@ package net.st915.typesafescalajs.renderer.typeclasses
 import cats.data.Kleisli
 import cats.effect.unsafe.IORuntime
 import net.st915.typesafescalajs.Node
-import net.st915.typesafescalajs.renderer.Environment
+import net.st915.typesafescalajs.dom.Environment
 import net.st915.typesafescalajs.renderer.domain.typealiases.NativeNode
 
 object CanConvertNodes {

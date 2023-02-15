@@ -2,8 +2,8 @@ package net.st915.typesafescalajs.renderer.instances
 
 import cats.data.Kleisli
 import cats.effect.Sync
+import net.st915.typesafescalajs.dom.Environment
 import net.st915.typesafescalajs.dom.tags.Tag
-import net.st915.typesafescalajs.renderer.Environment
 import net.st915.typesafescalajs.renderer.typeclasses.CanCreateNativeElement
 import net.st915.typesafescalajs.renderer.util.summonDocument
 import org.scalajs.dom.HTMLElement

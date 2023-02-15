@@ -12,7 +12,7 @@ trait HTMLIOApp extends IOApp {
   override final def run(args: List[String]): IO[ExitCode] = {
 
     import cats.effect.unsafe.implicits.global
-    import net.st915.typesafescalajs.renderer.environments.global
+    import net.st915.typesafescalajs.dom.environments.global
     import net.st915.typesafescalajs.renderer.instances.all.given
 
     for {
