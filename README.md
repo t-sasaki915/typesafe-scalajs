@@ -136,18 +136,40 @@ This will be:
 IFrame(src := "aaa.html", sandbox := Set())
 ```
 
-## HTMLApp
+## App
+
+#### HTMLApp
 ```scala
 import cats.effect.IO
-import net.st915.typesafescalajs.renderer.HTMLApp
+import net.st915.typesafescalajs.app.HTMLApp
 
 object Main extends HTMLApp {
 
   import net.st915.typesafescalajs.dom.dsl.*
 
-  override val headProgram: IO[Head] = ???
+  override val head: Head = ???
 
-  override val bodyProgram: IO[Body] = ???
+  override val body: Body = ???
+
+  override val afterRender: IO[Unit] = IO(???) // optional
+
+}
+```
+
+#### HTMLIOApp
+```scala
+import cats.effect.IO
+import net.st915.typesafescalajs.app.HTMLIOApp
+
+object Main extends HTMLIOApp {
+
+  import net.st915.typesafescalajs.dom.dsl.*
+
+  override val headProgram: IO[Head] = IO(???)
+
+  override val bodyProgram: IO[Body] = IO(???)
+
+  override val afterRender: IO[Unit] = IO(???) // optional
 
 }
 ```
