@@ -2,7 +2,6 @@ package net.st915.typesafescalajs.editor.typeclasses
 
 import cats.data.Kleisli
 import net.st915.typesafescalajs.dom.Environment
-import net.st915.typesafescalajs.editor.errors.EditorError
 import org.scalajs.dom.HTMLElement
 
 object CanGetNativeElementById {
@@ -13,6 +12,6 @@ object CanGetNativeElementById {
 
 trait CanGetNativeElementById[F[_]] {
 
-  def getNativeElementById(using Environment): Kleisli[F, String, Either[EditorError, HTMLElement]]
+  def getNativeElementById(using Environment): Kleisli[F, String, Option[HTMLElement]]
 
 }
