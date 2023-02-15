@@ -9,6 +9,8 @@ trait HTMLIOApp extends IOApp {
   val headProgram: IO[Head]
   val bodyProgram: IO[Body]
 
+  val afterRender: IO[Unit] = IO.unit
+
   override final def run(args: List[String]): IO[ExitCode] = {
 
     import cats.effect.unsafe.implicits.global
@@ -20,6 +22,7 @@ trait HTMLIOApp extends IOApp {
       body <- bodyProgram
       _ <- CanRenderHead[IO].renderHead(head)
       _ <- CanRenderBody[IO].renderBody(body)
+      _ <- afterRender
     } yield ExitCode.Success
 
   }
