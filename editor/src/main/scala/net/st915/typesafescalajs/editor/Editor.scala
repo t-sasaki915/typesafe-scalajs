@@ -6,7 +6,7 @@ import net.st915.typesafescalajs.dom.Environment
 import net.st915.typesafescalajs.editor.typeclasses.*
 import org.scalajs.dom.HTMLElement
 
-case class Editor[F[_]: Sync]()(using Environment) {
+final case class Editor[F[_]: Sync]()(using Environment) {
 
   import net.st915.typesafescalajs.editor.instances.all.given
 
