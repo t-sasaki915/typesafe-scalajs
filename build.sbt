@@ -56,7 +56,7 @@ lazy val app = project
   .enablePlugins(ScalaJSPlugin)
   .dependsOn(renderer)
   .settings(
-    name := "typesafe-scalajs"
+    name := "typesafe-scalajs-app"
   )
 
 lazy val examples = project
