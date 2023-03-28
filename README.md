@@ -9,6 +9,13 @@ docker run -p "8080:80" typesafe-scalajs-example
 
 # Usage
 
+## build.sbt
+```scala
+libraryDependencies ++= Seq(
+  "net.st915" %%% "typesafe-scalajs-app" % "VERSION"
+)
+```
+
 ## DOM DSL
 ```scala
 import net.st915.typesafescalajs.dom.dsl.*
