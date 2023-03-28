@@ -9,6 +9,7 @@ trait HTMLIOApp extends IOApp {
   val headProgram: IO[Head]
   val bodyProgram: IO[Body]
 
+  val beforeRender: IO[Unit] = IO.unit
   val afterRender: IO[Unit] = IO.unit
 
   override final def run(args: List[String]): IO[ExitCode] = {
@@ -18,6 +19,7 @@ trait HTMLIOApp extends IOApp {
     import net.st915.typesafescalajs.renderer.instances.all.given
 
     for {
+      _ <- beforeRender
       head <- headProgram
       body <- bodyProgram
       _ <- CanRenderHead[IO].renderHead(head)
