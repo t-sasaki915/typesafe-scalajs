@@ -151,6 +151,8 @@ object Main extends HTMLApp {
 
   override val body: Body = ???
 
+  override val beforeRender: IO[Unit] = IO(???) // optional
+  
   override val afterRender: IO[Unit] = IO(???) // optional
 
 }
@@ -168,6 +170,8 @@ object Main extends HTMLIOApp {
   override val headProgram: IO[Head] = IO(???)
 
   override val bodyProgram: IO[Body] = IO(???)
+  
+  override val beforeRender: IO[Unit] = IO(???) // optional
 
   override val afterRender: IO[Unit] = IO(???) // optional
 
